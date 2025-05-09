@@ -1,0 +1,111 @@
+﻿CREATE DATABASE BusManagement;
+USE BusManagement;
+CREATE TABLE Account (
+id INT PRIMARY KEY IDENTITY (1,1),
+username NVARCHAR(255) NOT NULL UNIQUE,
+password NVARCHAR(255) NOT NULL,
+role INT NOT NULL CHECK (role IN(0,1))
+);
+
+CREATE TABLE Admin (
+id INT PRIMARY KEY,
+FOREIGN KEY (id) REFERENCES Account (id) ON DELETE CASCADE, 
+);
+
+CREATE TABLE Station (
+ID_station NVARCHAR(255) PRIMARY KEY,
+Name_station NVARCHAR(255) NOT NULL,
+location NVARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE Staff (
+ID_account INT PRIMARY KEY,
+Name NVARCHAR(255) NOT NULL,
+email NVARCHAR(255) UNIQUE,
+phone NVARCHAR(20),
+ID_station NVARCHAR(255),
+CCCD NVARCHAR(12),
+home_address NVARCHAR(255),
+FOREIGN KEY (ID_account) REFERENCES Account (id) ON DELETE CASCADE,
+FOREIGN KEY (ID_station) REFERENCES Station (ID_Station)
+);
+
+CREATE TABLE Route (
+ID_route NVARCHAR(255) PRIMARY KEY,
+ID_Station_start NVARCHAR(255) NOT NULL,
+ID_Station_end NVARCHAR(255) NOT NULL,
+distance DECIMAL(10,2) NOT NULL,
+time TIME NOT NULL,
+);
+ALTER TABLE Route
+ADD CONSTRAINT FK_Route_StationStart FOREIGN KEY (ID_Station_start) REFERENCES Station(Id_station);
+ALTER TABLE Route
+ADD CONSTRAINT FK_Route_StationEnd FOREIGN KEY (ID_Station_end) REFERENCES Station(Id_station);
+
+CREATE TABLE Bus (
+ID_bus NVARCHAR(50) PRIMARY KEY,
+Quantity INT NOT NULL,
+Status NVARCHAR(50) NOT NULL,
+);
+
+CREATE TABLE Schedule (
+ID_Schedule VARCHAR(50) PRIMARY KEY,
+ID_bus NVARCHAR(50) NOT NULL,
+start_time DATETIME NOT NULL,
+end_time DATETIME NOT NULL,
+distance DECIMAL(10,2) NOT NULL,
+ CONSTRAINT FK_Schedule_Train FOREIGN KEY (ID_bus) REFERENCES Bus(ID_bus)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    
+);
+CREATE TABLE SEAT(
+ID_seat VARCHAR(255) PRIMARY KEY,
+ID_bus NVARCHAR(50) NOT NULL,
+seat_number INT NOT NULL,
+type NVARCHAR(50) NOT NULL,
+CONSTRAINT FK_Seat_Bus FOREIGN KEY (ID_bus) REFERENCES Bus(ID_bus) 
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE Ticket (
+ID_ticket INT PRIMARY KEY IDENTITY (1,1),
+ID_Schedule VARCHAR(50) NOT NULL,
+ID_seat VARCHAR(255) NOT NULL,
+price INT NOT NULL,
+booking_date DATETIME NOT NULL,
+ID_Station_start NVARCHAR(255) NOT NULL,
+ID_Station_end NVARCHAR(255) NOT NULL,
+  CONSTRAINT FK_Ticket_Schedule FOREIGN KEY (ID_schedule) 
+        REFERENCES Schedule(ID_schedule) 
+        ON DELETE CASCADE ON UPDATE CASCADE,
+);
+ALTER TABLE Ticket
+ADD CONSTRAINT FK_Ticket_Seat FOREIGN KEY (ID_seat) REFERENCES Seat(ID_seat);
+
+ALTER TABLE Ticket
+ADD CONSTRAINT FK_Ticket_StationStart FOREIGN KEY (ID_Station_start) REFERENCES Station(ID_station);
+
+ALTER TABLE Ticket
+ADD CONSTRAINT FK_Ticket_StationEnd FOREIGN KEY (ID_Station_end) REFERENCES Station(ID_station);
+
+Create Table Bus_Location_History(
+ID_History INT PRIMARY KEY IDENTITY (1,1),
+ID_bus NVARCHAR(50) NOT NULL,
+ID_Station NVARCHAR(255) NOT NULL,
+arrive_time DATETIME,
+leave_time DATETIME,
+CONSTRAINT FK_Bus_History FOREIGN KEY (ID_bus) REFERENCES Bus(ID_bus) 
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+ALTER TABLE Bus_Location_History
+ADD CONSTRAINT FK_Station_History FOREIGN KEY (ID_Station) REFERENCES Station(ID_station);
+
+CREATE TABLE Schedule_Stop (
+    ID_Stop INT IDENTITY(1,1) PRIMARY KEY, 
+    ID_Schedule VARCHAR(50) NOT NULL,     
+    IDStation_stop NVARCHAR(255) NOT NULL, 
+    Stop_time TIME NOT NULL,               
+	Stop_oderr INT NOT NULL,
+    -- Ràng buộc khóa ngoại
+    FOREIGN KEY (ID_Schedule) REFERENCES Schedule(ID_Schedule),
+    FOREIGN KEY (IDStation_stop) REFERENCES Station(ID_station)
+);
