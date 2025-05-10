@@ -57,12 +57,7 @@ namespace PBL3
         {
             get => txtCCCD.Text.Trim();
             set => txtCCCD.Text = value;
-        }
-        public string StaffIDStation
-        {
-            get => txtStation.Text.Trim();
-            set => txtStation.Text = value;
-        }
+        }  
         public string StaffGender
         {
             get => txtGender.Text.Trim();
@@ -86,7 +81,6 @@ namespace PBL3
                 dtpDob.Value = DateTime.Today;
                 txtNoiSinh.Clear();
                 txtCCCD.Clear();
-                txtStation.Clear();
                 txtGender.Clear();
             }
         }
@@ -100,7 +94,6 @@ namespace PBL3
                 dtpDob.Value == DateTime.Today ||
                 string.IsNullOrWhiteSpace(txtNoiSinh.Text) ||
                 string.IsNullOrWhiteSpace(txtCCCD.Text) ||
-                string.IsNullOrWhiteSpace(txtStation.Text) ||
                 string.IsNullOrWhiteSpace(txtGender.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

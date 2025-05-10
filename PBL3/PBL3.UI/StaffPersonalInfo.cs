@@ -34,9 +34,9 @@ namespace PBL3
                 txtName.Text = staff.Name;
                 txtEmail.Text = staff.email;
                 txtPhone.Text = staff.phone;
-                txtAddress.Text = staff.DiaChiNha;
+                txtAddress.Text = staff.home_address;
                 txtGender.Text = staff.Gender;
-                txtDob.Text = staff.NgaySinh.ToString("yyyy-MM-dd");
+                txtDob.Text = staff.Dob.ToString("yyyy-MM-dd");
                 txtNoiSinh.Text = staff.NoiSinh;
                 txtCCCD.Text = staff.CCCD;
                 txtID.Text = staff.ID_account.ToString();
