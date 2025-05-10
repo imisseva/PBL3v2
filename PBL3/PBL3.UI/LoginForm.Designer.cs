@@ -269,9 +269,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(57, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(63, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 176);
+            this.pictureBox1.Size = new System.Drawing.Size(263, 337);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -281,7 +281,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(78, 245);
+            this.label1.Location = new System.Drawing.Point(77, 299);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 33);
             this.label1.TabIndex = 1;
@@ -293,19 +293,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(53, 278);
+            this.label2.Location = new System.Drawing.Point(59, 332);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 33);
+            this.label2.Size = new System.Drawing.Size(247, 33);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Train Management";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Text = "Bus Management";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(175, 313);
+            this.label3.Location = new System.Drawing.Point(199, 365);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 33);
             this.label3.TabIndex = 3;

@@ -48,8 +48,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtStation = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,31 +222,11 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "CCCD:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(404, 357);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 23);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Ga làm việc:";
-            // 
-            // txtStation
-            // 
-            this.txtStation.Location = new System.Drawing.Point(561, 359);
-            this.txtStation.Name = "txtStation";
-            this.txtStation.ReadOnly = true;
-            this.txtStation.Size = new System.Drawing.Size(277, 22);
-            this.txtStation.TabIndex = 39;
-            // 
             // StaffPersonalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 504);
-            this.Controls.Add(this.txtStation);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.pictureBox1);
@@ -298,7 +276,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtStation;
     }
 }
