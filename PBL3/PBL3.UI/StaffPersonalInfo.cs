@@ -40,7 +40,6 @@ namespace PBL3
                 txtNoiSinh.Text = staff.NoiSinh;
                 txtCCCD.Text = staff.CCCD;
                 txtID.Text = staff.ID_account.ToString();
-                txtStation.Text = staff.ID_station;
             }
         }
     }
