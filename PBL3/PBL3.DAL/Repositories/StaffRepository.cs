@@ -76,7 +76,5 @@ namespace PBL3.DAL.Repositories
                 }
             }
         }
-      
-
     }
 }
