@@ -109,3 +109,9 @@ CREATE TABLE Schedule_Stop (
     FOREIGN KEY (ID_Schedule) REFERENCES Schedule(ID_Schedule),
     FOREIGN KEY (IDStation_stop) REFERENCES Station(ID_station)
 );
+ALTER TABLE Staff
+ADD DOB DATE;
+ALTER TABLE Staff
+ADD NoiSinh NVARCHAR(255);
+ALTER TABLE Staff
+ADD Gender NVARCHAR(10);
