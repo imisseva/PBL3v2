@@ -37,7 +37,6 @@
             this.lbSeat = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbBookingDate = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.txtStartPoint = new System.Windows.Forms.TextBox();
             this.txtEndPoint = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.cbbtrain = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,9 +65,9 @@
             this.lbTrain.AutoSize = true;
             this.lbTrain.Location = new System.Drawing.Point(27, 155);
             this.lbTrain.Name = "lbTrain";
-            this.lbTrain.Size = new System.Drawing.Size(72, 16);
+            this.lbTrain.Size = new System.Drawing.Size(61, 16);
             this.lbTrain.TabIndex = 0;
-            this.lbTrain.Text = "Tàu/Train: ";
+            this.lbTrain.Text = "Xe/Train:";
             // 
             // lbDate
             // 
@@ -101,18 +101,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 238);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 16);
+            this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Ga đi/Start point:";
+            this.label2.Text = "Nơi đi/Start point:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 266);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 16);
+            this.label3.Size = new System.Drawing.Size(117, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Ga đến/End point:";
+            this.label3.Text = "Nơi đến/End point:";
             // 
             // lbSeat
             // 
@@ -140,13 +140,6 @@
             this.lbBookingDate.Size = new System.Drawing.Size(167, 16);
             this.lbBookingDate.TabIndex = 8;
             this.lbBookingDate.Text = "Ngày đặt vé/Booking date:";
-            // 
-            // txtDate
-            // 
-            this.txtDate.Location = new System.Drawing.Point(211, 180);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(210, 22);
-            this.txtDate.TabIndex = 10;
             // 
             // txtTime
             // 
@@ -202,9 +195,9 @@
             this.lbType.AutoSize = true;
             this.lbType.Location = new System.Drawing.Point(27, 322);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(93, 16);
+            this.lbType.Size = new System.Drawing.Size(89, 16);
             this.lbType.TabIndex = 18;
-            this.lbType.Text = "Loại tàu/Type:";
+            this.lbType.Text = "Loại xe/Type:";
             // 
             // txtPrice
             // 
@@ -225,6 +218,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.cbbCabin);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btConfirm);
@@ -245,7 +239,6 @@
             this.panel1.Controls.Add(this.lbBookingDate);
             this.panel1.Controls.Add(this.txtStartPoint);
             this.panel1.Controls.Add(this.txtTime);
-            this.panel1.Controls.Add(this.txtDate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -284,7 +277,7 @@
             // cbbtrain
             // 
             this.cbbtrain.FormattingEnabled = true;
-            this.cbbtrain.Location = new System.Drawing.Point(23, 47);
+            this.cbbtrain.Location = new System.Drawing.Point(37, 47);
             this.cbbtrain.Name = "cbbtrain";
             this.cbbtrain.Size = new System.Drawing.Size(138, 24);
             this.cbbtrain.TabIndex = 2;
@@ -308,6 +301,13 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(459, 374);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(211, 178);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(210, 22);
+            this.dateTimePicker1.TabIndex = 22;
             // 
             // BookTicket
             // 
@@ -338,7 +338,6 @@
         private System.Windows.Forms.Label lbSeat;
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbBookingDate;
-        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.TextBox txtStartPoint;
         private System.Windows.Forms.TextBox txtEndPoint;
@@ -356,5 +355,6 @@
         private System.Windows.Forms.ComboBox cbbtrain;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbbtoa;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
