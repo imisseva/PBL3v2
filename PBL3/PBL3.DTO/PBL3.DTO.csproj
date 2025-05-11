@@ -45,6 +45,8 @@
     <Compile Include="BusDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteDTOcs.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="ScheduleStop.cs" />
     <Compile Include="SeatDTO.cs" />
     <Compile Include="StaffDTO.cs" />
     <Compile Include="StationDTO.cs" />

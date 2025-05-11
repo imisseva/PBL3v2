@@ -96,6 +96,18 @@
     <Compile Include="RouteView.Designer.cs">
       <DependentUpon>RouteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleDetail.Designer.cs">
+      <DependentUpon>ScheduleDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleView.Designer.cs">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SeatDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RouteView.resx">
       <DependentUpon>RouteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleDetail.resx">
+      <DependentUpon>ScheduleDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeatDetail.resx">
       <DependentUpon>SeatDetail.cs</DependentUpon>
