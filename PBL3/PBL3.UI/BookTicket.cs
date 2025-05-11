@@ -104,7 +104,7 @@ namespace PBL3
             var seat = (SeatDTO)btn.Tag;
 
             DialogResult result = MessageBox.Show(
-                $"Bạn có muốn {(selectedSeats.Contains(seat) ? "bỏ chọn" : "chọn")} ghế {seat.seat_number} ({seat.ID_seat}) không?",
+                $"Bạn có muốn chọn ghế {seat.seat_number} ({seat.ID_seat}) không?",
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
@@ -112,16 +112,22 @@ namespace PBL3
 
             if (result == DialogResult.Yes)
             {
-                if (selectedSeats.Contains(seat))
+                // Nếu đã chọn ghế khác rồi, reset màu cũ
+                foreach (Control control in panel2.Controls)
                 {
-                    selectedSeats.Remove(seat);
-                    btn.BackColor = Color.LightGreen;
+                    if (control is Button otherBtn && otherBtn.BackColor == Color.Gold)
+                    {
+                        otherBtn.BackColor = Color.LightGreen;
+                    }
                 }
-                else
-                {
-                    selectedSeats.Add(seat);
-                    btn.BackColor = Color.Gold;
-                }
+
+                // Xóa ghế cũ khỏi danh sách và thêm ghế mới
+                selectedSeats.Clear();
+                selectedSeats.Add(seat);
+                btn.BackColor = Color.Gold;
+
+                // Hiển thị số ghế vào textbox
+                txtSeat.Text = seat.seat_number.ToString();
             }
         }
 
