@@ -20,6 +20,16 @@ namespace PBL3.BLL.Services
                     Location = s.location
                 }).ToList();
         }
+        public List<StationDTO> GetIntermediateStations(int startID, int endID)
+        {
+            return _repo.GetIntermediateStations(startID, endID)
+                .Select(s => new StationDTO
+                {
+                    ID_station = s.ID_station,
+                    Name_station = s.Name_station,
+                    Location = s.Location
+                }).ToList();
+        }
 
         public void AddStation(StationDTO dto)
         {

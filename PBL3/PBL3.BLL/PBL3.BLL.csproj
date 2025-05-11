@@ -42,13 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\AccountService.cs" />
-    <Compile Include="Service\BusService.cs" />
-    <Compile Include="Service\RouteService.cs" />
-    <Compile Include="Service\SeatService.cs" />
-    <Compile Include="Service\StaffService.cs" />
-    <Compile Include="Service\StationService.cs" />
-    <Compile Include="Service\TicketService.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\BusService.cs" />
+    <Compile Include="Services\RouteService.cs" />
+    <Compile Include="Services\ScheduleService.cs" />
+    <Compile Include="Services\ScheduleStopService.cs" />
+    <Compile Include="Services\SeatService.cs" />
+    <Compile Include="Services\StaffService.cs" />
+    <Compile Include="Services\StationService.cs" />
+    <Compile Include="Services\TicketService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PBL3.DAL\PBL3.DAL.csproj">

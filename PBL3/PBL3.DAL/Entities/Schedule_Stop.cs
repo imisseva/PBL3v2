@@ -21,7 +21,7 @@ namespace PBL3.DAL.Entities
 
         public TimeSpan Stop_time { get; set; }
 
-        public int Stop_oderr { get; set; }
+        public int Stop_order { get; set; }
 
         public virtual Schedule Schedule { get; set; }
 
