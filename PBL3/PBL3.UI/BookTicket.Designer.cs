@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTrain = new System.Windows.Forms.Label();
+            this.lbBus = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,8 +41,6 @@
             this.txtStartPoint = new System.Windows.Forms.TextBox();
             this.txtEndPoint = new System.Windows.Forms.TextBox();
             this.txtSeat = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.txtBookingDate = new System.Windows.Forms.TextBox();
             this.txtTicketID = new System.Windows.Forms.TextBox();
             this.lbType = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -54,18 +52,20 @@
             this.cbbBus = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbbRoute = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cbbType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbTrain
+            // lbBus
             // 
-            this.lbTrain.AutoSize = true;
-            this.lbTrain.Location = new System.Drawing.Point(27, 155);
-            this.lbTrain.Name = "lbTrain";
-            this.lbTrain.Size = new System.Drawing.Size(61, 16);
-            this.lbTrain.TabIndex = 0;
-            this.lbTrain.Text = "Xe/Train:";
+            this.lbBus.AutoSize = true;
+            this.lbBus.Location = new System.Drawing.Point(27, 155);
+            this.lbBus.Name = "lbBus";
+            this.lbBus.Size = new System.Drawing.Size(53, 16);
+            this.lbBus.TabIndex = 0;
+            this.lbBus.Text = "Xe/Bus:";
             // 
             // lbDate
             // 
@@ -167,20 +167,6 @@
             this.txtSeat.Size = new System.Drawing.Size(210, 22);
             this.txtSeat.TabIndex = 14;
             // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(211, 319);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(210, 22);
-            this.txtType.TabIndex = 15;
-            // 
-            // txtBookingDate
-            // 
-            this.txtBookingDate.Location = new System.Drawing.Point(211, 347);
-            this.txtBookingDate.Name = "txtBookingDate";
-            this.txtBookingDate.Size = new System.Drawing.Size(210, 22);
-            this.txtBookingDate.TabIndex = 16;
-            // 
             // txtTicketID
             // 
             this.txtTicketID.Location = new System.Drawing.Point(211, 100);
@@ -193,9 +179,9 @@
             this.lbType.AutoSize = true;
             this.lbType.Location = new System.Drawing.Point(27, 322);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(89, 16);
+            this.lbType.Size = new System.Drawing.Size(98, 16);
             this.lbType.TabIndex = 18;
-            this.lbType.Text = "Loại xe/Type:";
+            this.lbType.Text = "Loại ghế/Type:";
             // 
             // txtPrice
             // 
@@ -216,20 +202,20 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbbType);
+            this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.cbbCabin);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btConfirm);
-            this.panel1.Controls.Add(this.lbTrain);
+            this.panel1.Controls.Add(this.lbBus);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.lbDate);
             this.panel1.Controls.Add(this.lbType);
             this.panel1.Controls.Add(this.lbTime);
             this.panel1.Controls.Add(this.txtTicketID);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtBookingDate);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtType);
             this.panel1.Controls.Add(this.lbSeat);
             this.panel1.Controls.Add(this.txtSeat);
             this.panel1.Controls.Add(this.lbPrice);
@@ -296,6 +282,21 @@
             this.cbbRoute.Size = new System.Drawing.Size(121, 24);
             this.cbbRoute.TabIndex = 3;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(211, 347);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(210, 22);
+            this.dateTimePicker2.TabIndex = 23;
+            // 
+            // cbbType
+            // 
+            this.cbbType.FormattingEnabled = true;
+            this.cbbType.Location = new System.Drawing.Point(211, 319);
+            this.cbbType.Name = "cbbType";
+            this.cbbType.Size = new System.Drawing.Size(210, 24);
+            this.cbbType.TabIndex = 24;
+            // 
             // BookTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,7 +317,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbTrain;
+        private System.Windows.Forms.Label lbBus;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label label1;
@@ -329,8 +330,6 @@
         private System.Windows.Forms.TextBox txtStartPoint;
         private System.Windows.Forms.TextBox txtEndPoint;
         private System.Windows.Forms.TextBox txtSeat;
-        private System.Windows.Forms.TextBox txtType;
-        private System.Windows.Forms.TextBox txtBookingDate;
         private System.Windows.Forms.TextBox txtTicketID;
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.TextBox txtPrice;
@@ -342,5 +341,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cbbRoute;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox cbbType;
     }
 }
