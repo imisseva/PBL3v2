@@ -67,7 +67,9 @@
     <Compile Include="Entities\Station.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\BusRepository.cs" />
     <Compile Include="Repositories\RouteRepository.cs" />
+    <Compile Include="Repositories\SeatRepository.cs" />
     <Compile Include="Repositories\StaffRepository.cs" />
     <Compile Include="Repositories\StationRepository.cs" />
     <Compile Include="Repositories\TicketRepository.cs" />

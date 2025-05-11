@@ -58,6 +58,18 @@
     <Compile Include="BookTicket.Designer.cs">
       <DependentUpon>BookTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusDetail.Designer.cs">
+      <DependentUpon>BusDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusView.Designer.cs">
+      <DependentUpon>BusView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,18 @@
     </Compile>
     <Compile Include="RouteView.Designer.cs">
       <DependentUpon>RouteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatDetail.Designer.cs">
+      <DependentUpon>SeatDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatView.Designer.cs">
+      <DependentUpon>SeatView.cs</DependentUpon>
     </Compile>
     <Compile Include="StaffDetail.cs">
       <SubType>Form</SubType>
@@ -120,6 +144,12 @@
     <EmbeddedResource Include="BookTicket.resx">
       <DependentUpon>BookTicket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BusDetail.resx">
+      <DependentUpon>BusDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusView.resx">
+      <DependentUpon>BusView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RouteView.resx">
       <DependentUpon>RouteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatDetail.resx">
+      <DependentUpon>SeatDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatView.resx">
+      <DependentUpon>SeatView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffDetail.resx">
       <DependentUpon>StaffDetail.cs</DependentUpon>
