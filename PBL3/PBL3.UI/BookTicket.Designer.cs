@@ -41,23 +41,21 @@
             this.txtStartPoint = new System.Windows.Forms.TextBox();
             this.txtEndPoint = new System.Windows.Forms.TextBox();
             this.txtSeat = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.txtBookingDate = new System.Windows.Forms.TextBox();
             this.txtTicketID = new System.Windows.Forms.TextBox();
             this.lbType = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.btConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbbCabin = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbbtoa = new System.Windows.Forms.ComboBox();
-            this.cbbtrain = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbbRoute = new System.Windows.Forms.ComboBox();
+            this.cbbBus = new System.Windows.Forms.ComboBox();
+            this.btTimKiem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTrain
@@ -65,9 +63,9 @@
             this.lbTrain.AutoSize = true;
             this.lbTrain.Location = new System.Drawing.Point(27, 155);
             this.lbTrain.Name = "lbTrain";
-            this.lbTrain.Size = new System.Drawing.Size(61, 16);
+            this.lbTrain.Size = new System.Drawing.Size(53, 16);
             this.lbTrain.TabIndex = 0;
-            this.lbTrain.Text = "Xe/Train:";
+            this.lbTrain.Text = "Xe/Bus:";
             // 
             // lbDate
             // 
@@ -169,20 +167,6 @@
             this.txtSeat.Size = new System.Drawing.Size(210, 22);
             this.txtSeat.TabIndex = 14;
             // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(211, 319);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(210, 22);
-            this.txtType.TabIndex = 15;
-            // 
-            // txtBookingDate
-            // 
-            this.txtBookingDate.Location = new System.Drawing.Point(211, 347);
-            this.txtBookingDate.Name = "txtBookingDate";
-            this.txtBookingDate.Size = new System.Drawing.Size(210, 22);
-            this.txtBookingDate.TabIndex = 16;
-            // 
             // txtTicketID
             // 
             this.txtTicketID.Location = new System.Drawing.Point(211, 100);
@@ -199,13 +183,6 @@
             this.lbType.TabIndex = 18;
             this.lbType.Text = "Loại xe/Type:";
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(211, 375);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(210, 22);
-            this.txtPrice.TabIndex = 19;
-            // 
             // btConfirm
             // 
             this.btConfirm.Location = new System.Drawing.Point(320, 451);
@@ -218,20 +195,20 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.cbbCabin);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btConfirm);
             this.panel1.Controls.Add(this.lbTrain);
-            this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.lbDate);
             this.panel1.Controls.Add(this.lbType);
             this.panel1.Controls.Add(this.lbTime);
             this.panel1.Controls.Add(this.txtTicketID);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtBookingDate);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtType);
             this.panel1.Controls.Add(this.lbSeat);
             this.panel1.Controls.Add(this.txtSeat);
             this.panel1.Controls.Add(this.lbPrice);
@@ -246,6 +223,36 @@
             this.panel1.TabIndex = 21;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(211, 375);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(210, 24);
+            this.comboBox2.TabIndex = 25;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(211, 347);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(210, 22);
+            this.dateTimePicker2.TabIndex = 24;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(211, 319);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(210, 24);
+            this.comboBox1.TabIndex = 23;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(211, 178);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(210, 22);
+            this.dateTimePicker1.TabIndex = 22;
+            // 
             // cbbCabin
             // 
             this.cbbCabin.FormattingEnabled = true;
@@ -256,58 +263,41 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cbbtoa);
-            this.panel2.Controls.Add(this.cbbtrain);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.cbbRoute);
+            this.panel2.Controls.Add(this.cbbBus);
+            this.panel2.Controls.Add(this.btTimKiem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(453, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(461, 504);
             this.panel2.TabIndex = 22;
             // 
-            // cbbtoa
+            // cbbRoute
             // 
-            this.cbbtoa.FormattingEnabled = true;
-            this.cbbtoa.Location = new System.Drawing.Point(181, 47);
-            this.cbbtoa.Name = "cbbtoa";
-            this.cbbtoa.Size = new System.Drawing.Size(121, 24);
-            this.cbbtoa.TabIndex = 3;
+            this.cbbRoute.FormattingEnabled = true;
+            this.cbbRoute.Location = new System.Drawing.Point(181, 47);
+            this.cbbRoute.Name = "cbbRoute";
+            this.cbbRoute.Size = new System.Drawing.Size(121, 24);
+            this.cbbRoute.TabIndex = 3;
             // 
-            // cbbtrain
+            // cbbBus
             // 
-            this.cbbtrain.FormattingEnabled = true;
-            this.cbbtrain.Location = new System.Drawing.Point(37, 47);
-            this.cbbtrain.Name = "cbbtrain";
-            this.cbbtrain.Size = new System.Drawing.Size(138, 24);
-            this.cbbtrain.TabIndex = 2;
-            this.cbbtrain.SelectedIndexChanged += new System.EventHandler(this.cbbtrain_SelectedIndexChanged);
+            this.cbbBus.FormattingEnabled = true;
+            this.cbbBus.Location = new System.Drawing.Point(37, 47);
+            this.cbbBus.Name = "cbbBus";
+            this.cbbBus.Size = new System.Drawing.Size(138, 24);
+            this.cbbBus.TabIndex = 2;
+            this.cbbBus.SelectedIndexChanged += new System.EventHandler(this.cbbtrain_SelectedIndexChanged);
             // 
-            // button1
+            // btTimKiem
             // 
-            this.button1.Location = new System.Drawing.Point(320, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(459, 374);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(211, 178);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 22);
-            this.dateTimePicker1.TabIndex = 22;
+            this.btTimKiem.Location = new System.Drawing.Point(320, 41);
+            this.btTimKiem.Name = "btTimKiem";
+            this.btTimKiem.Size = new System.Drawing.Size(89, 34);
+            this.btTimKiem.TabIndex = 1;
+            this.btTimKiem.Text = "Tìm kiếm";
+            this.btTimKiem.UseVisualStyleBackColor = true;
+            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // BookTicket
             // 
@@ -319,10 +309,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BookTicket";
             this.Text = "BookTicket";
+            this.Load += new System.EventHandler(this.BookTicket_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,19 +332,18 @@
         private System.Windows.Forms.TextBox txtStartPoint;
         private System.Windows.Forms.TextBox txtEndPoint;
         private System.Windows.Forms.TextBox txtSeat;
-        private System.Windows.Forms.TextBox txtType;
-        private System.Windows.Forms.TextBox txtBookingDate;
         private System.Windows.Forms.TextBox txtTicketID;
         private System.Windows.Forms.Label lbType;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btConfirm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbbCabin;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cbbtrain;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbbtoa;
+        private System.Windows.Forms.ComboBox cbbBus;
+        private System.Windows.Forms.Button btTimKiem;
+        private System.Windows.Forms.ComboBox cbbRoute;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -54,7 +54,7 @@
             this.kếtCaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(914, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(914, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,20 +117,20 @@
             // đặtVéToolStripMenuItem
             // 
             this.đặtVéToolStripMenuItem.Name = "đặtVéToolStripMenuItem";
-            this.đặtVéToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đặtVéToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.đặtVéToolStripMenuItem.Text = "Đặt vé";
             this.đặtVéToolStripMenuItem.Click += new System.EventHandler(this.đặtVéToolStripMenuItem_Click);
             // 
             // huỷVéToolStripMenuItem
             // 
             this.huỷVéToolStripMenuItem.Name = "huỷVéToolStripMenuItem";
-            this.huỷVéToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.huỷVéToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.huỷVéToolStripMenuItem.Text = "Huỷ vé";
             // 
             // xemThôngTinVéToolStripMenuItem
             // 
             this.xemThôngTinVéToolStripMenuItem.Name = "xemThôngTinVéToolStripMenuItem";
-            this.xemThôngTinVéToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.xemThôngTinVéToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.xemThôngTinVéToolStripMenuItem.Text = "Xem thông tin vé";
             // 
             // kếtCaToolStripMenuItem
@@ -142,9 +142,9 @@
             // MainPanel
             // 
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 28);
+            this.MainPanel.Location = new System.Drawing.Point(0, 30);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(914, 504);
+            this.MainPanel.Size = new System.Drawing.Size(914, 502);
             this.MainPanel.TabIndex = 2;
             // 
             // StaffForm
