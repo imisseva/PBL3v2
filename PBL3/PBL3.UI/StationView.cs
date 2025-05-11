@@ -35,8 +35,8 @@ namespace PBL3
             dgv.MultiSelect = false;
             if (dgv.Columns.Count > 0)
             {
-                dgv.Columns["ID_station"].HeaderText = "ID Ga";
-                dgv.Columns["Name_station"].HeaderText = "Tên Ga";
+                dgv.Columns["ID_station"].HeaderText = "ID Bến";
+                dgv.Columns["Name_station"].HeaderText = "Tên Bến Xe";
                 dgv.Columns["Location"].HeaderText = "Vị Trí";
             }
         }

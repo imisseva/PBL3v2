@@ -73,9 +73,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(120, 204);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên Ga";
+            this.label2.Text = "Tên Bến Xe";
             // 
             // label3
             // 
