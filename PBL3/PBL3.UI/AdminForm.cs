@@ -12,23 +12,12 @@ namespace PBL3
         public AdminForm()
         {
             InitializeComponent();
-            MainPanel.Visible = false; // Ẩn panel khi khởi động form
-        }
-
-        private void gaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = true;
-            LoadFormToPanel(new StationView());
+            MainPanel.Visible = false; 
         }
         private void tuyếnĐườngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Visible = true;
             LoadFormToPanel(new RouteView());
-        }
-        private void tàuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = true;
-            //LoadFormToPanel(new BusView());
         }
         private void LoadFormToPanel(Form frm)
         {
@@ -39,18 +28,33 @@ namespace PBL3
             MainPanel.Controls.Add(frm);
             frm.Show();
         }
-
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = true;
-            //LoadFormToPanel(new StaffView());
-        }
-
         private void toaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Visible = true;
             //LoadFormToPanel(new CabinView());
 
+        }
+        private void xeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new BusView());
+        }
+
+        private void ghếToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new SeatView());
+        }
+
+        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bếnXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new StationView());
         }
     }
 }

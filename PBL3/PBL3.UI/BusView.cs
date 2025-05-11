@@ -35,7 +35,7 @@ namespace PBL3
             if (dgv.Columns.Count > 0)
             {
                 dgv.Columns["ID_bus"].HeaderText = "Mã Xe";
-                dgv.Columns["Quantity"].HeaderText = "Số Ghế";
+                dgv.Columns["Quantity"].HeaderText = "Số Lượng Ghế";
                 dgv.Columns["Status"].HeaderText = "Trạng Thái";
             }
         }
