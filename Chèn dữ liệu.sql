@@ -81,3 +81,11 @@ INSERT INTO SEAT(ID_seat, ID_bus, seat_number, type) VALUES
 (N'S111', N'B4', 19, N'giường đôi'), (N'S112', N'B4', 20, N'giường đôi'), (N'S113', N'B4', 21, N'giường đôi'),
 (N'S114', N'B4', 22, N'giường đôi');
 
+INSERT INTO Station (ID_station, Name_station, location)
+VALUES
+(1, N'Bến xe nước ngầm', N'Số 1 Ngọc Hồi, Hoàng Liệt, Hoàng Mai, Tp. Hà Nội'),
+(2, N'Ngã ba bến xe Hà Tĩnh', N'13 Võ Liêm Sơn, Bắc Hà, Tp. Hà Tĩnh'),
+(3, N'Quầy 22A Bến xe Đà Nẵng', N'75 Thanh Tịnh, Quận Liên Chiểu, TP. Đà Nẵng'),
+(4, N'Hội An', N'133 Tôn Đức Thắng, Tân An, TP. Hội An'),
+(5, N'Đà Lạt', N'94 Mai Anh Đào, Phường 8, TP. Đà Lạt');
+
