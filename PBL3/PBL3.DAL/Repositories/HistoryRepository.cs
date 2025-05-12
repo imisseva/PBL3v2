@@ -15,7 +15,7 @@ namespace PBL3.DAL.Repositories
             {
                 return context.Bus_Location_History
                     .Where(h => h.ID_Station == stationId &&
-                                h.arrive_time <= time && h.leave_time >= time)
+                                h.arrive_time <= time && (h.leave_time == null || h.leave_time >= time))
                     .Select(h => h.ID_bus)
                     .Distinct()
                     .ToList();

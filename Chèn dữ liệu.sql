@@ -84,8 +84,24 @@ INSERT INTO SEAT(ID_seat, ID_bus, seat_number, type) VALUES
 INSERT INTO Station (ID_station, Name_station, location)
 VALUES
 (1, N'Bến xe nước ngầm', N'Số 1 Ngọc Hồi, Hoàng Liệt, Hoàng Mai, Tp. Hà Nội'),
-(2, N'Ngã ba bến xe Hà Tĩnh', N'13 Võ Liêm Sơn, Bắc Hà, Tp. Hà Tĩnh'),
-(3, N'Quầy 22A Bến xe Đà Nẵng', N'75 Thanh Tịnh, Quận Liên Chiểu, TP. Đà Nẵng'),
-(4, N'Hội An', N'133 Tôn Đức Thắng, Tân An, TP. Hội An'),
-(5, N'Đà Lạt', N'94 Mai Anh Đào, Phường 8, TP. Đà Lạt');
+(2, N'Trạm Thu Phí Cầu Bến Thuỷ 2',N'QL1A, Hưng Nguyên,TP. Nghệ An'),
+(3, N'Ngã ba bến xe Hà Tĩnh', N'13 Võ Liêm Sơn, Bắc Hà, Tp. Hà Tĩnh'),
+(4, N'Quầy 22A Bến xe Đà Nẵng', N'75 Thanh Tịnh, Quận Liên Chiểu, TP. Đà Nẵng'),
+(5, N'Văn phòng Hội An', N'133 Tôn Đức Thắng, Tân An, TP. Hội An'),
+(6, N'Bến xe Quy Nhơn', N'Đường Võ Liệu - Cửa Hàng Xăng Dầu Phương Linh 3,TP. Quy Nhơn'),
+(7, N'Văn phòng Đà Lạt', N'94 Mai Anh Đào, Phường 8, TP. Đà Lạt');
 
+INSERT INTO Bus_Location_History 
+( ID_bus, ID_Station, arrive_time)
+VALUES 
+( N'B1', N'1', '2025-05-12 00:00:00'),
+( N'B2', N'4', '2025-05-12 00:00:00'),
+( N'B3', N'5', '2025-05-12 00:00:00'),
+( N'B4', N'7', '2025-05-12 00:00:00');
+
+INSERT INTO Route(ID_route,ID_Station_start,ID_Station_end,distance,time)
+VALUES
+(N'HN_DN',N'1',N'4',770,'12:50'),
+(N'HN_HA',N'1',N'5',800,'13:20'),
+(N'DN_DL',N'4',N'7',650,'11:30'),
+(N'HA_DL',N'5',N'7',680,'11:00');
