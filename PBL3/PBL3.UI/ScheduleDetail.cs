@@ -21,6 +21,13 @@ namespace PBL3.UI
         {
             InitializeComponent();
             LoadData();
+            LoadDatetime();
+        }
+        private void LoadDatetime()
+        {
+            dpStartTime.Format = DateTimePickerFormat.Custom;
+            dpStartTime.CustomFormat= "dd/MM/yyyy HH:mm";
+            dpStartTime.ShowUpDown = true;
         }
         private void InitDGVStop(List<StationDTO> validStations)
         {
@@ -81,6 +88,11 @@ namespace PBL3.UI
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dpStartTime_ValueChanged(object sender, EventArgs e)
         {
 
         }
