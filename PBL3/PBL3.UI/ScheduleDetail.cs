@@ -20,11 +20,15 @@ namespace PBL3.UI
         public ScheduleDetail()
         {
             InitializeComponent();
+            LoadData();
         }
         private void InitDGVStop(List<StationDTO> validStations)
         {
             dgvStops.Columns.Clear();
             dgvStops.AutoGenerateColumns = false;
+            dgvStops.ThemeStyle.HeaderStyle.Height = 35;
+            dgvStops.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvStops.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // STT
             DataGridViewTextBoxColumn colIndex = new DataGridViewTextBoxColumn
@@ -54,7 +58,19 @@ namespace PBL3.UI
             };
             dgvStops.Columns.Add(colStopTime);
         }
+        private void LoadData()
+        {
+            var schedules = scheduleService.GetAllSchedules();          
+            var stations1 = stationService.GetStations();
+            var stations2 = stationService.GetStations();
 
+            comboBoxStartStation.DataSource = stations1;
+            comboBoxStartStation.DisplayMember = "Name_station";
+            comboBoxStartStation.ValueMember = "ID_station";
+            comboBoxEndStation.DataSource = stations2;
+            comboBoxEndStation.DisplayMember = "Name_station";
+            comboBoxEndStation.ValueMember = "ID_station";
+        }
         private void btnLoadStops_Click(object sender, EventArgs e)
         {
             int startID = int.Parse(comboBoxStartStation.SelectedValue.ToString());
@@ -64,5 +80,9 @@ namespace PBL3.UI
             InitDGVStop(validStations);
         }
 
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

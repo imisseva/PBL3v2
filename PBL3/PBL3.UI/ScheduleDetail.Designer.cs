@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvStops = new System.Windows.Forms.DataGridView();
-            this.comboBoxStartStation = new System.Windows.Forms.ComboBox();
-            this.comboBoxEndStation = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ADD = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvStops = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.comboBoxStartStation = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBoxEndStation = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtEndTime = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStops)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,46 +95,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Xe";
             // 
-            // dgvStops
-            // 
-            this.dgvStops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStops.Location = new System.Drawing.Point(72, 119);
-            this.dgvStops.Name = "dgvStops";
-            this.dgvStops.RowHeadersWidth = 51;
-            this.dgvStops.RowTemplate.Height = 24;
-            this.dgvStops.Size = new System.Drawing.Size(545, 205);
-            this.dgvStops.TabIndex = 1;
-            // 
-            // comboBoxStartStation
-            // 
-            this.comboBoxStartStation.FormattingEnabled = true;
-            this.comboBoxStartStation.Location = new System.Drawing.Point(155, 73);
-            this.comboBoxStartStation.Name = "comboBoxStartStation";
-            this.comboBoxStartStation.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxStartStation.TabIndex = 2;
-            // 
-            // comboBoxEndStation
-            // 
-            this.comboBoxEndStation.FormattingEnabled = true;
-            this.comboBoxEndStation.Location = new System.Drawing.Point(155, 348);
-            this.comboBoxEndStation.Name = "comboBoxEndStation";
-            this.comboBoxEndStation.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxEndStation.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(417, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(417, 353);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
-            this.textBox1.TabIndex = 5;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -140,54 +104,242 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "ID_Lịch";
             // 
-            // textBox2
+            // ADD
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 22);
-            this.textBox2.TabIndex = 7;
+            this.ADD.CheckedState.Parent = this.ADD;
+            this.ADD.CustomImages.Parent = this.ADD;
+            this.ADD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ADD.ForeColor = System.Drawing.Color.White;
+            this.ADD.HoverState.Parent = this.ADD;
+            this.ADD.Location = new System.Drawing.Point(678, 100);
+            this.ADD.Name = "ADD";
+            this.ADD.ShadowDecoration.Parent = this.ADD;
+            this.ADD.Size = new System.Drawing.Size(86, 32);
+            this.ADD.TabIndex = 10;
+            this.ADD.Text = "ADD";
+            this.ADD.Click += new System.EventHandler(this.btnLoadStops_Click);
             // 
-            // comboBox3
+            // dgvStops
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(417, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvStops.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvStops.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStops.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStops.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvStops.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvStops.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStops.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvStops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStops.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvStops.EnableHeadersVisualStyles = false;
+            this.dgvStops.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvStops.Location = new System.Drawing.Point(60, 100);
+            this.dgvStops.Name = "dgvStops";
+            this.dgvStops.RowHeadersVisible = false;
+            this.dgvStops.RowHeadersWidth = 51;
+            this.dgvStops.RowTemplate.Height = 24;
+            this.dgvStops.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStops.Size = new System.Drawing.Size(594, 238);
+            this.dgvStops.TabIndex = 11;
+            this.dgvStops.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvStops.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvStops.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvStops.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvStops.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvStops.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvStops.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvStops.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvStops.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvStops.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvStops.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvStops.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvStops.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStops.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvStops.ThemeStyle.ReadOnly = false;
+            this.dgvStops.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvStops.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvStops.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvStops.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvStops.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvStops.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvStops.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // button1
+            // comboBoxStartStation
             // 
-            this.button1.Location = new System.Drawing.Point(201, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.comboBoxStartStation.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxStartStation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxStartStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStartStation.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBoxStartStation.FocusedState.Parent = this.comboBoxStartStation;
+            this.comboBoxStartStation.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxStartStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxStartStation.FormattingEnabled = true;
+            this.comboBoxStartStation.HoverState.Parent = this.comboBoxStartStation;
+            this.comboBoxStartStation.ItemHeight = 30;
+            this.comboBoxStartStation.ItemsAppearance.Parent = this.comboBoxStartStation;
+            this.comboBoxStartStation.Location = new System.Drawing.Point(155, 62);
+            this.comboBoxStartStation.Name = "comboBoxStartStation";
+            this.comboBoxStartStation.ShadowDecoration.Parent = this.comboBoxStartStation;
+            this.comboBoxStartStation.Size = new System.Drawing.Size(121, 36);
+            this.comboBoxStartStation.TabIndex = 12;
             // 
-            // button2
+            // comboBoxEndStation
             // 
-            this.button2.Location = new System.Drawing.Point(417, 402);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.comboBoxEndStation.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxEndStation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEndStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEndStation.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBoxEndStation.FocusedState.Parent = this.comboBoxEndStation;
+            this.comboBoxEndStation.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxEndStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxEndStation.FormattingEnabled = true;
+            this.comboBoxEndStation.HoverState.Parent = this.comboBoxEndStation;
+            this.comboBoxEndStation.ItemHeight = 30;
+            this.comboBoxEndStation.ItemsAppearance.Parent = this.comboBoxEndStation;
+            this.comboBoxEndStation.Location = new System.Drawing.Point(155, 348);
+            this.comboBoxEndStation.Name = "comboBoxEndStation";
+            this.comboBoxEndStation.ShadowDecoration.Parent = this.comboBoxEndStation;
+            this.comboBoxEndStation.Size = new System.Drawing.Size(121, 36);
+            this.comboBoxEndStation.TabIndex = 13;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.FormattingEnabled = true;
+            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(417, 14);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
+            this.guna2ComboBox1.TabIndex = 14;
+            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Location = new System.Drawing.Point(155, 15);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Size = new System.Drawing.Size(121, 27);
+            this.guna2TextBox1.TabIndex = 15;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(184, 402);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(92, 33);
+            this.guna2Button1.TabIndex = 16;
+            this.guna2Button1.Text = "Save";
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(417, 402);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(94, 36);
+            this.guna2Button2.TabIndex = 17;
+            this.guna2Button2.Text = "Cancel";
+            // 
+            // txtEndTime
+            // 
+            this.txtEndTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEndTime.DefaultText = "";
+            this.txtEndTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEndTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEndTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEndTime.DisabledState.Parent = this.txtEndTime;
+            this.txtEndTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEndTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEndTime.FocusedState.Parent = this.txtEndTime;
+            this.txtEndTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEndTime.HoverState.Parent = this.txtEndTime;
+            this.txtEndTime.Location = new System.Drawing.Point(417, 349);
+            this.txtEndTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.PasswordChar = '\0';
+            this.txtEndTime.PlaceholderText = "";
+            this.txtEndTime.SelectedText = "";
+            this.txtEndTime.ShadowDecoration.Parent = this.txtEndTime;
+            this.txtEndTime.Size = new System.Drawing.Size(200, 35);
+            this.txtEndTime.TabIndex = 18;
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(417, 75);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(237, 22);
+            this.guna2DateTimePicker1.TabIndex = 19;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 5, 12, 16, 21, 22, 210);
             // 
             // ScheduleDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.txtEndTime);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.guna2ComboBox1);
             this.Controls.Add(this.comboBoxEndStation);
             this.Controls.Add(this.comboBoxStartStation);
             this.Controls.Add(this.dgvStops);
+            this.Controls.Add(this.ADD);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -208,15 +360,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvStops;
-        private System.Windows.Forms.ComboBox comboBoxStartStation;
-        private System.Windows.Forms.ComboBox comboBoxEndStation;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private Guna.UI2.WinForms.Guna2Button ADD;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvStops;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxStartStation;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxEndStation;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox txtEndTime;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
     }
 }
