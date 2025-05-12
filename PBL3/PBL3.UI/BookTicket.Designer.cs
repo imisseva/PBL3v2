@@ -45,15 +45,15 @@
             this.lbType = new System.Windows.Forms.Label();
             this.btConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbbCabin = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbbRoute = new System.Windows.Forms.ComboBox();
-            this.cbbBus = new System.Windows.Forms.ComboBox();
-            this.btTimKiem = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbbBus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -223,6 +223,13 @@
             this.panel1.TabIndex = 21;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(211, 319);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(210, 22);
+            this.textBox1.TabIndex = 26;
+            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -255,9 +262,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cbbRoute);
-            this.panel2.Controls.Add(this.cbbBus);
             this.panel2.Controls.Add(this.btTimKiem);
+            this.panel2.Controls.Add(this.cbbBus);
+            this.panel2.Controls.Add(this.cbbRoute);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(453, 0);
             this.panel2.Name = "panel2";
@@ -267,36 +274,45 @@
             // cbbRoute
             // 
             this.cbbRoute.FormattingEnabled = true;
-            this.cbbRoute.Location = new System.Drawing.Point(181, 47);
+            this.cbbRoute.Location = new System.Drawing.Point(178, 47);
             this.cbbRoute.Name = "cbbRoute";
             this.cbbRoute.Size = new System.Drawing.Size(121, 24);
             this.cbbRoute.TabIndex = 3;
             // 
             // cbbBus
             // 
+            this.cbbBus.BackColor = System.Drawing.Color.Transparent;
+            this.cbbBus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbBus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbBus.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbBus.FocusedState.Parent = this.cbbBus;
+            this.cbbBus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbBus.FormattingEnabled = true;
-            this.cbbBus.Location = new System.Drawing.Point(37, 47);
+            this.cbbBus.HoverState.Parent = this.cbbBus;
+            this.cbbBus.ItemHeight = 30;
+            this.cbbBus.ItemsAppearance.Parent = this.cbbBus;
+            this.cbbBus.Location = new System.Drawing.Point(31, 47);
             this.cbbBus.Name = "cbbBus";
-            this.cbbBus.Size = new System.Drawing.Size(138, 24);
-            this.cbbBus.TabIndex = 2;
+            this.cbbBus.ShadowDecoration.Parent = this.cbbBus;
+            this.cbbBus.Size = new System.Drawing.Size(130, 36);
+            this.cbbBus.TabIndex = 4;
             this.cbbBus.SelectedIndexChanged += new System.EventHandler(this.cbbtrain_SelectedIndexChanged);
             // 
             // btTimKiem
             // 
-            this.btTimKiem.Location = new System.Drawing.Point(320, 41);
+            this.btTimKiem.CheckedState.Parent = this.btTimKiem;
+            this.btTimKiem.CustomImages.Parent = this.btTimKiem;
+            this.btTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btTimKiem.HoverState.Parent = this.btTimKiem;
+            this.btTimKiem.Location = new System.Drawing.Point(327, 47);
             this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(89, 34);
-            this.btTimKiem.TabIndex = 1;
+            this.btTimKiem.ShadowDecoration.Parent = this.btTimKiem;
+            this.btTimKiem.Size = new System.Drawing.Size(107, 36);
+            this.btTimKiem.TabIndex = 5;
             this.btTimKiem.Text = "Tìm kiếm";
-            this.btTimKiem.UseVisualStyleBackColor = true;
             this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(211, 319);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 22);
-            this.textBox1.TabIndex = 26;
             // 
             // BookTicket
             // 
@@ -337,12 +353,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbbCabin;
-        private System.Windows.Forms.ComboBox cbbBus;
-        private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.ComboBox cbbRoute;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbBus;
+        private Guna.UI2.WinForms.Guna2Button btTimKiem;
     }
 }
