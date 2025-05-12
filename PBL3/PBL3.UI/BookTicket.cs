@@ -26,8 +26,12 @@ namespace PBL3
 
         private void cbbtrain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedTrain = cbbBus.SelectedValue.ToString();
-
+            if (cbbBus.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string selectedBusID = cbbBus.SelectedValue.ToString();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -50,15 +54,27 @@ namespace PBL3
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
-            if (cbbBus.SelectedIndex == null) return;
+            if (cbbBus.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string selectedBusID = cbbBus.SelectedValue.ToString();
+
             var seats = SeatService.GetSeats()
                                 .Where(s => s.ID_bus == selectedBusID)
                                 .ToList();
 
+            if (seats.Count == 0)
+            {
+                MessageBox.Show("Không có ghế nào cho xe buýt này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             ShowSeats(seats);
         }
+
         private void ShowSeats(List<SeatDTO> seats)
         {
             panel2.Controls.Clear();
@@ -96,7 +112,34 @@ namespace PBL3
 
                 panel2.Controls.Add(btn);
             }
+
+            // Thêm nút Thoát / Hủy chọn
+            Button btnCancel = new Button();
+            btnCancel.Text = "Thoát";
+            btnCancel.Width = 80;
+            btnCancel.Height = 30;
+            btnCancel.BackColor = Color.LightGray;
+
+            btnCancel.Click += (s, e) =>
+            {
+                // Xóa tất cả ghế đã chọn
+                selectedSeats.Clear();
+                txtSeat.Text = ""; // Reset textbox ghế
+
+                // Quay lại ComboBox để chọn lại xe
+                cbbBus.SelectedIndex = -1; // Reset ComboBox
+
+                // Thông báo cho người dùng
+                MessageBox.Show("Chọn lại xe và ghế nếu muốn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            };
+
+            btnCancel.Left = (panel2.Width - btnCancel.Width) / 2;
+            btnCancel.Top = startY + totalHeight + 20;
+
+            panel2.Controls.Add(btnCancel);
         }
+
+
 
         private void Seat_Click(object sender, EventArgs e)
         {
