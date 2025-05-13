@@ -87,21 +87,28 @@ VALUES
 (2, N'Trạm Thu Phí Cầu Bến Thuỷ 2',N'QL1A, Hưng Nguyên,TP. Nghệ An'),
 (3, N'Ngã ba bến xe Hà Tĩnh', N'13 Võ Liêm Sơn, Bắc Hà, Tp. Hà Tĩnh'),
 (4, N'Quầy 22A Bến xe Đà Nẵng', N'75 Thanh Tịnh, Quận Liên Chiểu, TP. Đà Nẵng'),
-(5, N'Văn phòng Hội An', N'133 Tôn Đức Thắng, Tân An, TP. Hội An'),
-(6, N'Bến xe Quy Nhơn', N'Đường Võ Liệu - Cửa Hàng Xăng Dầu Phương Linh 3,TP. Quy Nhơn'),
-(7, N'Văn phòng Đà Lạt', N'94 Mai Anh Đào, Phường 8, TP. Đà Lạt');
+(5, N'Bến xe Quy Nhơn', N'Đường Võ Liệu - Cửa Hàng Xăng Dầu Phương Linh 3,TP. Quy Nhơn'),
+(6, N'Văn phòng Đà Lạt', N'94 Mai Anh Đào, Phường 8, TP. Đà Lạt');
 
 INSERT INTO Bus_Location_History 
 ( ID_bus, ID_Station, arrive_time)
 VALUES 
 ( N'B1', N'1', '2025-05-12 00:00:00'),
 ( N'B2', N'4', '2025-05-12 00:00:00'),
-( N'B3', N'5', '2025-05-12 00:00:00'),
-( N'B4', N'7', '2025-05-12 00:00:00');
+( N'B3', N'4', '2025-05-12 00:00:00'),
+( N'B4', N'5', '2025-05-12 00:00:00');
 
 INSERT INTO Route(ID_route,ID_Station_start,ID_Station_end,distance,time)
 VALUES
 (N'HN_DN',N'1',N'4',770,'12:50'),
-(N'HN_HA',N'1',N'5',800,'13:20'),
-(N'DN_DL',N'4',N'7',650,'11:30'),
-(N'HA_DL',N'5',N'7',680,'11:00');
+(N'HN_NA',N'1',N'2',280,'04:40'),
+(N'HN_HT',N'1',N'3',358,'06:00'),
+(N'DN_HT',N'4',N'3',412,'07:00'),
+(N'DN_NA',N'4',N'2',490,'08:20'),
+(N'DN_HN',N'4',N'1',770,'12:50'),
+(N'DN_DL',N'4',N'6',680,'11:30'),
+(N'DN_QN',N'4',N'5',330,'05:30'),
+(N'DL_QN',N'6',N'5',350,'06:00'),
+(N'DL_DN',N'6',N'4',680,'11:30');
+
+

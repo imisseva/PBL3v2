@@ -58,6 +58,7 @@
     <Compile Include="Entities\Bus.cs" />
     <Compile Include="Context\BusManagement.cs" />
     <Compile Include="Entities\Bus_Location_History.cs" />
+    <Compile Include="Entities\Route_SubRoute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\Schedule.cs" />
