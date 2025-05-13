@@ -116,3 +116,18 @@ ADD NoiSinh NVARCHAR(255);
 ALTER TABLE Staff
 ADD Gender NVARCHAR(10);
 
+CREATE TABLE Route_SubRoute (
+    ID INT IDENTITY PRIMARY KEY,
+    ID_route_parent NVARCHAR(255),
+    ID_route_child NVARCHAR(255),
+	FOREIGN KEY (ID_route_parent) REFERENCES Route(ID_route),
+    FOREIGN KEY (ID_route_child) REFERENCES Route(ID_route)
+);
+ALTER TABLE Route_SubRoute
+ADD StopOrder INT NOT NULL;
+
+ALTER TABLE Schedule
+ADD ID_route NVARCHAR(255);
+ALTER TABLE Schedule
+ADD CONSTRAINT FK_Schedule_Route
+FOREIGN KEY (ID_route) REFERENCES Route(ID_route);

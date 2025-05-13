@@ -30,7 +30,10 @@ namespace PBL3.DAL.Entities
 
         public decimal distance { get; set; }
 
+        [StringLength(255)]
+        public string ID_route { get; set; }
         public virtual Bus Bus { get; set; }
+        public virtual Route Route { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule_Stop> Schedule_Stop { get; set; }
