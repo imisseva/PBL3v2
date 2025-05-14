@@ -17,12 +17,6 @@ namespace PBL3
         {
             InitializeComponent();
         }
-
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void txtUsername_Click(object sender, EventArgs e)
         {
             txtUsername.BackColor = Color.White;    
@@ -73,10 +67,7 @@ namespace PBL3
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void label7_Click(object sender, EventArgs e)
         {
