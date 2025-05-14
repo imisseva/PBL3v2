@@ -260,7 +260,7 @@
             this.ticketBookingContainer.Location = new System.Drawing.Point(0, 49);
             this.ticketBookingContainer.Margin = new System.Windows.Forms.Padding(0);
             this.ticketBookingContainer.Name = "ticketBookingContainer";
-            this.ticketBookingContainer.Size = new System.Drawing.Size(248, 207);
+            this.ticketBookingContainer.Size = new System.Drawing.Size(248, 49);
             this.ticketBookingContainer.TabIndex = 7;
             // 
             // guna2Panel2
@@ -388,7 +388,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.guna2Button3);
-            this.guna2Panel4.Location = new System.Drawing.Point(3, 259);
+            this.guna2Panel4.Location = new System.Drawing.Point(3, 101);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.Size = new System.Drawing.Size(248, 52);
