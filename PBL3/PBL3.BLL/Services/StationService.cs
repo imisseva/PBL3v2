@@ -30,7 +30,10 @@ namespace PBL3.BLL.Services
                     Location = s.Location
                 }).ToList();
         }
-
+        public string GetNameStation(string Id)
+        {
+            return _repo.GetAll().FirstOrDefault(r => r.ID_station == Id)?.Name_station;
+        }
         public void AddStation(StationDTO dto)
         {
             _repo.Add(new Station

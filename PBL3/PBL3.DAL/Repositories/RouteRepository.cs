@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace PBL3.DAL.Repositories
 {
     public class RouteRepository
     {
+       
+
         public List<RouteDTO> GetAll(string keyword = "")
         {
             using (var db = new BusManagement())
@@ -86,7 +89,7 @@ namespace PBL3.DAL.Repositories
                 return context.Routes.Find(id);
             }
         }
-
+        
     }
 
 }

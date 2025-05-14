@@ -18,6 +18,7 @@ namespace PBL3.DAL.Context
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Bus> Buses { get; set; }
         public virtual DbSet<Bus_Location_History> Bus_Location_History { get; set; }
+        public virtual DbSet<Route_SubRoute> Route_SubRoute { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<Schedule_Stop> Schedule_Stop { get; set; }

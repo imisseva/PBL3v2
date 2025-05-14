@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace PBL3.UI
         private ScheduleService scheduleService = new ScheduleService();
         private ScheduleStopService scheduleStopService = new ScheduleStopService();
         private StationService stationService = new StationService();
+        private RouteService routeService = new RouteService();
+        private Route_SubRouteService route_subrouteService = new Route_SubRouteService();
         private List<ScheduleDTO> schedule; // Danh sách đã được gán dữ liệu trước đó
         private bool hasShownDuplicateMessage = false; // Để tránh hiện lại nhiều lần khi chưa thay đổi
         public ScheduleDetail()
@@ -35,40 +38,79 @@ namespace PBL3.UI
 
         private void InitDGVStop(List<StationDTO> validStations)
         {
-            allStations = validStations; // Lưu danh sách gốc để lọc về sau
+            allStations = validStations;
 
+            // Reset và cấu hình cơ bản
             dgvStops.Columns.Clear();
             dgvStops.AutoGenerateColumns = false;
-            dgvStops.ThemeStyle.HeaderStyle.Height = 35;
+            dgvStops.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Font chữ mặc định
             dgvStops.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgvStops.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvStops.ColumnHeadersHeight = 35;
 
-            // STT
+            // Cột STT (Width nhỏ, căn giữa)
             dgvStops.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "STT",
                 Name = "colIndex",
-                ReadOnly = true
+                ReadOnly = true,
+                Width = 50,  // Đủ rộng để hiển thị số
+                
             });
 
-            // Ga dừng (ComboBox)
-            dgvStops.Columns.Add(new DataGridViewComboBoxColumn
+            // Cột Ga dừng (Width lớn, căn trái)
+            var stationColumn = new DataGridViewComboBoxColumn
             {
                 HeaderText = "Ga dừng",
                 Name = "colStation",
                 DisplayMember = "Name_station",
                 ValueMember = "ID_station",
-                DataSource = new List<StationDTO>(allStations) // Tạm thời set tất cả
-            });
+                DataSource = new List<StationDTO>(allStations),
+                Width = 400,  // Rộng để hiển thị tên ga
+               
+            };
+            dgvStops.Columns.Add(stationColumn);
 
-            // Thời gian dừng
+            // Cột Thời gian dừng (Width vừa, căn giữa)
             dgvStops.Columns.Add(new DataGridViewTextBoxColumn
             {
-                HeaderText = "Thời gian dừng (HH:mm)",
-                Name = "colStopTime"
+                HeaderText = "Thời gian dừng(HH:mm)",
+                Name = "colStopTime",
+                Width = 150,
+                
+               
             });
 
+            // Tự động co giãn cột Ga dừng nếu cần
+            dgvStops.Columns["colStation"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Ngăn người dùng kéo chỉnh kích thước cột
+            foreach (DataGridViewColumn column in dgvStops.Columns)
+            {
+                column.Resizable = DataGridViewTriState.False;
+            }
+            dgvStops.RowsAdded += dgvStops_RowsAdded;
+            dgvStops.RowsRemoved += dgvStops_RowsRemoved;
             dgvStops.EditingControlShowing += dgvStops_EditingControlShowing;
+        }
+
+        private void UpdateSTT()
+        {
+            for (int i = 0; i < dgvStops.Rows.Count; i++)
+            {
+                if (!dgvStops.Rows[i].IsNewRow)
+                {
+                    dgvStops.Rows[i].Cells["colIndex"].Value = (i + 1).ToString();
+                }
+            }
+        }
+        private void dgvStops_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            UpdateSTT();
+        }
+        private void dgvStops_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            UpdateSTT();
         }
 
         private void dgvStops_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -111,32 +153,66 @@ namespace PBL3.UI
 
         private void LoadData()
         {
-            var stations1 = stationService.GetStations();
-            var stations2 = stationService.GetStations();
-            stations1.Insert(0, new StationDTO { ID_station = "-1", Name_station = "-- Chọn ga bắt đầu --" });
-            stations2.Insert(0, new StationDTO { ID_station = "-1", Name_station = "-- Chọn ga kết thúc --" });
-            comboBoxStartStation.DataSource = stations1;
-            comboBoxStartStation.DisplayMember = "Name_station";
-            comboBoxStartStation.ValueMember = "ID_station";
-            comboBoxEndStation.DataSource = stations2;
-            comboBoxEndStation.DisplayMember = "Name_station";
-            comboBoxEndStation.ValueMember = "ID_station";
+            var routes = route_subrouteService.GetMainRoutes();
+
+            routes.Insert(0, new RouteDTO
+            {
+                ID_route = "Vui lòng chọn chuyến", 
+                               
+            });
+
+            cbRoute.DataSource = routes;
+            cbRoute.DisplayMember = "ID_route";
+            cbRoute.ValueMember = "ID_route";
+            cbRoute.SelectedIndex = 0; // Hiển thị dòng "Chọn tuyến đường"
         }
+
+
+        private void LoadStopsFromRoute(string routeId)
+        {
+            var intermediateStations = route_subrouteService.GetIntermediateStationsByRoute(routeId);
+            InitDGVStop(intermediateStations); // tái sử dụng hàm cũ để load vào DataGridView
+        }
+        private void LoadStationsFromRoute(string routeId)
+        {
+            var StartStation = stationService.GetNameStation(routeService.GetIDstationStart(routeId));
+            var EndStation = stationService.GetNameStation(routeService.GetIdStationEnd(routeId));
+            txtStartSt.Text = StartStation;
+            txtEndSt.Text = EndStation;
+        }
+        private void cbRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRoute.SelectedIndex > 0)
+            {
+                string routeId = cbRoute.SelectedValue.ToString();
+                LoadStopsFromRoute(routeId);
+                LoadStationsFromRoute(routeId);
+            }
+        }
+
         private void btnLoadStops_Click(object sender, EventArgs e)
         {
-            if (comboBoxStartStation.SelectedIndex == 0 || comboBoxEndStation.SelectedIndex == 0)
+            if (cbRoute.SelectedIndex <= 0)
             {
-                MessageBox.Show("Vui lòng chọn ga bắt đầu và ga kết thúc.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn tuyến đường!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            int startID = int.Parse(comboBoxStartStation.SelectedValue.ToString());
-            int endID = int.Parse(comboBoxEndStation.SelectedValue.ToString());
-            var validStations = new StationService().GetIntermediateStations(startID, endID);
-            InitDGVStop(validStations);
+
+            string selectedRouteID = cbRoute.SelectedValue.ToString();
             txtEndTimeLoad();
-            string startStationID = comboBoxStartStation.SelectedValue.ToString();
+            string startStationID = routeService.GetIDstationStart(selectedRouteID);
             DateTime startTime = dpStartTime.Value;
-            DateTime endTime = DateTime.Parse(txtEndTime.Text);
+            DateTime endTime;
+            // Format cố định để khớp với txtEndTime.Text
+            string endTimeText = txtEndTime.Text;
+            string format = "dd/MM/yyyy HH:mm";
+            CultureInfo provider = CultureInfo.InvariantCulture;
+
+            if (!DateTime.TryParseExact(endTimeText, format, provider, DateTimeStyles.None, out endTime))
+            {
+                MessageBox.Show("Thời gian kết thúc không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var schedules = scheduleService.GetBusesAvailableForSchedule(startStationID, startTime, endTime);
             cbBus.DataSource = schedules;      
 
@@ -164,21 +240,32 @@ namespace PBL3.UI
             DateTime startTime = dpStartTime.Value;
             DateTime currentTime = startTime;
 
+            string selectedRouteID = cbRoute.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(selectedRouteID)) return;
+
+            // Lấy thời gian chạy từ bảng Route (cột 'time')
+            TimeSpan routeDuration = routeService.GetTime(selectedRouteID);
+            currentTime = currentTime.Add(routeDuration);
+
+            // Cộng thêm thời gian dừng (nếu có)
             foreach (DataGridViewRow row in dgvStops.Rows)
             {
-                if (row.IsNewRow) continue; // bỏ qua dòng trống cuối
+                if (row.IsNewRow) continue;
 
                 string stopTimeText = row.Cells["colStopTime"].Value?.ToString();
 
-                if (!string.IsNullOrEmpty(stopTimeText) &&
+                if (!string.IsNullOrWhiteSpace(stopTimeText) &&
                     TimeSpan.TryParse(stopTimeText, out TimeSpan stopDuration))
                 {
                     currentTime = currentTime.Add(stopDuration);
                 }
             }
-            txtEndTime.Text = currentTime.ToString("dd/MM/yyyy HH:mm");
 
+            txtEndTime.Text = currentTime.ToString("dd/MM/yyyy HH:mm");
         }
+
+
+
         //private void btnAddStop_Click(object sender, EventArgs e)
         //{
         //    if (dgvStops.Rows.Count == 0)
@@ -202,15 +289,7 @@ namespace PBL3.UI
         //    MessageBox.Show("Thêm ga dừng thành công");
         //}
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dpStartTime_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -236,5 +315,7 @@ namespace PBL3.UI
                 hasShownDuplicateMessage = false;
             }
         }
+
+        
     }
 }

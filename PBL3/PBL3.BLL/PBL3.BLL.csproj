@@ -46,6 +46,7 @@
     <Compile Include="Services\BusService.cs" />
     <Compile Include="Services\HistoryService.cs" />
     <Compile Include="Services\RouteService.cs" />
+    <Compile Include="Services\Route_SubRouteService.cs" />
     <Compile Include="Services\ScheduleService.cs" />
     <Compile Include="Services\ScheduleStopService.cs" />
     <Compile Include="Services\SeatService.cs" />
