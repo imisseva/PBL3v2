@@ -96,6 +96,7 @@
     <Compile Include="LoginForm2.Designer.cs">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="mdiProperties.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteDetail.cs">
@@ -277,6 +278,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign out icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

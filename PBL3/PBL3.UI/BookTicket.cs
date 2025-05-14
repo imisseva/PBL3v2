@@ -180,6 +180,7 @@ namespace PBL3
             cbbBus.DataSource = busList;
             cbbBus.DisplayMember = "ID_bus";
             cbbBus.ValueMember = "ID_bus";
+            this.ControlBox = false;
         }
     }
 }
