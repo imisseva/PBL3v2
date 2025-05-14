@@ -146,12 +146,6 @@
     <Compile Include="StaffForm.Designer.cs">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StaffForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StaffForm2.Designer.cs">
-      <DependentUpon>StaffForm2.cs</DependentUpon>
-    </Compile>
     <Compile Include="StaffPersonalInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,7 +199,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RouteDetail.resx">
       <DependentUpon>RouteDetail.cs</DependentUpon>
@@ -227,9 +220,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StaffForm2.resx">
-      <DependentUpon>StaffForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffPersonalInfo.resx">
       <DependentUpon>StaffPersonalInfo.cs</DependentUpon>
