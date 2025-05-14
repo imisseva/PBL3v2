@@ -22,7 +22,14 @@ namespace PBL3.BLL.Services
                 Name_Station_end = r.Name_Station_end
             }).ToList();
         }
-
+        public string GetIDstationStart(string idRoute)
+        {
+            return _repo.GetAll().FirstOrDefault(r => r.ID_route == idRoute)?.ID_Station_start;
+        }
+        public string GetIdStationEnd(string idRoute)
+        {
+            return _repo.GetAll().FirstOrDefault(r => r.ID_route == idRoute)?.ID_Station_end;
+        }
         public void AddRoute(RouteDTO dto)
         {
             _repo.Add(dto);
@@ -37,6 +44,12 @@ namespace PBL3.BLL.Services
         {
             _repo.Delete(id);
         }
+        public TimeSpan GetTime(string idRoute)
+        {
+            return _repo.GetAll().FirstOrDefault(r => r.ID_route == idRoute)?.Time ?? TimeSpan.Zero;
+        }
+        
+        
     }
 
 
