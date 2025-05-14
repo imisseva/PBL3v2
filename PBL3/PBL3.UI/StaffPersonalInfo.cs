@@ -26,7 +26,12 @@ namespace PBL3
             InitializeComponent();
             LoadStaffData();
         }
-          private void LoadStaffData()
+
+        private void StaffPersonalInfo_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false; // Disable the close button
+        }
+        private void LoadStaffData()
         {
             var staff = _staffService.GetAllStaffByID(Session.LoggedInAccountId).FirstOrDefault();
             if (staff != null)
@@ -42,6 +47,8 @@ namespace PBL3
                 txtID.Text = staff.ID_account.ToString();
             }
         }
+
+       
     }
 }
 

@@ -36,7 +36,7 @@ namespace PBL3.UI
                 else if (account.Role == 0) // Staff
                 {
                     StaffPersonalInfo.Session.LoggedInAccountId = account.Id;
-                    StaffForm staffForm = new StaffForm();
+                    StaffForm2 staffForm = new StaffForm2();
                     MessageBox.Show("Đăng nhập với quyền là nhân viên", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     staffForm.Show();
