@@ -1,63 +1,86 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PBL3.DAL.Entities;
+﻿using PBL3.DAL.Entities;
 using PBL3.DAL.Repositories;
 using PBL3.DTO;
-
-namespace PBL3.BLL.Services
+using System.Collections.Generic;
+using System;
+using System.Linq;
+public class ScheduleService
 {
-    public class ScheduleService
+    private readonly ScheduleRepository _scheduleRepo;
+    private readonly HistoryRepository _historyRepo;
+
+    public ScheduleService()
     {
-        public List<string> GetBusesAvailableForSchedule(string stationId, DateTime startTime, DateTime endTime)
-        {
-            var candidateBuses = new HistoryRepository().GetAvailableBusesAtStation(stationId, startTime);
-            return candidateBuses
-                .Where(busId => new ScheduleRepository().IsBusFreeDuringTimeRange(busId, startTime, endTime))
-                .ToList();
-        }
-        private ScheduleRepository repo = new ScheduleRepository();
+        _scheduleRepo = new ScheduleRepository();
+        _historyRepo = new HistoryRepository();
+    }
 
-        public void AddSchedule(ScheduleDTO dto)
+    public List<string> GetBusesAvailableForSchedule(string stationId, DateTime startTime, DateTime endTime)
+    {
+        var candidateBuses = _historyRepo.GetAvailableBusesAtStation(stationId, startTime);
+        return candidateBuses
+            .Where(busId => _scheduleRepo.IsBusFreeDuringTimeRange(busId, startTime, endTime))
+            .ToList();
+    }
+
+    public void AddSchedule(ScheduleDTO dto)
+    {
+        Schedule entity = new Schedule
         {
-            Schedule entity = new Schedule
+            ID_Schedule = dto.ID_Schedule,
+            ID_bus = dto.ID_bus,
+            start_time = dto.start_time,
+            end_time = dto.end_time,
+            distance = dto.distance,
+            ID_route = dto.ID_route // Đảm bảo bạn có ID_route trong DTO
+        };
+
+        _scheduleRepo.Add(entity);
+
+        var route = new RouteRepository().GetById(dto.ID_route);
+        if (route != null)
+        {
+            var historyDto = new HistoryDTO
             {
-                ID_Schedule = dto.ID_Schedule,
                 ID_bus = dto.ID_bus,
-                start_time = dto.start_time,
-                end_time = dto.end_time,
-                distance = dto.distance
+                ID_Station = route.ID_Station_end,
+                arrive_time = dto.end_time,
+                leave_time = null
             };
-            repo.Add(entity);
-        }
 
-        public void UpdateSchedule(ScheduleDTO dto)
-        {
-            Schedule entity = new Schedule
-            {
-                ID_Schedule = dto.ID_Schedule,
-                ID_bus = dto.ID_bus,
-                start_time = dto.start_time,
-                end_time = dto.end_time,
-                distance = dto.distance
-            };
-            repo.Update(entity);
-        }
-
-        public void DeleteSchedule(string id) => repo.Delete(id);
-
-        public List<ScheduleDTO> GetAllSchedules()
-        {
-            return repo.GetAll().Select(s => new ScheduleDTO
-            {
-                ID_Schedule = s.ID_Schedule,
-                ID_bus = s.ID_bus,
-                start_time = s.start_time,
-                end_time = s.end_time,
-                distance = s.distance
-            }).ToList();
+            new HistoryRepository().AddHistory(historyDto);
         }
     }
+
+
+    public void UpdateSchedule(ScheduleDTO dto)
+    {
+        var entity = ConvertToEntity(dto);
+        _scheduleRepo.Update(entity);
+    }
+
+    public void DeleteSchedule(string id) => _scheduleRepo.Delete(id);
+
+    public List<ScheduleDTO> GetAllSchedules()
+    {
+        return _scheduleRepo.GetAll().Select(ConvertToDTO).ToList();
+    }
+
+    private ScheduleDTO ConvertToDTO(Schedule s) => new ScheduleDTO
+    {
+        ID_Schedule = s.ID_Schedule,
+        ID_bus = s.ID_bus,
+        start_time = s.start_time,
+        end_time = s.end_time,
+        distance = s.distance
+    };
+
+    private Schedule ConvertToEntity(ScheduleDTO dto) => new Schedule
+    {
+        ID_Schedule = dto.ID_Schedule,
+        ID_bus = dto.ID_bus,
+        start_time = dto.start_time,
+        end_time = dto.end_time,
+        distance = dto.distance
+    };
 }

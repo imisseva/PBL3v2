@@ -79,6 +79,14 @@ namespace PBL3.DAL.Repositories
                 db.SaveChanges();
             }
         }
+        public Route GetById(string id)
+        {
+            using (var context = new BusManagement())
+            {
+                return context.Routes.Find(id);
+            }
+        }
+
     }
 
 }
