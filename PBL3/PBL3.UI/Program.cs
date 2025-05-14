@@ -16,7 +16,8 @@ namespace PBL3.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RouteView());
+
+            Application.Run(new LoginForm2());
         }
     }
 }
