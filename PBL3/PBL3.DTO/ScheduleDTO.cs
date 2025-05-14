@@ -13,6 +13,7 @@ namespace PBL3.DTO
         public DateTime start_time { get; set; }
         public DateTime end_time { get; set; }
         public decimal distance { get; set; }
+        public string ID_route { get; set; }
     }
 
 }

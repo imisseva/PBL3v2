@@ -111,4 +111,12 @@ VALUES
 (N'DL_QN',N'6',N'5',350,'06:00'),
 (N'DL_DN',N'6',N'4',680,'11:30');
 
+INSERT INTO Route_SubRoute(ID_route_parent,ID_route_child,StopOrder)
+VALUES
+(N'HN_DN',N'HN_NA',1),
+(N'HN_DN',N'HN_HT',2),
+(N'DN_HN',N'DN_HT',1),
+(N'DN_HN',N'DN_NA',2),
+(N'DN_DL',N'DN_QN',1),
+(N'DL_DN',N'DL_QN',1);
 
