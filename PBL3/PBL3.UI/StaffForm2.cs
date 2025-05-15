@@ -132,5 +132,18 @@ namespace PBL3.UI
         {
 
         }
+
+        private void btChangePassword_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new ChangePassword());
+        }
+
+        private void btChangeInfo_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new StaffUpdateInfo());
+
+        }
     }
 }

@@ -164,6 +164,12 @@
     <Compile Include="StaffPersonalInfo.Designer.cs">
       <DependentUpon>StaffPersonalInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffUpdateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffUpdateInfo.Designer.cs">
+      <DependentUpon>StaffUpdateInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffPersonalInfo.resx">
       <DependentUpon>StaffPersonalInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffUpdateInfo.resx">
+      <DependentUpon>StaffUpdateInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffView.resx">
       <DependentUpon>StaffView.cs</DependentUpon>
