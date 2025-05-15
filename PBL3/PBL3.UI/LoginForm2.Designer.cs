@@ -30,16 +30,16 @@
         {
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbWelcome = new System.Windows.Forms.Label();
+            this.Signupbt = new Guna.UI2.WinForms.Guna2Button();
+            this.loginbt = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btCLose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.loginbt = new Guna.UI2.WinForms.Guna2Button();
-            this.Signupbt = new Guna.UI2.WinForms.Guna2Button();
-            this.lbWelcome = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btLogin = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,65 @@
             this.panel1.Size = new System.Drawing.Size(409, 405);
             this.panel1.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(31, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(350, 33);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Login to your account";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbWelcome
+            // 
+            this.lbWelcome.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lbWelcome.ForeColor = System.Drawing.Color.White;
+            this.lbWelcome.Location = new System.Drawing.Point(31, 53);
+            this.lbWelcome.Name = "lbWelcome";
+            this.lbWelcome.Size = new System.Drawing.Size(350, 33);
+            this.lbWelcome.TabIndex = 22;
+            this.lbWelcome.Text = "Welcome to Bus Management Service";
+            this.lbWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Signupbt
+            // 
+            this.Signupbt.Animated = true;
+            this.Signupbt.BorderColor = System.Drawing.Color.White;
+            this.Signupbt.BorderRadius = 8;
+            this.Signupbt.BorderThickness = 2;
+            this.Signupbt.CheckedState.Parent = this.Signupbt;
+            this.Signupbt.CustomImages.Parent = this.Signupbt;
+            this.Signupbt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.Signupbt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Signupbt.ForeColor = System.Drawing.Color.White;
+            this.Signupbt.HoverState.Parent = this.Signupbt;
+            this.Signupbt.Location = new System.Drawing.Point(246, 304);
+            this.Signupbt.Name = "Signupbt";
+            this.Signupbt.ShadowDecoration.Parent = this.Signupbt;
+            this.Signupbt.Size = new System.Drawing.Size(130, 33);
+            this.Signupbt.TabIndex = 21;
+            this.Signupbt.Text = "SIGNUP";
+            // 
+            // loginbt
+            // 
+            this.loginbt.Animated = true;
+            this.loginbt.BorderRadius = 8;
+            this.loginbt.CheckedState.Parent = this.loginbt;
+            this.loginbt.CustomImages.Parent = this.loginbt;
+            this.loginbt.FillColor = System.Drawing.Color.White;
+            this.loginbt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.loginbt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.loginbt.HoverState.Parent = this.loginbt;
+            this.loginbt.Location = new System.Drawing.Point(41, 304);
+            this.loginbt.Name = "loginbt";
+            this.loginbt.ShadowDecoration.Parent = this.loginbt;
+            this.loginbt.Size = new System.Drawing.Size(130, 33);
+            this.loginbt.TabIndex = 20;
+            this.loginbt.Text = "LOGIN";
+            this.loginbt.Click += new System.EventHandler(this.btLogin_Click);
+            // 
             // txtPassword
             // 
             this.txtPassword.Animated = true;
@@ -116,25 +175,6 @@
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(350, 47);
             this.txtPassword.TabIndex = 19;
-            // 
-            // btLogin
-            // 
-            this.btLogin.Animated = true;
-            this.btLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btLogin.BorderRadius = 8;
-            this.btLogin.CheckedState.Parent = this.btLogin;
-            this.btLogin.CustomImages.Parent = this.btLogin;
-            this.btLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.btLogin.ForeColor = System.Drawing.Color.White;
-            this.btLogin.HoverState.Parent = this.btLogin;
-            this.btLogin.Location = new System.Drawing.Point(120, 380);
-            this.btLogin.Name = "btLogin";
-            this.btLogin.ShadowDecoration.Parent = this.btLogin;
-            this.btLogin.Size = new System.Drawing.Size(134, 40);
-            this.btLogin.TabIndex = 15;
-            this.btLogin.Text = "LOGIN";
-            this.btLogin.UseTransparentBackground = true;
             // 
             // btCLose
             // 
@@ -180,64 +220,24 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Support";
             // 
-            // loginbt
+            // btLogin
             // 
-            this.loginbt.Animated = true;
-            this.loginbt.BorderRadius = 8;
-            this.loginbt.CheckedState.Parent = this.loginbt;
-            this.loginbt.CustomImages.Parent = this.loginbt;
-            this.loginbt.FillColor = System.Drawing.Color.White;
-            this.loginbt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.loginbt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.loginbt.HoverState.Parent = this.loginbt;
-            this.loginbt.Location = new System.Drawing.Point(41, 304);
-            this.loginbt.Name = "loginbt";
-            this.loginbt.ShadowDecoration.Parent = this.loginbt;
-            this.loginbt.Size = new System.Drawing.Size(130, 33);
-            this.loginbt.TabIndex = 20;
-            this.loginbt.Text = "LOGIN";
-            this.loginbt.Click += new System.EventHandler(this.btLogin_Click);
-            // 
-            // Signupbt
-            // 
-            this.Signupbt.Animated = true;
-            this.Signupbt.BorderColor = System.Drawing.Color.White;
-            this.Signupbt.BorderRadius = 8;
-            this.Signupbt.BorderThickness = 2;
-            this.Signupbt.CheckedState.Parent = this.Signupbt;
-            this.Signupbt.CustomImages.Parent = this.Signupbt;
-            this.Signupbt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.Signupbt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Signupbt.ForeColor = System.Drawing.Color.White;
-            this.Signupbt.HoverState.Parent = this.Signupbt;
-            this.Signupbt.Location = new System.Drawing.Point(246, 304);
-            this.Signupbt.Name = "Signupbt";
-            this.Signupbt.ShadowDecoration.Parent = this.Signupbt;
-            this.Signupbt.Size = new System.Drawing.Size(130, 33);
-            this.Signupbt.TabIndex = 21;
-            this.Signupbt.Text = "SIGNUP";
-            // 
-            // lbWelcome
-            // 
-            this.lbWelcome.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lbWelcome.ForeColor = System.Drawing.Color.White;
-            this.lbWelcome.Location = new System.Drawing.Point(31, 53);
-            this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(350, 33);
-            this.lbWelcome.TabIndex = 22;
-            this.lbWelcome.Text = "Welcome to Bus Management Service";
-            this.lbWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 33);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Login to your account";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btLogin.Animated = true;
+            this.btLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btLogin.BorderRadius = 8;
+            this.btLogin.CheckedState.Parent = this.btLogin;
+            this.btLogin.CustomImages.Parent = this.btLogin;
+            this.btLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btLogin.ForeColor = System.Drawing.Color.White;
+            this.btLogin.HoverState.Parent = this.btLogin;
+            this.btLogin.Location = new System.Drawing.Point(120, 380);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.ShadowDecoration.Parent = this.btLogin;
+            this.btLogin.Size = new System.Drawing.Size(134, 40);
+            this.btLogin.TabIndex = 15;
+            this.btLogin.Text = "LOGIN";
+            this.btLogin.UseTransparentBackground = true;
             // 
             // LoginForm2
             // 
@@ -260,7 +260,6 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btLogin;
         private Guna.UI2.WinForms.Guna2ControlBox btCLose;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
@@ -270,5 +269,6 @@
         private Guna.UI2.WinForms.Guna2Button Signupbt;
         private System.Windows.Forms.Label lbWelcome;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btLogin;
     }
 }

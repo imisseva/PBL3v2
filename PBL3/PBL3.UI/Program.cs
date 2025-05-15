@@ -16,7 +16,6 @@ namespace PBL3.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new StaffForm2());
         }
     }

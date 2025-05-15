@@ -355,6 +355,7 @@
             this.btCancelTicket.TabIndex = 2;
             this.btCancelTicket.Text = "Huỷ vé";
             this.btCancelTicket.TextOffset = new System.Drawing.Point(-6, 0);
+            this.btCancelTicket.Click += new System.EventHandler(this.btCancelTicket_Click);
             // 
             // guna2Panel6
             // 
@@ -385,6 +386,7 @@
             this.btInfoTicket.TabIndex = 2;
             this.btInfoTicket.Text = "Thông tin vé";
             this.btInfoTicket.TextOffset = new System.Drawing.Point(1, 0);
+            this.btInfoTicket.Click += new System.EventHandler(this.btInfoTicket_Click);
             // 
             // guna2Panel4
             // 

@@ -103,7 +103,8 @@ namespace PBL3.UI
 
         private void btBookTicket_Click(object sender, EventArgs e)
         {
-        
+            MainPanel.Visible = true;
+            LoadFormToPanel(new BookTicket());
         }
         private void bookTicket_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -120,6 +121,16 @@ namespace PBL3.UI
                 loginForm.Show();
                 this.Close();
             }
+        }
+
+        private void btCancelTicket_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btInfoTicket_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
