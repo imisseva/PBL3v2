@@ -55,5 +55,19 @@ namespace PBL3.BLL.Services
 
             _repo.Delete(id);
         }
+
+        public List<SeatDTO> GetSeatsByBusID(string busID)
+        {
+            return _repo.GetAll()
+                .Where(s => s.ID_bus == busID)
+                .Select(s => new SeatDTO
+                {
+                    ID_seat = s.ID_seat,
+                    ID_bus = s.ID_bus,
+                    seat_number = s.seat_number,
+                    type = s.type
+                }).ToList();
+        }
+
     }
 }

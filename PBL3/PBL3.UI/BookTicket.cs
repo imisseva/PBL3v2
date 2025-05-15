@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,9 @@ namespace PBL3
     public partial class BookTicket : Form
     {
         private BusService BusService = new BusService();
+        private SeatService SeatService = new SeatService();
+        public List<SeatDTO> selectedSeats = new List<SeatDTO>();
+
         public BookTicket()
         {
             InitializeComponent();
@@ -39,6 +43,7 @@ namespace PBL3
             LoadStation();
             LoadBus();
             LoadSchedules();
+            dpBookingdate.Value = DateTime.Today;
             cbbStartPoint.SelectedIndexChanged += StationSelectionChanged;
             cbbEndPoint.SelectedIndexChanged += StationSelectionChanged;
         }
@@ -46,13 +51,49 @@ namespace PBL3
 
         private void btPickSeat_Click(object sender, EventArgs e)
         {
-            ShowSeats showSeats = new ShowSeats();
-            showSeats.ShowDialog();
+            if (cbbBus.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string selectedBusID = cbbBus.SelectedValue.ToString();
+            var seats = SeatService.GetSeats().Where(s => s.ID_bus == selectedBusID).ToList();
+
+            if (!seats.Any())
+            {
+                MessageBox.Show("Không có ghế nào cho xe buýt này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            ShowSeats showSeats = new ShowSeats(seats);
+            if (showSeats.ShowDialog() == DialogResult.OK)
+            {
+                var selectedSeats = showSeats.selectedSeats;
+                txtSeat.Text = string.Join(", ", selectedSeats.Select(s => s.seat_number));
+            }
         }
+
+
 
         private void cbbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedBusID = cbbBus.SelectedValue.ToString(); 
+            if (cbbBus.SelectedValue == null)
+                return;
+
+            string selectedBusID = cbbBus.SelectedValue.ToString();
+           
+
+            var seats = SeatService.GetSeatsByBusID(selectedBusID);
+            if (seats != null && seats.Count > 0)
+            {
+                // Lấy type của ghế đầu tiên hoặc xử lý logic riêng
+                txtType.Text = seats[0].type;
+            }
+            else
+            {
+                txtType.Text = string.Empty;
+            }
+            txtSeat.Text = "";
         }
 
         private void LoadStation()
@@ -75,16 +116,6 @@ namespace PBL3
             {
                 string startID = cbbStartPoint.SelectedValue.ToString();
                 string endID = cbbEndPoint.SelectedValue.ToString();
-
-                //if (startID != endID)
-                //{
-                //    LoadSchedules(startID, endID); // Xem tiếp bước 3
-                //}
-                //else
-                //{
-                //    cbbSchedule.DataSource = null;
-                //    panelSeats.Controls.Clear();
-                //}
             }
         }
 
@@ -93,7 +124,7 @@ namespace PBL3
             var schedules = new ScheduleService().GetAllSchedules();
 
             cbbSchedule.DataSource = schedules;
-            cbbSchedule.DisplayMember = "start_time"; // hoặc ghép tuyến + thời gian
+            cbbSchedule.DisplayMember = "start_time";
             cbbSchedule.ValueMember = "ID_schedule";
 
             cbbSchedule.SelectedIndexChanged += ScheduleSelectionChanged;
@@ -107,8 +138,15 @@ namespace PBL3
                 //LoadSeats(scheduleID);
             }
         }
-
-
-
+        public void SetSelectedSeats(List<SeatDTO> selectedSeats)
+        {
+            if (selectedSeats == null || selectedSeats.Count == 0)
+            {
+                txtSeat.Text = "";
+                return;
+            }
+            string seatNumbers = string.Join(", ", selectedSeats.Select(s => s.seat_number));
+            txtSeat.Text = seatNumbers;
+        }
     }
 }

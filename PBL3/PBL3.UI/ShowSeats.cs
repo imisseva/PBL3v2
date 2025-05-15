@@ -16,50 +16,15 @@ namespace PBL3.UI
     {
         private BusService BusService = new BusService();
         private SeatService SeatService = new SeatService();
-        private List<SeatDTO> selectedSeats = new List<SeatDTO>();
+        private List<SeatDTO> seats;
+        public List<SeatDTO> selectedSeats = new List<SeatDTO>();
 
-        public ShowSeats()
-        {   
-            InitializeComponent();   
-        }
-
-        private void ShowSeats_Load(object sender, EventArgs e)
+        public ShowSeats(List<SeatDTO> seats)
         {
-            var busList = BusService.GetBuses();
-            cbbBus.DataSource = busList;
-            cbbBus.DisplayMember = "ID_bus";
-            cbbBus.ValueMember = "ID_bus";
+            InitializeComponent();
+            this.seats = seats;
+            ShowSeat(seats); // hàm hiển thị ghế trên form ShowSeats
         }
-
-        private void btTimKiem_Click(object sender, EventArgs e)
-        {
-            if (cbbBus.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string selectedBusID = cbbBus.SelectedValue.ToString();
-            var seats = SeatService.GetSeats().Where(s => s.ID_bus == selectedBusID).ToList();
-
-            if (!seats.Any())
-            {
-                MessageBox.Show("Không có ghế nào cho xe buýt này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            ShowSeat(seats);
-        }
-
-        private void cbbtrain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbBus.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string selectedBusID = cbbBus.SelectedValue.ToString();
-        }
-
 
         private void ShowSeat(List<SeatDTO> seats)
         {
@@ -99,14 +64,37 @@ namespace PBL3.UI
 
                 panel2.Controls.Add(btn);
             }
+
+            Button btnExit = new Button();
+            btnExit.Text = "Thoát";
+            btnExit.Width = 80;
+            btnExit.Height = 30;
+            btnExit.BackColor = Color.LightCoral;
+            btnExit.Left = (panel2.Width / 4) - (btnExit.Width / 2);
+            btnExit.Top = startY + totalHeight + 10;
+
+            btnExit.Click += (s, e) =>
+            {
+                this.Close();
+            };
+
+            panel2.Controls.Add(btnExit);
+
+            Button btnOk = new Button();
+            btnOk.Text = "OK";
+            btnOk.Width = 80;
+            btnOk.Height = 30;
+            btnOk.BackColor = Color.LightBlue;
+            btnOk.Left = (panel2.Width * 3 / 4) - (btnOk.Width / 2);
+            btnOk.Top = startY + totalHeight + 10;
+            btnOk.Click += BtnOk_Click;
+            panel2.Controls.Add(btnOk);
         }
 
         private void Seat_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             var seat = (SeatDTO)btn.Tag;
-
-            // Nếu ghế đã được chọn
             if (selectedSeats.Contains(seat))
             {
                 DialogResult result = MessageBox.Show(
@@ -125,7 +113,7 @@ namespace PBL3.UI
             else
             {
                 DialogResult result = MessageBox.Show(
-                    $"Bạn có muốn **chọn** ghế {seat.seat_number} ({seat.ID_seat}) không?",
+                    $"Bạn có muốn chọn ghế {seat.seat_number} ({seat.ID_seat}) không?",
                     "Xác nhận",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
@@ -137,6 +125,18 @@ namespace PBL3.UI
                     btn.BackColor = Color.Gold;
                 }
             }
+        }
+        private void BtnOk_Click(object sender, EventArgs e)
+        {
+            if (selectedSeats.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn ghế nào!", "Thông báo");
+                return;
+            }
+
+            selectedSeats = new List<SeatDTO>(selectedSeats);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

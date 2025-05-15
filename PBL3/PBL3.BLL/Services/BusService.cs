@@ -18,7 +18,8 @@ namespace PBL3.BLL.Services
                 {
                     ID_bus = b.ID_bus,
                     Quantity = b.Quantity,
-                    Status = b.Status
+                    Status = b.Status,
+
                 }).ToList();
         }
 
