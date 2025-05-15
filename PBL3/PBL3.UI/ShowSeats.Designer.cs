@@ -31,6 +31,8 @@
             this.cbbBus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.cbbRoute = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbbBus
@@ -46,7 +48,7 @@
             this.cbbBus.HoverState.Parent = this.cbbBus;
             this.cbbBus.ItemHeight = 30;
             this.cbbBus.ItemsAppearance.Parent = this.cbbBus;
-            this.cbbBus.Location = new System.Drawing.Point(64, 27);
+            this.cbbBus.Location = new System.Drawing.Point(71, 58);
             this.cbbBus.Name = "cbbBus";
             this.cbbBus.ShadowDecoration.Parent = this.cbbBus;
             this.cbbBus.Size = new System.Drawing.Size(130, 36);
@@ -59,32 +61,44 @@
             this.btTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btTimKiem.ForeColor = System.Drawing.Color.White;
             this.btTimKiem.HoverState.Parent = this.btTimKiem;
-            this.btTimKiem.Location = new System.Drawing.Point(389, 27);
+            this.btTimKiem.Location = new System.Drawing.Point(396, 58);
             this.btTimKiem.Name = "btTimKiem";
             this.btTimKiem.ShadowDecoration.Parent = this.btTimKiem;
             this.btTimKiem.Size = new System.Drawing.Size(107, 36);
             this.btTimKiem.TabIndex = 11;
             this.btTimKiem.Text = "Tìm kiếm";
+            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // cbbRoute
             // 
             this.cbbRoute.FormattingEnabled = true;
-            this.cbbRoute.Location = new System.Drawing.Point(227, 27);
+            this.cbbRoute.Location = new System.Drawing.Point(234, 58);
             this.cbbRoute.Name = "cbbRoute";
             this.cbbRoute.Size = new System.Drawing.Size(121, 24);
             this.cbbRoute.TabIndex = 9;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cbbBus);
+            this.panel2.Controls.Add(this.cbbRoute);
+            this.panel2.Controls.Add(this.btTimKiem);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(554, 565);
+            this.panel2.TabIndex = 12;
             // 
             // ShowSeats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 565);
-            this.Controls.Add(this.cbbBus);
-            this.Controls.Add(this.btTimKiem);
-            this.Controls.Add(this.cbbRoute);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ShowSeats";
             this.Text = "ShowSeats";
+            this.Load += new System.EventHandler(this.ShowSeats_Load);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,5 +108,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbBus;
         private Guna.UI2.WinForms.Guna2Button btTimKiem;
         private System.Windows.Forms.ComboBox cbbRoute;
+        private System.Windows.Forms.Panel panel2;
     }
 }
