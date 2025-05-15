@@ -12,7 +12,6 @@ namespace PBL3.DTO
         public string ID_bus { get; set; }
         public DateTime start_time { get; set; }
         public DateTime end_time { get; set; }
-        public decimal distance { get; set; }
         public string ID_route { get; set; }
     }
 

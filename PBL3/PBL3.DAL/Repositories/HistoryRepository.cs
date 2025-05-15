@@ -23,6 +23,19 @@ namespace PBL3.DAL.Repositories
                     .ToList();
             }
         }
+        public HistoryDTO GetLastHistoryWithNullLeaveTime(string busID)
+        {
+            using (var context = new BusManagement())
+            {
+                var history = context.Bus_Location_History
+                    .Where(h => h.ID_bus == busID && h.leave_time == null)
+                    .OrderByDescending(h => h.arrive_time)
+                    .FirstOrDefault();
+
+                return history != null ? ConvertToDTO(history) : null;
+            }
+        }
+
         public List<HistoryDTO> GetAllHistory()
         {
             using (var context = new BusManagement())
@@ -59,17 +72,19 @@ namespace PBL3.DAL.Repositories
         {
             using (var context = new BusManagement())
             {
-                var entity = context.Bus_Location_History.Find(dto.ID_History);
-                if (entity == null) throw new Exception("History not found");
+                var entity = context.Bus_Location_History.FirstOrDefault(h =>
+                    h.ID_bus == dto.ID_bus &&
+                    h.ID_Station == dto.ID_Station &&
+                    h.arrive_time == dto.arrive_time);
 
-                entity.ID_bus = dto.ID_bus;
-                entity.ID_Station = dto.ID_Station;
-                entity.arrive_time = dto.arrive_time;
-                entity.leave_time = dto.leave_time;
-
-                context.SaveChanges();
+                if (entity != null)
+                {
+                    entity.leave_time = dto.leave_time;
+                    context.SaveChanges();
+                }
             }
         }
+
 
         public void DeleteHistory(int id)
         {
@@ -100,6 +115,17 @@ namespace PBL3.DAL.Repositories
                 };
             }
         }
+        private HistoryDTO ConvertToDTO(Bus_Location_History history)
+        {
+            return new HistoryDTO
+            {
+                ID_bus = history.ID_bus,
+                ID_Station = history.ID_Station,
+                arrive_time = history.arrive_time,
+                leave_time = history.leave_time
+            };
+        }
+
 
     }
 }

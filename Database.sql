@@ -131,3 +131,5 @@ ADD ID_route NVARCHAR(255);
 ALTER TABLE Schedule
 ADD CONSTRAINT FK_Schedule_Route
 FOREIGN KEY (ID_route) REFERENCES Route(ID_route);
+ALTER TABLE Schedule
+DROP COLUMN distance;

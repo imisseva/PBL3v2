@@ -28,8 +28,6 @@ namespace PBL3.DAL.Entities
 
         public DateTime end_time { get; set; }
 
-        public decimal distance { get; set; }
-
         [StringLength(255)]
         public string ID_route { get; set; }
         public virtual Bus Bus { get; set; }
