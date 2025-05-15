@@ -19,14 +19,20 @@ namespace PBL3.UI
         public StaffForm2()
         {
             InitializeComponent();
-            mdiProp();
+            MainPanel.Visible = false;
         }
 
-        private void mdiProp()
+
+        private void LoadFormToPanel(Form frm)
         {
-            this.SetBevel(false);
-            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232, 234, 237);
+            MainPanel.Controls.Clear();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            MainPanel.Controls.Add(frm);
+            frm.Show();
         }
+      
         bool bookingticketExpand = false;
 
         private void bookticketTransition_Tick(object sender, EventArgs e)
@@ -87,22 +93,22 @@ namespace PBL3.UI
 
         private void btInfo_Click(object sender, EventArgs e)
         {
-            if (staffinfo == null)
-            {
-                staffinfo = new StaffPersonalInfo();
-                staffinfo.FormClosed += staffInfo_FormClosed;
-                staffinfo.MdiParent = this;
-                staffinfo.Show();
-            } else
-            {
-                staffinfo.Activate();
-            }  
+            MainPanel.Visible = true;
+            LoadFormToPanel(new StaffPersonalInfo());
         }
         private void staffInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
             staffinfo = null;
         }
 
+        private void btBookTicket_Click(object sender, EventArgs e)
+        {
+        
+        }
+        private void bookTicket_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bookTicket = null;
+        }
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -114,25 +120,6 @@ namespace PBL3.UI
                 loginForm.Show();
                 this.Close();
             }
-        }
-
-        private void btBookTicket_Click(object sender, EventArgs e)
-        {
-            if (bookTicket == null)
-            {
-                bookTicket = new BookTicket();
-                bookTicket.FormClosed += bookTicket_FormClosed;
-                bookTicket.MdiParent = this;
-                bookTicket.Show();
-            }
-            else
-            {
-                bookTicket.Activate();
-            }
-        }
-        private void bookTicket_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            bookTicket = null;
         }
     }
 }

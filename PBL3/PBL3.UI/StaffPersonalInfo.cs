@@ -46,9 +46,7 @@ namespace PBL3
                 txtCCCD.Text = staff.CCCD;
                 txtID.Text = staff.ID_account.ToString();
             }
-        }
-
-       
+        } 
     }
 }
 
