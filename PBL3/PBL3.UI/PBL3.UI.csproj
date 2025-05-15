@@ -135,6 +135,12 @@
     <Compile Include="SeatView.Designer.cs">
       <DependentUpon>SeatView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowSeats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowSeats.Designer.cs">
+      <DependentUpon>ShowSeats.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeatView.resx">
       <DependentUpon>SeatView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowSeats.resx">
+      <DependentUpon>ShowSeats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffDetail.resx">
       <DependentUpon>StaffDetail.cs</DependentUpon>
