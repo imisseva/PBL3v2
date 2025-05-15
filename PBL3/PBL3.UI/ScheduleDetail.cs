@@ -219,18 +219,28 @@ namespace PBL3.UI
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (/*string.IsNullOrEmpty(txtDistance.Text) ||*/string.IsNullOrEmpty(txtEndTime.Text))
+            if (string.IsNullOrEmpty(txtEndTime.Text)||string.IsNullOrEmpty(txtIDSchedule.Text)||cbRoute.SelectedIndex<=0||cbBus.SelectedIndex<0)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
+            DateTime endTime;
+            string endTimeText = txtEndTime.Text;
+            string format = "dd/MM/yyyy HH:mm";
+            CultureInfo provider = CultureInfo.InvariantCulture;
+
+            if (!DateTime.TryParseExact(endTimeText, format, provider, DateTimeStyles.None, out endTime))
+            {
+                MessageBox.Show("Thời gian kết thúc không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             ScheduleDTO schedule = new ScheduleDTO
             {
-                ID_Schedule = Guid.NewGuid().ToString(),
+                ID_Schedule = txtIDSchedule.Text,
                 ID_bus = cbBus.SelectedValue.ToString(),
                 start_time = dpStartTime.Value,
-                end_time = DateTime.Parse(txtEndTime.Text),
-                //distance = int.Parse(txtDistance.Text)
+                end_time = endTime,
+                ID_route = cbRoute.SelectedValue.ToString()
             };
             scheduleService.AddSchedule(schedule);
             MessageBox.Show("Thêm lịch trình thành công");
@@ -263,37 +273,13 @@ namespace PBL3.UI
 
             txtEndTime.Text = currentTime.ToString("dd/MM/yyyy HH:mm");
         }
-
-
-
-        //private void btnAddStop_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvStops.Rows.Count == 0)
-        //    {
-        //        MessageBox.Show("Vui lòng thêm ga dừng");
-        //        return;
-        //    }
-        //    foreach (DataGridViewRow row in dgvStops.Rows)
-        //    {
-        //        if (row.IsNewRow) continue;
-        //        ScheduleStopDTO stop = new ScheduleStopDTO
-        //        {
-        //            ID_Stop = Guid.NewGuid().ToString(),
-        //            ID_Schedule = cbBus.SelectedValue.ToString(),
-        //            IDStation_stop = row.Cells["colStation"].Value.ToString(),
-        //            Stop_time = DateTime.Parse(row.Cells["colStopTime"].Value.ToString()),
-        //            Stop_order = int.Parse(row.Cells["colIndex"].Value.ToString())
-        //        };
-        //        scheduleStopService.AddStop(stop);
-        //    }
-        //    MessageBox.Show("Thêm ga dừng thành công");
-        //}
-
-
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            string inputId = guna2TextBox1.Text.Trim();
+            string inputId = txtIDSchedule.Text.Trim();
 
             if (schedule == null || string.IsNullOrEmpty(inputId))
             {
@@ -307,11 +293,11 @@ namespace PBL3.UI
             {
                 MessageBox.Show("ID đã tồn tại trong danh sách lịch trình!", "Trùng ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 hasShownDuplicateMessage = true;
-                guna2TextBox1.ForeColor = Color.Red;
+                txtIDSchedule.ForeColor = Color.Red;
             }
             else if (!isDuplicate)
             {
-                guna2TextBox1.ForeColor = Color.Black;
+                txtIDSchedule.ForeColor = Color.Black;
                 hasShownDuplicateMessage = false;
             }
         }

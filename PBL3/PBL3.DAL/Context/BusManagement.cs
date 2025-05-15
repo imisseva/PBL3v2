@@ -47,9 +47,7 @@ namespace PBL3.DAL.Context
                 .Property(e => e.ID_Schedule)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Schedule>()
-                .Property(e => e.distance)
-                .HasPrecision(10, 2);
+            
 
             modelBuilder.Entity<Schedule>()
                 .HasMany(e => e.Schedule_Stop)
