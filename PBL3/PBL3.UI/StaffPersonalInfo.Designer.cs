@@ -138,6 +138,7 @@
             // 
             // btUpload
             // 
+            this.btUpload.Animated = true;
             this.btUpload.BorderRadius = 8;
             this.btUpload.CheckedState.Parent = this.btUpload;
             this.btUpload.CustomImages.Parent = this.btUpload;
