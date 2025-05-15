@@ -127,7 +127,7 @@
             this.PersonalinfoContainer.Location = new System.Drawing.Point(0, 0);
             this.PersonalinfoContainer.Margin = new System.Windows.Forms.Padding(0);
             this.PersonalinfoContainer.Name = "PersonalinfoContainer";
-            this.PersonalinfoContainer.Size = new System.Drawing.Size(248, 49);
+            this.PersonalinfoContainer.Size = new System.Drawing.Size(248, 211);
             this.PersonalinfoContainer.TabIndex = 8;
             // 
             // guna2Panel7
@@ -249,6 +249,7 @@
             this.btChangePassword.TabIndex = 2;
             this.btChangePassword.Text = "Thay đổi mật khẩu";
             this.btChangePassword.TextOffset = new System.Drawing.Point(-5, 0);
+            this.btChangePassword.Click += new System.EventHandler(this.btChangePassword_Click);
             // 
             // ticketBookingContainer
             // 
@@ -257,7 +258,7 @@
             this.ticketBookingContainer.Controls.Add(this.guna2Panel3);
             this.ticketBookingContainer.Controls.Add(this.guna2Panel5);
             this.ticketBookingContainer.Controls.Add(this.guna2Panel6);
-            this.ticketBookingContainer.Location = new System.Drawing.Point(0, 49);
+            this.ticketBookingContainer.Location = new System.Drawing.Point(0, 211);
             this.ticketBookingContainer.Margin = new System.Windows.Forms.Padding(0);
             this.ticketBookingContainer.Name = "ticketBookingContainer";
             this.ticketBookingContainer.Size = new System.Drawing.Size(248, 49);
@@ -388,7 +389,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.guna2Button3);
-            this.guna2Panel4.Location = new System.Drawing.Point(3, 101);
+            this.guna2Panel4.Location = new System.Drawing.Point(3, 263);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.Size = new System.Drawing.Size(248, 52);

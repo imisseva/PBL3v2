@@ -1,5 +1,6 @@
 ﻿using PBL3.BLL.Services;
 using PBL3.DTO;
+using PBL3.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,16 +25,7 @@ namespace PBL3
             InitializeComponent();
         }
 
-        private void cbbtrain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbBus.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string selectedBusID = cbbBus.SelectedValue.ToString();
-        }
-
+       
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -52,135 +44,141 @@ namespace PBL3
             MessageBox.Show("Đặt vé thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btTimKiem_Click(object sender, EventArgs e)
+        private void btPickSeat_Click(object sender, EventArgs e)
         {
-            if (cbbBus.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string selectedBusID = cbbBus.SelectedValue.ToString();
-
-            var seats = SeatService.GetSeats()
-                                .Where(s => s.ID_bus == selectedBusID)
-                                .ToList();
-
-            if (seats.Count == 0)
-            {
-                MessageBox.Show("Không có ghế nào cho xe buýt này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            ShowSeats(seats);
+            ShowSeats showSeatsForm = new ShowSeats();
+            showSeatsForm.ShowDialog();
         }
 
-        private void ShowSeats(List<SeatDTO> seats)
-        {
-            panel2.Controls.Clear();
+        //private void btTimKiem_Click(object sender, EventArgs e)
+        //{
+        //    if (cbbBus.SelectedItem == null)
+        //    {
+        //        MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
 
-            int seatWidth = 40, seatHeight = 40;
-            int margin = 10;
-            int seatsPerRow = 5;
+        //    string selectedBusID = cbbBus.SelectedValue.ToString();
 
-            int totalCols = seatsPerRow;
-            int totalRows = (int)Math.Ceiling(seats.Count / (double)seatsPerRow);
+        //    var seats = SeatService.GetSeats()
+        //                        .Where(s => s.ID_bus == selectedBusID)
+        //                        .ToList();
 
-            int totalWidth = totalCols * seatWidth + (totalCols - 1) * margin;
-            int totalHeight = totalRows * seatHeight + (totalRows - 1) * margin;
+        //    if (seats.Count == 0)
+        //    {
+        //        MessageBox.Show("Không có ghế nào cho xe buýt này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
 
-            int startX = (panel2.Width - totalWidth) / 2;
-            int startY = (panel2.Height - totalHeight) / 2;
+        //    ShowSeats(seats);
+        //}
 
-            for (int i = 0; i < seats.Count; i++)
-            {
-                var seat = seats[i];
-                Button btn = new Button();
-                btn.Text = seat.seat_number.ToString();
-                btn.Width = seatWidth;
-                btn.Height = seatHeight;
-                btn.BackColor = Color.LightGreen;
-                btn.Tag = seat;
+        //private void ShowSeats(List<SeatDTO> seats)
+        //{
+        //    panel2.Controls.Clear();
 
-                btn.Click += Seat_Click;
+        //    int seatWidth = 40, seatHeight = 40;
+        //    int margin = 10;
+        //    int seatsPerRow = 5;
 
-                int col = i % seatsPerRow;
-                int row = i / seatsPerRow;
+        //    int totalCols = seatsPerRow;
+        //    int totalRows = (int)Math.Ceiling(seats.Count / (double)seatsPerRow);
 
-                btn.Left = startX + col * (seatWidth + margin);
-                btn.Top = startY + row * (seatHeight + margin);
+        //    int totalWidth = totalCols * seatWidth + (totalCols - 1) * margin;
+        //    int totalHeight = totalRows * seatHeight + (totalRows - 1) * margin;
 
-                panel2.Controls.Add(btn);
-            }
+        //    int startX = (panel2.Width - totalWidth) / 2;
+        //    int startY = (panel2.Height - totalHeight) / 2;
 
-            // Thêm nút Thoát / Hủy chọn
-            Button btnCancel = new Button();
-            btnCancel.Text = "Thoát";
-            btnCancel.Width = 80;
-            btnCancel.Height = 30;
-            btnCancel.BackColor = Color.LightGray;
+        //    for (int i = 0; i < seats.Count; i++)
+        //    {
+        //        var seat = seats[i];
+        //        Button btn = new Button();
+        //        btn.Text = seat.seat_number.ToString();
+        //        btn.Width = seatWidth;
+        //        btn.Height = seatHeight;
+        //        btn.BackColor = Color.LightGreen;
+        //        btn.Tag = seat;
 
-            btnCancel.Click += (s, e) =>
-            {
-                // Xóa tất cả ghế đã chọn
-                selectedSeats.Clear();
-                txtSeat.Text = ""; // Reset textbox ghế
+        //        btn.Click += Seat_Click;
 
-                // Quay lại ComboBox để chọn lại xe
-                cbbBus.SelectedIndex = -1; // Reset ComboBox
+        //        int col = i % seatsPerRow;
+        //        int row = i / seatsPerRow;
 
-                // Thông báo cho người dùng
-                MessageBox.Show("Chọn lại xe và ghế nếu muốn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            };
+        //        btn.Left = startX + col * (seatWidth + margin);
+        //        btn.Top = startY + row * (seatHeight + margin);
 
-            btnCancel.Left = (panel2.Width - btnCancel.Width) / 2;
-            btnCancel.Top = startY + totalHeight + 20;
+        //        panel2.Controls.Add(btn);
+        //    }
 
-            panel2.Controls.Add(btnCancel);
-        }
+        //    // Thêm nút Thoát / Hủy chọn
+        //    Button btnCancel = new Button();
+        //    btnCancel.Text = "Thoát";
+        //    btnCancel.Width = 80;
+        //    btnCancel.Height = 30;
+        //    btnCancel.BackColor = Color.LightGray;
+
+        //    btnCancel.Click += (s, e) =>
+        //    {
+        //        // Xóa tất cả ghế đã chọn
+        //        selectedSeats.Clear();
+        //        txtSeat.Text = ""; // Reset textbox ghế
+
+        //        // Quay lại ComboBox để chọn lại xe
+        //        cbbBus.SelectedIndex = -1; // Reset ComboBox
+
+        //        // Thông báo cho người dùng
+        //        MessageBox.Show("Chọn lại xe và ghế nếu muốn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    };
+
+        //    btnCancel.Left = (panel2.Width - btnCancel.Width) / 2;
+        //    btnCancel.Top = startY + totalHeight + 20;
+
+        //    panel2.Controls.Add(btnCancel);
+        //}
 
 
 
-        private void Seat_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            var seat = (SeatDTO)btn.Tag;
+        //private void Seat_Click(object sender, EventArgs e)
+        //{
+        //    Button btn = sender as Button;
+        //    var seat = (SeatDTO)btn.Tag;
 
-            DialogResult result = MessageBox.Show(
-                $"Bạn có muốn chọn ghế {seat.seat_number} ({seat.ID_seat}) không?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+        //    DialogResult result = MessageBox.Show(
+        //        $"Bạn có muốn chọn ghế {seat.seat_number} ({seat.ID_seat}) không?",
+        //        "Xác nhận",
+        //        MessageBoxButtons.YesNo,
+        //        MessageBoxIcon.Question
+        //    );
 
-            if (result == DialogResult.Yes)
-            {
-                // Nếu đã chọn ghế khác rồi, reset màu cũ
-                foreach (Control control in panel2.Controls)
-                {
-                    if (control is Button otherBtn && otherBtn.BackColor == Color.Gold)
-                    {
-                        otherBtn.BackColor = Color.LightGreen;
-                    }
-                }
+        //    if (result == DialogResult.Yes)
+        //    {
+        //        // Nếu đã chọn ghế khác rồi, reset màu cũ
+        //        foreach (Control control in panel2.Controls)
+        //        {
+        //            if (control is Button otherBtn && otherBtn.BackColor == Color.Gold)
+        //            {
+        //                otherBtn.BackColor = Color.LightGreen;
+        //            }
+        //        }
 
-                // Xóa ghế cũ khỏi danh sách và thêm ghế mới
-                selectedSeats.Clear();
-                selectedSeats.Add(seat);
-                btn.BackColor = Color.Gold;
+        //        // Xóa ghế cũ khỏi danh sách và thêm ghế mới
+        //        selectedSeats.Clear();
+        //        selectedSeats.Add(seat);
+        //        btn.BackColor = Color.Gold;
 
-                // Hiển thị số ghế vào textbox
-                txtSeat.Text = seat.seat_number.ToString();
-            }
-        }
+        //        // Hiển thị số ghế vào textbox
+        //        txtSeat.Text = seat.seat_number.ToString();
+        //    }
+        //}
 
-        private void BookTicket_Load(object sender, EventArgs e)
-        {
-            var busList = BusService.GetBuses();
-            cbbBus.DataSource = busList;
-            cbbBus.DisplayMember = "ID_bus";
-            cbbBus.ValueMember = "ID_bus";
-            this.ControlBox = false;
-        }
+        //private void BookTicket_Load(object sender, EventArgs e)
+        //{
+        //    var busList = BusService.GetBuses();
+        //    cbbBus.DataSource = busList;
+        //    cbbBus.DisplayMember = "ID_bus";
+        //    cbbBus.ValueMember = "ID_bus";
+        //    this.ControlBox = false;
+        //}
     }
 }

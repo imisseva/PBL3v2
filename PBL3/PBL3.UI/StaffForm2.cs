@@ -16,6 +16,7 @@ namespace PBL3.UI
 
         StaffPersonalInfo staffinfo;
         BookTicket bookTicket;
+        ChangePassword changePassword;
         public StaffForm2()
         {
             InitializeComponent();
@@ -134,5 +135,24 @@ namespace PBL3.UI
         {
             bookTicket = null;
         }
+
+        private void btChangePassword_Click(object sender, EventArgs e)
+        {
+            if (changePassword == null)
+            {
+                changePassword = new ChangePassword();
+                changePassword.FormClosed += changePassword_FormClosed;
+                changePassword.MdiParent = this;
+                changePassword.Show();
+            }
+            else
+            {
+                changePassword.Activate();
+            }
+        }
+        private void changePassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            changePassword = null;
+        }   
     }
 }

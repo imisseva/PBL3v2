@@ -41,7 +41,7 @@
             // 
             this.lbOldPass.AutoSize = true;
             this.lbOldPass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOldPass.Location = new System.Drawing.Point(228, 155);
+            this.lbOldPass.Location = new System.Drawing.Point(155, 210);
             this.lbOldPass.Name = "lbOldPass";
             this.lbOldPass.Size = new System.Drawing.Size(156, 23);
             this.lbOldPass.TabIndex = 20;
@@ -51,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 215);
+            this.label1.Location = new System.Drawing.Point(144, 270);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 23);
             this.label1.TabIndex = 21;
@@ -61,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(188, 275);
+            this.label2.Location = new System.Drawing.Point(115, 330);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 23);
             this.label2.TabIndex = 22;
@@ -69,28 +69,28 @@
             // 
             // txtOldPass
             // 
-            this.txtOldPass.Location = new System.Drawing.Point(418, 157);
+            this.txtOldPass.Location = new System.Drawing.Point(345, 212);
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.Size = new System.Drawing.Size(277, 22);
             this.txtOldPass.TabIndex = 28;
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(418, 217);
+            this.txtNewPass.Location = new System.Drawing.Point(345, 272);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(277, 22);
             this.txtNewPass.TabIndex = 29;
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Location = new System.Drawing.Point(418, 277);
+            this.txtConfirmPass.Location = new System.Drawing.Point(345, 332);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(277, 22);
             this.txtConfirmPass.TabIndex = 30;
             // 
             // btConfirm
             // 
-            this.btConfirm.Location = new System.Drawing.Point(418, 364);
+            this.btConfirm.Location = new System.Drawing.Point(345, 419);
             this.btConfirm.Name = "btConfirm";
             this.btConfirm.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btConfirm.Size = new System.Drawing.Size(111, 40);
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 504);
+            this.ClientSize = new System.Drawing.Size(801, 606);
             this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.txtConfirmPass);
             this.Controls.Add(this.txtNewPass);
