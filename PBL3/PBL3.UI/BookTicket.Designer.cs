@@ -39,7 +39,7 @@
             this.txtSeat = new System.Windows.Forms.TextBox();
             this.txtTicketID = new System.Windows.Forms.TextBox();
             this.lbType = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dpBookingdate = new System.Windows.Forms.DateTimePicker();
             this.btPickSeat = new Guna.UI2.WinForms.Guna2Button();
@@ -145,12 +145,12 @@
             this.lbType.TabIndex = 18;
             this.lbType.Text = "Loại xe/Type:";
             // 
-            // textBox1
+            // txtType
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 317);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 22);
-            this.textBox1.TabIndex = 26;
+            this.txtType.Location = new System.Drawing.Point(171, 317);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(210, 22);
+            this.txtType.TabIndex = 26;
             // 
             // comboBox2
             // 
@@ -297,7 +297,7 @@
             this.Controls.Add(this.cbbStartPoint);
             this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.btPickSeat);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtType);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dpBookingdate);
@@ -335,7 +335,7 @@
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dpBookingdate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtType;
         private Guna.UI2.WinForms.Guna2Button btPickSeat;
         private Guna.UI2.WinForms.Guna2Button btConfirm;
         private Guna.UI2.WinForms.Guna2ComboBox cbbStartPoint;
