@@ -96,7 +96,6 @@
     <Compile Include="LoginForm2.Designer.cs">
       <DependentUpon>LoginForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="mdiProperties.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteDetail.cs">
@@ -290,6 +289,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sign out icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ID icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gender icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\place of birth icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dob icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cccd icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -55,6 +55,7 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.bookticketTransition = new System.Windows.Forms.Timer(this.components);
             this.PersonalinfoTransition = new System.Windows.Forms.Timer(this.components);
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.PersonalinfoContainer.SuspendLayout();
@@ -425,15 +426,23 @@
             this.PersonalinfoTransition.Interval = 10;
             this.PersonalinfoTransition.Tick += new System.EventHandler(this.PersonalinfoTransition_Tick);
             // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(251, 37);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(771, 566);
+            this.MainPanel.TabIndex = 3;
+            // 
             // StaffForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 603);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.Sidebar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IsMdiContainer = true;
             this.Name = "StaffForm2";
             this.Text = "StaffForm2";
             this.panel1.ResumeLayout(false);
@@ -481,5 +490,6 @@
         private Guna.UI2.WinForms.Guna2Button btChangePassword;
         private Guna.UI2.WinForms.Guna2Button btStaffInfo;
         private System.Windows.Forms.Timer PersonalinfoTransition;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }
