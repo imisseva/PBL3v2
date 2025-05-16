@@ -1,4 +1,5 @@
-﻿using PBL3.BLL.Services;
+﻿using Microsoft.VisualBasic;
+using PBL3.BLL.Services;
 using PBL3.DTO;
 using PBL3.UI;
 using System;
@@ -26,38 +27,34 @@ namespace PBL3
         {
             InitializeComponent();
         }
-        private void btConfirm_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void LoadBus()
-        {
-            var buses = BusService.GetBuses();
-            cbbBus.DataSource = buses;
-            cbbBus.DisplayMember = "ID_bus";
-            cbbBus.ValueMember = "ID_bus";
-        }
+
+
 
         private void BookTicket_Load(object sender, EventArgs e)
         {
             LoadStation();
-            LoadBus();
-            LoadSchedules();
             dpBookingdate.Value = DateTime.Today;
             cbbStartPoint.SelectedIndexChanged += StationSelectionChanged;
             cbbEndPoint.SelectedIndexChanged += StationSelectionChanged;
         }
 
-
         private void btPickSeat_Click(object sender, EventArgs e)
         {
-            if (cbbBus.SelectedItem == null)
+            if (dgvBus.CurrentRow == null)
             {
-                MessageBox.Show("Vui lòng chọn một xe buýt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn một chuyến trên bảng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string selectedBusID = cbbBus.SelectedValue.ToString();
+            // Lấy BusID từ dòng đang chọn của dgvBus, giả sử cột MãXe là cột BusID
+            string selectedBusID = dgvBus.CurrentRow.Cells["MãXe"].Value?.ToString();
+            if (string.IsNullOrEmpty(selectedBusID))
+            {
+                MessageBox.Show("BusID không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Lấy danh sách ghế của Bus
             var seats = SeatService.GetSeats().Where(s => s.ID_bus == selectedBusID).ToList();
 
             if (!seats.Any())
@@ -65,35 +62,14 @@ namespace PBL3
                 MessageBox.Show("Không có ghế nào cho xe buýt này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            // Hiển thị form chọn ghế
             ShowSeats showSeats = new ShowSeats(seats);
             if (showSeats.ShowDialog() == DialogResult.OK)
             {
                 var selectedSeats = showSeats.selectedSeats;
                 txtSeat.Text = string.Join(", ", selectedSeats.Select(s => s.seat_number));
             }
-        }
-
-
-
-        private void cbbBus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbBus.SelectedValue == null)
-                return;
-
-            string selectedBusID = cbbBus.SelectedValue.ToString();
-           
-
-            var seats = SeatService.GetSeatsByBusID(selectedBusID);
-            if (seats != null && seats.Count > 0)
-            {
-                // Lấy type của ghế đầu tiên hoặc xử lý logic riêng
-                txtType.Text = seats[0].type;
-            }
-            else
-            {
-                txtType.Text = string.Empty;
-            }
-            txtSeat.Text = "";
         }
 
         private void LoadStation()
@@ -107,8 +83,76 @@ namespace PBL3
             cbbEndPoint.DisplayMember = "Name_station";
             cbbEndPoint.ValueMember = "ID_station";
         }
+        private void LoadBusDataGridView(List<BusTicketDTO> buses)
+        {
+            if (buses == null || buses.Count == 0)
+            {
+                MessageBox.Show("Không có chuyến nào phù hợp.");
+                dgvBus.DataSource = null;
+                return;
+            }
 
-       
+            dgvBus.DataSource = buses.Select(b => new
+            {
+                MãXe = b.BusID,
+                LoạiGhế = b.SeatType,
+                SứcChứa = b.Quantity,
+                ThờiGianKhởiHành = b.StartTime.ToString("dd/MM/yyyy HH:mm"),
+                ThờiGianĐến = b.EndTime.ToString("dd/MM/yyyy HH:mm")
+            }).ToList();
+
+            dgvBus.Columns["MãXe"].HeaderText = "Mã Xe";
+            dgvBus.Columns["LoạiGhế"].HeaderText = "Loại Ghế";
+            dgvBus.Columns["SứcChứa"].HeaderText = "Sức Chứa";
+            dgvBus.Columns["ThờiGianKhởiHành"].HeaderText = "Thời Gian Khởi Hành";
+            dgvBus.Columns["ThờiGianĐến"].HeaderText = "Thời Gian Đến";
+            dgvBus.ColumnHeadersHeight = 35;
+            dgvBus.AutoGenerateColumns = false;
+           
+            dgvBus.Columns["MãXe"].Width = 80;
+            dgvBus.Columns["LoạiGhế"].Width = 100;
+            dgvBus.Columns["SứcChứa"].Width = 70;
+            dgvBus.Columns["ThờiGianKhởiHành"].Width = 150;
+            dgvBus.Columns["ThờiGianĐến"].Width = 150;
+
+            dgvBus.Columns["MãXe"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvBus.Columns["SứcChứa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvBus.Columns["LoạiGhế"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvBus.Columns["ThờiGianKhởiHành"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvBus.Columns["ThờiGianĐến"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvBus.ReadOnly = true;
+            dgvBus.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvBus.RowTemplate.Height = 24;
+            foreach (DataGridViewColumn column in dgvBus.Columns)
+            {
+                column.Resizable = DataGridViewTriState.False;
+            }
+            // Reset scroll lên đầu
+            if (dgvBus.Rows.Count > 0)
+            {
+                dgvBus.FirstDisplayedScrollingRowIndex = 0;
+            }
+        }
+
+
+        private void btn_LoaddgvBus_Click(object sender, EventArgs e)
+        {
+            string start = cbbStartPoint.Text.Trim();
+            string end = cbbEndPoint.Text.Trim();
+            DateTime date = dtpDate.Value.Date;
+
+            if (string.IsNullOrEmpty(start) || string.IsNullOrEmpty(end))
+            {
+                MessageBox.Show("Vui lòng chọn đầy đủ điểm đi và điểm đến.");
+                return;
+            }
+
+            var service = new ScheduleService();
+            var buses = service.GetAvailableBuses(date, start, end);
+
+            LoadBusDataGridView(buses);
+        }
         private void StationSelectionChanged(object sender, EventArgs e)
         {
             // Chỉ load lịch trình khi cả 2 trạm được chọn
@@ -119,34 +163,9 @@ namespace PBL3
             }
         }
 
-        private void LoadSchedules()
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
-            var schedules = new ScheduleService().GetAllSchedules();
 
-            cbbSchedule.DataSource = schedules;
-            cbbSchedule.DisplayMember = "start_time";
-            cbbSchedule.ValueMember = "ID_schedule";
-
-            cbbSchedule.SelectedIndexChanged += ScheduleSelectionChanged;
-        }
-
-        private void ScheduleSelectionChanged(object sender, EventArgs e)
-        {
-            if (cbbSchedule.SelectedValue != null)
-            {
-                string scheduleID = cbbSchedule.SelectedValue.ToString();
-                //LoadSeats(scheduleID);
-            }
-        }
-        public void SetSelectedSeats(List<SeatDTO> selectedSeats)
-        {
-            if (selectedSeats == null || selectedSeats.Count == 0)
-            {
-                txtSeat.Text = "";
-                return;
-            }
-            string seatNumbers = string.Join(", ", selectedSeats.Select(s => s.seat_number));
-            txtSeat.Text = seatNumbers;
         }
     }
 }

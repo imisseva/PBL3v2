@@ -83,6 +83,18 @@ namespace PBL3.DAL.Repositories
                 }
             }
         }
-       
+        public string GetStationIDByName(string stationName)
+        {
+            using (var context = new BusManagement())
+            {
+                var station = context.Stations
+                                     .FirstOrDefault(s => s.Name_station == stationName);
+
+                if (station == null)
+                    throw new Exception("Không tìm thấy ga với tên đã cho.");
+
+                return station.ID_station;
+            }
+        }
     }
 }

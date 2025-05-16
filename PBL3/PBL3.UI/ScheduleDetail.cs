@@ -243,6 +243,38 @@ namespace PBL3.UI
                 ID_route = cbRoute.SelectedValue.ToString()
             };
             scheduleService.AddSchedule(schedule);
+            foreach (DataGridViewRow row in dgvStops.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                var stationCell = row.Cells["colStation"] as DataGridViewComboBoxCell;
+                var stopTimeCell = row.Cells["colStopTime"];
+                var sttCell = row.Cells["colIndex"];
+
+                if (stationCell?.Value == null || stopTimeCell?.Value == null)
+                    continue;
+
+                string idStation = stationCell.Value.ToString();
+                string stopTimeText = stopTimeCell.Value.ToString();
+                int stt=int.Parse(sttCell.Value.ToString());
+
+                // Thử parse thời gian dừng (HH:mm) thành TimeSpan
+                if (!TimeSpan.TryParseExact(stopTimeText, "hh\\:mm", CultureInfo.InvariantCulture, out TimeSpan stopDuration))
+                {
+                    MessageBox.Show($"Thời gian dừng không hợp lệ ở dòng {row.Index + 1}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+
+                ScheduleStopDTO stopDTO = new ScheduleStopDTO
+                {                 
+                    ID_Schedule = txtIDSchedule.Text,
+                    IDStation_stop  = idStation,
+                    Stop_time = stopDuration,
+                    Stop_order= stt
+                };
+
+                scheduleStopService.AddStop(stopDTO); // Gọi tới lớp BLL/DAL tương ứng
+            }
             MessageBox.Show("Thêm lịch trình thành công");
         }
         private void txtEndTimeLoad()
