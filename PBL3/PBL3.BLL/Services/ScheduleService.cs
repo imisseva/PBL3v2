@@ -8,11 +8,12 @@ public class ScheduleService
 {
     private readonly ScheduleRepository _scheduleRepo;
     private readonly HistoryRepository _historyRepo;
-
+    private readonly StationRepository _stationRepo;
     public ScheduleService()
     {
         _scheduleRepo = new ScheduleRepository();
         _historyRepo = new HistoryRepository();
+        _stationRepo = new StationRepository();
     }
 
     public List<string> GetBusesAvailableForSchedule(string stationId, DateTime startTime, DateTime endTime)
@@ -22,7 +23,21 @@ public class ScheduleService
             .Where(busId => _scheduleRepo.IsBusFreeDuringTimeRange(busId, startTime, endTime))
             .ToList();
     }
+    public List<BusTicketDTO> GetAvailableBuses(DateTime date, string startStation, string endStation)
+    {
+        string idStart = _stationRepo.GetStationIDByName(startStation);
+        string idEnd = _stationRepo.GetStationIDByName(endStation);
 
+        if (idStart == null || idEnd == null) return new List<BusTicketDTO>();
+
+        var result = _scheduleRepo.GetBusTicketsByMainRoute(date, idStart, idEnd);
+        if (result.Count == 0)
+        {
+            result = _scheduleRepo.GetBusTicketsBySubRoute(date, idStart, idEnd);
+        }
+
+        return result;
+    }
     public void AddSchedule(ScheduleDTO dto)
     {
         // 1. Thêm lịch trình

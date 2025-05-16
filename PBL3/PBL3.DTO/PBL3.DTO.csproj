@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="AccountDTO.cs" />
     <Compile Include="BusDTO.cs" />
+    <Compile Include="BusTicketDTO.cs" />
     <Compile Include="HistoryDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteDTOcs.cs" />
