@@ -96,7 +96,7 @@ VALUES
 ( N'B1', N'1', '2025-05-12 00:00:00'),
 ( N'B2', N'4', '2025-05-12 00:00:00'),
 ( N'B3', N'4', '2025-05-12 00:00:00'),
-( N'B4', N'5', '2025-05-12 00:00:00');
+( N'B4', N'6', '2025-05-12 00:00:00');
 
 INSERT INTO Route(ID_route,ID_Station_start,ID_Station_end,distance,time)
 VALUES
