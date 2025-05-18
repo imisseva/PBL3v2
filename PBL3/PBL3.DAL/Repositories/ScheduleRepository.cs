@@ -22,7 +22,7 @@ namespace PBL3.DAL.Repositories
                                && route.ID_Station_end == idEnd
                                && DbFunctions.TruncateTime(sch.start_time) == date.Date
                             select new BusTicketDTO
-                            {   
+                            {
                                 ID_schedule = sch.ID_Schedule,
                                 BusID = sch.ID_bus,
                                 StartTime = sch.start_time,
@@ -132,7 +132,7 @@ namespace PBL3.DAL.Repositories
             using (var context = new BusManagement())
             {
                 context.Schedules.Add(schedule);
-                context.SaveChanges();
+                //context.SaveChanges();
             }
         }
 
