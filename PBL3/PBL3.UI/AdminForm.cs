@@ -56,5 +56,16 @@ namespace PBL3
             MainPanel.Visible = true;
             LoadFormToPanel(new StationView());
         }
+
+        private void đặtVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new BookTicket());
+        }
+
+        private void danhSáchVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,14 +30,17 @@ namespace PBL3.BLL.Services
         {
             var ticket = new Ticket
             {
-                ID_ticket = dto.ID_ticket,
+                // Không cần set ID_ticket vì DB tự tăng
                 booking_date = dto.booking_date,
                 ID_seat = dto.ID_seat,
                 ID_Schedule = dto.ID_schedule,
                 price = dto.Price,
+                ID_Station_start = dto.station_start,
+                ID_Station_end = dto.station_end
             };
             _repo.BookTicket(ticket);
         }
+
 
         public void CancelTicket(TicketDTO dto)
         {
