@@ -249,7 +249,10 @@ namespace PBL3
 
             MessageBox.Show("Đặt vé thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }
