@@ -94,13 +94,14 @@ namespace PBL3
 
             dgvBus.DataSource = buses.Select(b => new
             {
+                Lịch = b.ID_schedule,
                 MãXe = b.BusID,
                 LoạiGhế = b.SeatType,
                 SứcChứa = b.Quantity,
                 ThờiGianKhởiHành = b.StartTime.ToString("dd/MM/yyyy HH:mm"),
                 ThờiGianĐến = b.EndTime.ToString("dd/MM/yyyy HH:mm")
             }).ToList();
-
+            dgvBus.Columns["Lịch"].HeaderText = "Lịch";
             dgvBus.Columns["MãXe"].HeaderText = "Mã Xe";
             dgvBus.Columns["LoạiGhế"].HeaderText = "Loại Ghế";
             dgvBus.Columns["SứcChứa"].HeaderText = "Sức Chứa";
@@ -108,13 +109,15 @@ namespace PBL3
             dgvBus.Columns["ThờiGianĐến"].HeaderText = "Thời Gian Đến";
             dgvBus.ColumnHeadersHeight = 35;
             dgvBus.AutoGenerateColumns = false;
-           
-            dgvBus.Columns["MãXe"].Width = 80;
+
+            dgvBus.Columns["Lịch"].Visible = false;
+            dgvBus.Columns["MãXe"].Width = 40;
             dgvBus.Columns["LoạiGhế"].Width = 100;
             dgvBus.Columns["SứcChứa"].Width = 70;
             dgvBus.Columns["ThờiGianKhởiHành"].Width = 150;
             dgvBus.Columns["ThờiGianĐến"].Width = 150;
 
+            dgvBus.Columns["Lịch"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBus.Columns["MãXe"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBus.Columns["SứcChứa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBus.Columns["LoạiGhế"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -185,9 +188,9 @@ namespace PBL3
 
             // 2. Lấy thông tin từ form
             string selectedBusID = dgvBus.CurrentRow.Cells["MãXe"].Value.ToString();
-            string IDstartStation = cbbStartPoint.ValueMember;
-            string IDendStation = cbbEndPoint.ValueMember;
-            DateTime selectedDate = dpBookingdate.Value.Date;
+            string IDstartStation = cbbStartPoint.SelectedValue.ToString();
+            string IDendStation = cbbEndPoint.SelectedValue.ToString();
+            DateTime selectedDate = dtpDate.Value;
 
             // 3. Lấy ID ga
             var stationService = new StationService();
@@ -201,16 +204,16 @@ namespace PBL3
             }
 
             // 4. Tìm lịch trình phù hợp từ BLL
-            var scheduleService = new ScheduleService();
-            var schedule = scheduleService.GetScheduleByConditions(selectedBusID, selectedDate, startStationID, endStationID);
+            //var scheduleService = new ScheduleService();
+            //var schedule = scheduleService.GetScheduleByConditions(selectedBusID, selectedDate, startStationID, endStationID);
 
-            if (schedule == null)
-            {
-                MessageBox.Show("Không tìm thấy lịch trình phù hợp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (schedule == null)
+            //{
+            //    MessageBox.Show("Không tìm thấy lịch trình phù hợp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            string scheduleID = schedule.ID_Schedule;
+            string scheduleID = dgvBus.CurrentRow.Cells["Lịch"].Value.ToString();
 
             // 5. Lấy danh sách ghế đã chọn
             List<int> selectedSeatNumbers = txtSeat.Text
@@ -228,7 +231,7 @@ namespace PBL3
                 MessageBox.Show("Không thể xác định tất cả ghế đã chọn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            
             // 6. Tạo và lưu vé
             var ticketService = new TicketService();
 
@@ -240,8 +243,8 @@ namespace PBL3
                     ID_seat = seat.ID_seat,
                     ID_schedule = scheduleID,
                     Price = int.Parse(cbbPrice.Text),
-                    station_start=cbbStartPoint.Text,
-                    station_end = cbbEndPoint.Text,
+                    station_start= IDstartStation,
+                    station_end = IDendStation,
                 };
 
                 ticketService.BookTicket(ticket);

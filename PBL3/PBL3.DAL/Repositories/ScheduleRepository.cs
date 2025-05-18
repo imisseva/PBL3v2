@@ -22,7 +22,8 @@ namespace PBL3.DAL.Repositories
                                && route.ID_Station_end == idEnd
                                && DbFunctions.TruncateTime(sch.start_time) == date.Date
                             select new BusTicketDTO
-                            {
+                            {   
+                                ID_schedule = sch.ID_Schedule,
                                 BusID = sch.ID_bus,
                                 StartTime = sch.start_time,
                                 EndTime = sch.end_time,
@@ -91,6 +92,7 @@ namespace PBL3.DAL.Repositories
                     // Tạo đối tượng DTO
                     var busInfo = new BusTicketDTO
                     {
+                        ID_schedule = sch.ID_Schedule,
                         BusID = sch.ID_bus,
                         StartTime = sch.start_time,
                         EndTime = endTime,
