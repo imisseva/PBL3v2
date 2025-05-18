@@ -54,5 +54,29 @@ namespace PBL3.BLL.Services
             };
             _repo.CancelTicket(ticket);
         }
+        public void CancelTicket(int ticketId)
+        {
+            var ticket = new TicketDTO { ID_ticket = ticketId };
+            CancelTicket(ticket); // gọi hàm có sẵn
+        }
+
+        public TicketDTO GetTicketByID(int id)
+        {
+            return _repo.GetTickets()
+                        .Where(t => t.ID_ticket == id)
+                        .Select(t => new TicketDTO
+                        {
+                            ID_ticket = t.ID_ticket,
+                            booking_date = t.booking_date,
+                            ID_seat = t.ID_seat,
+                            ID_schedule = t.ID_Schedule,
+                            Price = t.price,
+                            station_start = t.ID_Station_start,
+                            station_end = t.ID_Station_end
+                        })
+                        .FirstOrDefault();
+        }
+
     }
+
 }

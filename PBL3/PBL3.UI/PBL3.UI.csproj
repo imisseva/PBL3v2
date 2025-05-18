@@ -78,6 +78,12 @@
     <Compile Include="BusView.Designer.cs">
       <DependentUpon>BusView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CancelTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelTicket.Designer.cs">
+      <DependentUpon>CancelTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BusView.resx">
       <DependentUpon>BusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelTicket.resx">
+      <DependentUpon>CancelTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
