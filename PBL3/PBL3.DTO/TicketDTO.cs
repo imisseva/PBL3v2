@@ -12,7 +12,6 @@ namespace PBL3.DTO
         public string ID_schedule { get; set; }
         public string ID_seat { get; set; }
         public int Price { get; set; }
-        public DateTime start_Time { get; set; }
         public DateTime booking_date { get; set; }
         public string station_start { get; set; }
         public string station_end { get; set; }

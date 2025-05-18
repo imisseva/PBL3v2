@@ -22,7 +22,7 @@ namespace PBL3
         private BusService BusService = new BusService();
         private SeatService SeatService = new SeatService();
         public List<SeatDTO> selectedSeats = new List<SeatDTO>();
-
+        public ScheduleService ScheduleService = new ScheduleService();
         public BookTicket()
         {
             InitializeComponent();
@@ -165,7 +165,91 @@ namespace PBL3
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            // 1. Kiểm tra đầu vào
+            if (dgvBus.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một chuyến!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(txtSeat.Text))
+            {
+                MessageBox.Show("Vui lòng chọn ghế!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cbbPrice.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn giá vé!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Lấy thông tin từ form
+            string selectedBusID = dgvBus.CurrentRow.Cells["MãXe"].Value.ToString();
+            string IDstartStation = cbbStartPoint.ValueMember;
+            string IDendStation = cbbEndPoint.ValueMember;
+            DateTime selectedDate = dpBookingdate.Value.Date;
+
+            // 3. Lấy ID ga
+            var stationService = new StationService();
+            string startStationID = IDstartStation;
+            string endStationID = IDendStation;
+
+            if (startStationID == null || endStationID == null)
+            {
+                MessageBox.Show("Không tìm thấy ID ga tương ứng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 4. Tìm lịch trình phù hợp từ BLL
+            var scheduleService = new ScheduleService();
+            var schedule = scheduleService.GetScheduleByConditions(selectedBusID, selectedDate, startStationID, endStationID);
+
+            if (schedule == null)
+            {
+                MessageBox.Show("Không tìm thấy lịch trình phù hợp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string scheduleID = schedule.ID_Schedule;
+
+            // 5. Lấy danh sách ghế đã chọn
+            List<int> selectedSeatNumbers = txtSeat.Text
+                .Split(new[] { ", " }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(s => int.Parse(s))
+                .ToList();
+
+            var seatService = new SeatService();
+            var allSeats = seatService.GetSeats()
+                .Where(s => s.ID_bus == selectedBusID && selectedSeatNumbers.Contains(s.seat_number))
+                .ToList();
+
+            if (allSeats.Count != selectedSeatNumbers.Count)
+            {
+                MessageBox.Show("Không thể xác định tất cả ghế đã chọn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 6. Tạo và lưu vé
+            var ticketService = new TicketService();
+
+            foreach (var seat in allSeats)
+            {
+                var ticket = new TicketDTO
+                {
+                    booking_date = DateTime.Now,
+                    ID_seat = seat.ID_seat,
+                    ID_schedule = scheduleID,
+                    Price = int.Parse(cbbPrice.Text),
+                    station_start=cbbStartPoint.Text,
+                    station_end = cbbEndPoint.Text,
+                };
+
+                ticketService.BookTicket(ticket);
+            }
+
+            MessageBox.Show("Đặt vé thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
     }
 }

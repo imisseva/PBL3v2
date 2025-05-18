@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbSeat = new System.Windows.Forms.Label();
             this.lbBookingDate = new System.Windows.Forms.Label();
             this.txtSeat = new System.Windows.Forms.TextBox();
-            this.txtTicketID = new System.Windows.Forms.TextBox();
             this.dpBookingdate = new System.Windows.Forms.DateTimePicker();
             this.btPickSeat = new Guna.UI2.WinForms.Guna2Button();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
@@ -48,26 +46,19 @@
             this.dgvBus = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnLoad = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbPrice = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBus)).BeginInit();
             this.SuspendLayout();
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(387, 40);
+            this.lbDate.Location = new System.Drawing.Point(33, 41);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(90, 16);
             this.lbDate.TabIndex = 1;
             this.lbDate.Text = "Ngày đi/Date:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Mã vé/Ticket ID:";
             // 
             // label2
             // 
@@ -112,13 +103,6 @@
             this.txtSeat.ReadOnly = true;
             this.txtSeat.Size = new System.Drawing.Size(210, 22);
             this.txtSeat.TabIndex = 14;
-            // 
-            // txtTicketID
-            // 
-            this.txtTicketID.Location = new System.Drawing.Point(171, 37);
-            this.txtTicketID.Name = "txtTicketID";
-            this.txtTicketID.Size = new System.Drawing.Size(210, 22);
-            this.txtTicketID.TabIndex = 17;
             // 
             // dpBookingdate
             // 
@@ -203,37 +187,37 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(493, 35);
+            this.dtpDate.Location = new System.Drawing.Point(170, 35);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(250, 22);
+            this.dtpDate.Size = new System.Drawing.Size(255, 22);
             this.dtpDate.TabIndex = 31;
             // 
             // dgvBus
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvBus.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvBus.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvBus.BackgroundColor = System.Drawing.Color.White;
             this.dgvBus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBus.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBus.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBus.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBus.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBus.EnableHeadersVisualStyles = false;
             this.dgvBus.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBus.Location = new System.Drawing.Point(36, 179);
@@ -298,11 +282,45 @@
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Thoát";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(532, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 16);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Giá";
+            // 
+            // cbbPrice
+            // 
+            this.cbbPrice.BackColor = System.Drawing.Color.Transparent;
+            this.cbbPrice.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbPrice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPrice.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbPrice.FocusedState.Parent = this.cbbPrice;
+            this.cbbPrice.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbPrice.FormattingEnabled = true;
+            this.cbbPrice.HoverState.Parent = this.cbbPrice;
+            this.cbbPrice.ItemHeight = 30;
+            this.cbbPrice.Items.AddRange(new object[] {
+            "700",
+            "750",
+            "900"});
+            this.cbbPrice.ItemsAppearance.Parent = this.cbbPrice;
+            this.cbbPrice.Location = new System.Drawing.Point(587, 32);
+            this.cbbPrice.Name = "cbbPrice";
+            this.cbbPrice.ShadowDecoration.Parent = this.cbbPrice;
+            this.cbbPrice.Size = new System.Drawing.Size(140, 36);
+            this.cbbPrice.TabIndex = 35;
+            // 
             // BookTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 566);
+            this.Controls.Add(this.cbbPrice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dgvBus);
             this.Controls.Add(this.dtpDate);
@@ -311,7 +329,6 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btPickSeat);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dpBookingdate);
             this.Controls.Add(this.lbBookingDate);
             this.Controls.Add(this.label2);
@@ -319,7 +336,6 @@
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbSeat);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTicketID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BookTicket";
             this.Text = "BookTicket";
@@ -332,13 +348,11 @@
 
         #endregion
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbSeat;
         private System.Windows.Forms.Label lbBookingDate;
         private System.Windows.Forms.TextBox txtSeat;
-        private System.Windows.Forms.TextBox txtTicketID;
         private System.Windows.Forms.DateTimePicker dpBookingdate;
         private Guna.UI2.WinForms.Guna2Button btPickSeat;
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
@@ -348,5 +362,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvBus;
         private Guna.UI2.WinForms.Guna2Button btnLoad;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbPrice;
     }
 }

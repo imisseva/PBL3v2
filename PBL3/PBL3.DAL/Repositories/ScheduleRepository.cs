@@ -167,6 +167,21 @@ namespace PBL3.DAL.Repositories
                 return context.Schedules.ToList();
             }
         }
+        public Schedule GetScheduleConditions(string busId, DateTime date, string idStart, string idEnd)
+        {
+            using (var context = new BusManagement())
+            {
+                return context.Schedules
+                    .Join(context.Routes, sch => sch.ID_route, r => r.ID_route, (sch, r) => new { sch, r })
+                    .Where(x =>
+                        x.sch.ID_bus == busId &&
+                        DbFunctions.TruncateTime(x.sch.start_time) == date.Date &&
+                        x.r.ID_Station_start == idStart &&
+                        x.r.ID_Station_end == idEnd)
+                    .Select(x => x.sch)
+                    .FirstOrDefault();
+            }
+        }
 
     }
 }
