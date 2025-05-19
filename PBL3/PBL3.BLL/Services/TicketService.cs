@@ -13,6 +13,7 @@ namespace PBL3.BLL.Services
     public class TicketService
     {
         private TicketRepository _repo = new TicketRepository();
+        private StationRepository _stationRepo = new StationRepository();   
         public List<TicketDTO> GetTickets()
         {
             return _repo.GetTickets()
@@ -22,7 +23,9 @@ namespace PBL3.BLL.Services
                     booking_date = t.booking_date,
                     ID_seat = t.ID_seat,
                     ID_schedule = t.ID_Schedule,
-                    Price =t.price,
+                    Price = t.price,
+                    station_start = _stationRepo.GetStationNamebyID(t.ID_Station_start),
+                    station_end = _stationRepo.GetStationNamebyID(t.ID_Station_end),
                 }).ToList();
         }
 
