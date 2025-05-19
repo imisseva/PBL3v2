@@ -64,7 +64,8 @@ namespace PBL3
             }
 
             // Hiển thị form chọn ghế
-            ShowSeats showSeats = new ShowSeats(seats);
+            string scheduleID = dgvBus.CurrentRow.Cells["Lịch"].Value.ToString();
+            ShowSeats showSeats = new ShowSeats(seats, scheduleID);
             if (showSeats.ShowDialog() == DialogResult.OK)
             {
                 var selectedSeats = showSeats.selectedSeats;
