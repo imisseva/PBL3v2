@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbDate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(33, 41);
+            this.lbDate.Location = new System.Drawing.Point(57, 59);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(90, 16);
             this.lbDate.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 87);
+            this.label2.Location = new System.Drawing.Point(57, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 4;
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 133);
+            this.label3.Location = new System.Drawing.Point(57, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 16);
             this.label3.TabIndex = 5;
@@ -81,7 +81,7 @@
             // lbSeat
             // 
             this.lbSeat.AutoSize = true;
-            this.lbSeat.Location = new System.Drawing.Point(33, 415);
+            this.lbSeat.Location = new System.Drawing.Point(57, 514);
             this.lbSeat.Name = "lbSeat";
             this.lbSeat.Size = new System.Drawing.Size(66, 16);
             this.lbSeat.TabIndex = 6;
@@ -90,7 +90,7 @@
             // lbBookingDate
             // 
             this.lbBookingDate.AutoSize = true;
-            this.lbBookingDate.Location = new System.Drawing.Point(33, 447);
+            this.lbBookingDate.Location = new System.Drawing.Point(374, 514);
             this.lbBookingDate.Name = "lbBookingDate";
             this.lbBookingDate.Size = new System.Drawing.Size(167, 16);
             this.lbBookingDate.TabIndex = 8;
@@ -98,17 +98,17 @@
             // 
             // txtSeat
             // 
-            this.txtSeat.Location = new System.Drawing.Point(171, 409);
+            this.txtSeat.Location = new System.Drawing.Point(138, 511);
             this.txtSeat.Name = "txtSeat";
             this.txtSeat.ReadOnly = true;
-            this.txtSeat.Size = new System.Drawing.Size(210, 22);
+            this.txtSeat.Size = new System.Drawing.Size(86, 22);
             this.txtSeat.TabIndex = 14;
             // 
             // dpBookingdate
             // 
-            this.dpBookingdate.Location = new System.Drawing.Point(220, 441);
+            this.dpBookingdate.Location = new System.Drawing.Point(556, 512);
             this.dpBookingdate.Name = "dpBookingdate";
-            this.dpBookingdate.Size = new System.Drawing.Size(248, 22);
+            this.dpBookingdate.Size = new System.Drawing.Size(242, 22);
             this.dpBookingdate.TabIndex = 24;
             // 
             // btPickSeat
@@ -120,7 +120,7 @@
             this.btPickSeat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btPickSeat.ForeColor = System.Drawing.Color.White;
             this.btPickSeat.HoverState.Parent = this.btPickSeat;
-            this.btPickSeat.Location = new System.Drawing.Point(429, 409);
+            this.btPickSeat.Location = new System.Drawing.Point(244, 512);
             this.btPickSeat.Name = "btPickSeat";
             this.btPickSeat.ShadowDecoration.Parent = this.btPickSeat;
             this.btPickSeat.Size = new System.Drawing.Size(98, 22);
@@ -137,7 +137,7 @@
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
-            this.btnConfirm.Location = new System.Drawing.Point(149, 479);
+            this.btnConfirm.Location = new System.Drawing.Point(183, 574);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(164, 37);
@@ -159,7 +159,7 @@
             this.cbbStartPoint.HoverState.Parent = this.cbbStartPoint;
             this.cbbStartPoint.ItemHeight = 30;
             this.cbbStartPoint.ItemsAppearance.Parent = this.cbbStartPoint;
-            this.cbbStartPoint.Location = new System.Drawing.Point(171, 79);
+            this.cbbStartPoint.Location = new System.Drawing.Point(195, 96);
             this.cbbStartPoint.Name = "cbbStartPoint";
             this.cbbStartPoint.ShadowDecoration.Parent = this.cbbStartPoint;
             this.cbbStartPoint.Size = new System.Drawing.Size(355, 36);
@@ -179,7 +179,7 @@
             this.cbbEndPoint.HoverState.Parent = this.cbbEndPoint;
             this.cbbEndPoint.ItemHeight = 30;
             this.cbbEndPoint.ItemsAppearance.Parent = this.cbbEndPoint;
-            this.cbbEndPoint.Location = new System.Drawing.Point(170, 125);
+            this.cbbEndPoint.Location = new System.Drawing.Point(194, 144);
             this.cbbEndPoint.Name = "cbbEndPoint";
             this.cbbEndPoint.ShadowDecoration.Parent = this.cbbEndPoint;
             this.cbbEndPoint.Size = new System.Drawing.Size(356, 36);
@@ -187,46 +187,46 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(170, 35);
+            this.dtpDate.Location = new System.Drawing.Point(194, 53);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(255, 22);
             this.dtpDate.TabIndex = 31;
             // 
             // dgvBus
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvBus.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvBus.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvBus.BackgroundColor = System.Drawing.Color.White;
             this.dgvBus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBus.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBus.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBus.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBus.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBus.EnableHeadersVisualStyles = false;
             this.dgvBus.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBus.Location = new System.Drawing.Point(36, 179);
+            this.dgvBus.Location = new System.Drawing.Point(60, 206);
             this.dgvBus.Name = "dgvBus";
             this.dgvBus.RowHeadersVisible = false;
             this.dgvBus.RowHeadersWidth = 51;
             this.dgvBus.RowTemplate.Height = 24;
             this.dgvBus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBus.Size = new System.Drawing.Size(702, 220);
+            this.dgvBus.Size = new System.Drawing.Size(738, 260);
             this.dgvBus.TabIndex = 32;
             this.dgvBus.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvBus.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -258,7 +258,7 @@
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
             this.btnLoad.HoverState.Parent = this.btnLoad;
-            this.btnLoad.Location = new System.Drawing.Point(587, 133);
+            this.btnLoad.Location = new System.Drawing.Point(706, 140);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.ShadowDecoration.Parent = this.btnLoad;
             this.btnLoad.Size = new System.Drawing.Size(92, 28);
@@ -275,7 +275,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(483, 479);
+            this.btnCancel.Location = new System.Drawing.Point(556, 574);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(164, 37);
@@ -286,7 +286,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(532, 40);
+            this.label1.Location = new System.Drawing.Point(589, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 16);
             this.label1.TabIndex = 34;
@@ -309,7 +309,7 @@
             "750",
             "900"});
             this.cbbPrice.ItemsAppearance.Parent = this.cbbPrice;
-            this.cbbPrice.Location = new System.Drawing.Point(587, 32);
+            this.cbbPrice.Location = new System.Drawing.Point(658, 50);
             this.cbbPrice.Name = "cbbPrice";
             this.cbbPrice.ShadowDecoration.Parent = this.cbbPrice;
             this.cbbPrice.Size = new System.Drawing.Size(140, 36);
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 566);
+            this.ClientSize = new System.Drawing.Size(868, 655);
             this.Controls.Add(this.cbbPrice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoad);

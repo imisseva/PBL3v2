@@ -125,7 +125,8 @@ namespace PBL3.UI
 
         private void btCancelTicket_Click(object sender, EventArgs e)
         {
-
+            MainPanel.Visible = true;
+            LoadFormToPanel(new CancelTicket());
         }
 
         private void btInfoTicket_Click(object sender, EventArgs e)
