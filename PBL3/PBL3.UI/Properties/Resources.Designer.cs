@@ -93,6 +93,16 @@ namespace PBL3.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_icon {
+            get {
+                object obj = ResourceManager.GetObject("calendar_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cccd_icon {
             get {
                 object obj = ResourceManager.GetObject("cccd_icon", resourceCulture);
@@ -196,6 +206,16 @@ namespace PBL3.UI.Properties {
         internal static System.Drawing.Bitmap place_of_birth_icon {
             get {
                 object obj = ResourceManager.GetObject("place_of_birth_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap route_icon {
+            get {
+                object obj = ResourceManager.GetObject("route_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

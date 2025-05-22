@@ -68,7 +68,7 @@ namespace PBL3.UI
             if (busManagementExpand == false)
             {
                 BusManagementContainer.Height += 10;
-                if (BusManagementContainer.Height >= 154)
+                if (BusManagementContainer.Height >= 125)
                 {
                     busManagementTransition.Stop();
                     busManagementExpand = true;
@@ -99,5 +99,7 @@ namespace PBL3.UI
         {
 
         }
+
+        
     }
 }

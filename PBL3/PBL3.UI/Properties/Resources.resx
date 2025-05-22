@@ -127,6 +127,9 @@
   <data name="bus_station_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bus station icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="calendar_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cccd_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cccd icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +162,9 @@
   </data>
   <data name="place_of_birth_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\place of birth icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="route_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\route icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sign_out_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign out icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
