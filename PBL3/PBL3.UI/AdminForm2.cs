@@ -15,6 +15,89 @@ namespace PBL3.UI
         public AdminForm2()
         {
             InitializeComponent();
+            MainPanel.Visible = false;
+        }
+
+        private void LoadFormToPanel(Form frm)
+        {
+            MainPanel.Controls.Clear();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            MainPanel.Controls.Add(frm);
+            frm.Show();
+        }
+
+        bool personalinfoExpand = false;
+        private void personalContainerTransition_Tick(object sender, EventArgs e)
+        {
+            if (personalinfoExpand == false)
+            {
+                PersonalinfoContainer.Height += 10;
+                if (PersonalinfoContainer.Height >= 165)
+                {
+                    personalContainerTransition.Stop();
+                    personalinfoExpand = true;
+                }
+            }
+            else
+            {
+                PersonalinfoContainer.Height -= 10;
+                if (PersonalinfoContainer.Height <= 49)
+                {
+                    personalContainerTransition.Stop();
+                    personalinfoExpand = false;
+
+                }
+            }
+        }
+
+        private void btStaffInfo_Click(object sender, EventArgs e)
+        {
+            personalContainerTransition.Start();
+        }
+
+        private void btBusStation_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new StationView());
+        }
+        bool busManagementExpand = false;
+        private void busManagementTransition_Tick(object sender, EventArgs e)
+        {
+            if (busManagementExpand == false)
+            {
+                BusManagementContainer.Height += 10;
+                if (BusManagementContainer.Height >= 154)
+                {
+                    busManagementTransition.Stop();
+                    busManagementExpand = true;
+                }
+            }
+            else
+            {
+                BusManagementContainer.Height -= 10;
+                if (BusManagementContainer.Height <= 49)
+                {
+                    busManagementTransition.Stop();
+                    busManagementExpand = false;
+                }
+            }
+        }
+
+        private void btBusManage_Click(object sender, EventArgs e)
+        {
+            busManagementTransition.Start();
+        }
+
+        private void btBus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSeat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,6 +73,26 @@ namespace PBL3.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bus_icon4 {
+            get {
+                object obj = ResourceManager.GetObject("bus_icon4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bus_station_icon {
+            get {
+                object obj = ResourceManager.GetObject("bus_station_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cccd_icon {
             get {
                 object obj = ResourceManager.GetObject("cccd_icon", resourceCulture);

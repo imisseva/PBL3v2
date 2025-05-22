@@ -44,12 +44,12 @@
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(1022, 355);
+            this.dgv.Size = new System.Drawing.Size(850, 608);
             this.dgv.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(313, 14);
+            this.btnSearch.Location = new System.Drawing.Point(333, 14);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(105, 23);
             this.btnSearch.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(560, 14);
+            this.btnAdd.Location = new System.Drawing.Point(485, 14);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 23);
             this.btnAdd.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(723, 14);
+            this.btnEdit.Location = new System.Drawing.Point(604, 14);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 23);
             this.btnEdit.TabIndex = 1;
@@ -79,7 +79,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(886, 14);
+            this.btnDel.Location = new System.Drawing.Point(724, 14);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(99, 23);
             this.btnDel.TabIndex = 1;
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 420);
+            this.ClientSize = new System.Drawing.Size(850, 608);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);

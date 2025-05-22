@@ -121,6 +121,12 @@
   <data name="address_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bus_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bus icon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bus_station_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bus station icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cccd_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cccd icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
