@@ -100,6 +100,10 @@ namespace PBL3.UI
 
         }
 
-        
+        private void btStaff_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new StaffView());
+        }
     }
 }

@@ -20,14 +20,6 @@ namespace PBL3.UI
         {
             InitializeComponent();
         }
-
-        public StaffUpdateInfo(StaffDTO staff)
-        {
-            InitializeComponent();
-            _staff = staff;
-            LoadStaffInfo();
-        }
-
         private void LoadStaffInfo()
         {
             txtID.Text = _staff.ID_account.ToString();

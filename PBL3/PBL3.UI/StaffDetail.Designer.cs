@@ -50,6 +50,7 @@
             this.btOK = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
+            this.txtStationID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,10 +236,18 @@
             this.dtpDob.Size = new System.Drawing.Size(200, 22);
             this.dtpDob.TabIndex = 63;
             // 
+            // txtStationID
+            // 
+            this.txtStationID.Location = new System.Drawing.Point(606, 291);
+            this.txtStationID.Name = "txtStationID";
+            this.txtStationID.Size = new System.Drawing.Size(277, 22);
+            this.txtStationID.TabIndex = 64;
+            // 
             // StaffDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1020, 420);
+            this.Controls.Add(this.txtStationID);
             this.Controls.Add(this.dtpDob);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOK);
@@ -291,5 +300,6 @@
         private System.Windows.Forms.Button btOK;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.DateTimePicker dtpDob;
+        private System.Windows.Forms.TextBox txtStationID;
     }
 }
