@@ -1,4 +1,5 @@
 ﻿using PBL3.BLL.Services;
+using PBL3.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,16 +26,18 @@ namespace PBL3.UI
 
             if (account != null)
             {
+
                 if (account.Role == 1) // Admin
                 {
                     AdminForm adminForm = new AdminForm();
                     MessageBox.Show("Đăng nhập với quyền quản trị viên!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     adminForm.Show();
                     this.Hide();
                 }
                 else if (account.Role == 0) // Staff
                 {
+                    
                     StaffPersonalInfo.Session.LoggedInAccountId = account.Id;
                     StaffForm2 staffForm = new StaffForm2();
                     MessageBox.Show("Đăng nhập với quyền là nhân viên", "Thông báo",
