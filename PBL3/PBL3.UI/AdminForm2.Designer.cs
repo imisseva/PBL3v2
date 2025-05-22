@@ -452,6 +452,7 @@
             this.btRoute.TabIndex = 2;
             this.btRoute.Text = "Quản lý tuyến đường";
             this.btRoute.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btRoute.Click += new System.EventHandler(this.btRoute_Click);
             // 
             // guna2Panel12
             // 
@@ -510,6 +511,7 @@
             this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "Đăng xuất";
             this.guna2Button1.TextOffset = new System.Drawing.Point(-7, 0);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // MainPanel
             // 
