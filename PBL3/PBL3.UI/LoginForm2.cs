@@ -29,7 +29,7 @@ namespace PBL3.UI
 
                 if (account.Role == 1) // Admin
                 {
-                    AdminForm adminForm = new AdminForm();
+                    AdminForm2 adminForm = new AdminForm2();
                     MessageBox.Show("Đăng nhập với quyền quản trị viên!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                     adminForm.Show();

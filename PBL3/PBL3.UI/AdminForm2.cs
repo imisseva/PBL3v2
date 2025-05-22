@@ -92,18 +92,39 @@ namespace PBL3.UI
 
         private void btBus_Click(object sender, EventArgs e)
         {
-
+            MainPanel.Visible = true;
+            LoadFormToPanel(new BusView());
         }
 
         private void btSeat_Click(object sender, EventArgs e)
         {
-
+            MainPanel.Visible = true;
+            LoadFormToPanel(new SeatView());
         }
 
         private void btStaff_Click(object sender, EventArgs e)
         {
             MainPanel.Visible = true;
             LoadFormToPanel(new StaffView());
+        }
+
+        private void btRoute_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new RouteView());
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginForm2 loginForm = new LoginForm2();
+                loginForm.Show();
+                this.Close();
+            }
         }
     }
 }

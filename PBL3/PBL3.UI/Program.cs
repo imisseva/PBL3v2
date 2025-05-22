@@ -16,7 +16,7 @@ namespace PBL3.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminForm2());
+            Application.Run(new LoginForm2());
         }
     }
 }
