@@ -55,13 +55,13 @@
             this.btSeat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.btRoute = new Guna.UI2.WinForms.Guna2Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.personalContainerTransition = new System.Windows.Forms.Timer(this.components);
             this.busManagementTransition = new System.Windows.Forms.Timer(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.sideBar.SuspendLayout();
             this.PersonalinfoContainer.SuspendLayout();
@@ -289,6 +289,7 @@
             this.btStaff.TabIndex = 2;
             this.btStaff.Text = "Quản lý nhân viên";
             this.btStaff.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btStaff.Click += new System.EventHandler(this.btStaff_Click);
             // 
             // guna2Panel4
             // 
@@ -452,14 +453,6 @@
             this.btRoute.Text = "Quản lý tuyến đường";
             this.btRoute.TextOffset = new System.Drawing.Point(-7, 0);
             // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(251, 37);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(850, 608);
-            this.MainPanel.TabIndex = 2;
-            // 
             // guna2Panel12
             // 
             this.guna2Panel12.Controls.Add(this.guna2Button7);
@@ -489,15 +482,14 @@
             this.guna2Button7.Text = "Quản lý lịch trình";
             this.guna2Button7.TextOffset = new System.Drawing.Point(-7, 0);
             // 
-            // personalContainerTransition
+            // guna2Panel5
             // 
-            this.personalContainerTransition.Interval = 10;
-            this.personalContainerTransition.Tick += new System.EventHandler(this.personalContainerTransition_Tick);
-            // 
-            // busManagementTransition
-            // 
-            this.busManagementTransition.Interval = 10;
-            this.busManagementTransition.Tick += new System.EventHandler(this.busManagementTransition_Tick);
+            this.guna2Panel5.Controls.Add(this.guna2Button1);
+            this.guna2Panel5.Location = new System.Drawing.Point(3, 337);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
+            this.guna2Panel5.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel5.TabIndex = 11;
             // 
             // guna2Button1
             // 
@@ -511,22 +503,31 @@
             this.guna2Button1.Image = global::PBL3.UI.Properties.Resources.sign_out_icon;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(-18, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(19, 19);
-            this.guna2Button1.Location = new System.Drawing.Point(-101, 0);
+            this.guna2Button1.Location = new System.Drawing.Point(-133, 0);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(466, 52);
+            this.guna2Button1.Size = new System.Drawing.Size(498, 52);
             this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "Đăng xuất";
             this.guna2Button1.TextOffset = new System.Drawing.Point(-7, 0);
             // 
-            // guna2Panel5
+            // MainPanel
             // 
-            this.guna2Panel5.Controls.Add(this.guna2Button1);
-            this.guna2Panel5.Location = new System.Drawing.Point(3, 337);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel5.TabIndex = 11;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(251, 37);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(850, 608);
+            this.MainPanel.TabIndex = 2;
+            // 
+            // personalContainerTransition
+            // 
+            this.personalContainerTransition.Interval = 10;
+            this.personalContainerTransition.Tick += new System.EventHandler(this.personalContainerTransition_Tick);
+            // 
+            // busManagementTransition
+            // 
+            this.busManagementTransition.Interval = 10;
+            this.busManagementTransition.Tick += new System.EventHandler(this.busManagementTransition_Tick);
             // 
             // AdminForm2
             // 
