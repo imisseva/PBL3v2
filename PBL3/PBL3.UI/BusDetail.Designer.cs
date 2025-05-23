@@ -34,8 +34,8 @@
             this.txtIDBus = new System.Windows.Forms.TextBox();
             this.numSeat = new System.Windows.Forms.NumericUpDown();
             this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.numSeat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,23 +88,33 @@
             this.cbStatus.Size = new System.Drawing.Size(190, 24);
             this.cbStatus.TabIndex = 5;
             // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(270, 322);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 6;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(426, 322);
+            this.btnCancel.CheckedState.Parent = this.btnCancel;
+            this.btnCancel.CustomImages.Parent = this.btnCancel;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.HoverState.Parent = this.btnCancel;
+            this.btnCancel.Location = new System.Drawing.Point(455, 319);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
+            this.btnCancel.Size = new System.Drawing.Size(94, 36);
+            this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnOK
+            // 
+            this.btnOK.CheckedState.Parent = this.btnOK;
+            this.btnOK.CustomImages.Parent = this.btnOK;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.HoverState.Parent = this.btnOK;
+            this.btnOK.Location = new System.Drawing.Point(248, 322);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.ShadowDecoration.Parent = this.btnOK;
+            this.btnOK.Size = new System.Drawing.Size(92, 33);
+            this.btnOK.TabIndex = 18;
+            this.btnOK.Text = "OK";
             // 
             // BusDetail
             // 
@@ -136,7 +146,7 @@
         private System.Windows.Forms.TextBox txtIDBus;
         private System.Windows.Forms.NumericUpDown numSeat;
         private System.Windows.Forms.ComboBox cbStatus;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnOK;
     }
 }
