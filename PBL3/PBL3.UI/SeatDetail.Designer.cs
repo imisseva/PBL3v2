@@ -32,12 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.txtIDSeat = new System.Windows.Forms.TextBox();
             this.numSeatNumber = new System.Windows.Forms.NumericUpDown();
             this.cbIDBus = new System.Windows.Forms.ComboBox();
             this.cbType = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.numSeatNumber)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,24 +77,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Loại Ghế";
             // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(128, 325);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(277, 324);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
             // txtIDSeat
             // 
             this.txtIDSeat.Location = new System.Drawing.Point(254, 47);
@@ -125,17 +107,45 @@
             this.cbType.Size = new System.Drawing.Size(180, 24);
             this.cbType.TabIndex = 9;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.CheckedState.Parent = this.btnCancel;
+            this.btnCancel.CustomImages.Parent = this.btnCancel;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.HoverState.Parent = this.btnCancel;
+            this.btnCancel.Location = new System.Drawing.Point(316, 316);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
+            this.btnCancel.Size = new System.Drawing.Size(94, 36);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // btnOK
+            // 
+            this.btnOK.CheckedState.Parent = this.btnOK;
+            this.btnOK.CustomImages.Parent = this.btnOK;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.HoverState.Parent = this.btnOK;
+            this.btnOK.Location = new System.Drawing.Point(109, 319);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.ShadowDecoration.Parent = this.btnOK;
+            this.btnOK.Size = new System.Drawing.Size(92, 33);
+            this.btnOK.TabIndex = 20;
+            this.btnOK.Text = "OK";
+            // 
             // SeatDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.cbIDBus);
             this.Controls.Add(this.numSeatNumber);
             this.Controls.Add(this.txtIDSeat);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -154,11 +164,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtIDSeat;
         private System.Windows.Forms.NumericUpDown numSeatNumber;
         private System.Windows.Forms.ComboBox cbIDBus;
         private System.Windows.Forms.ComboBox cbType;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnOK;
     }
 }

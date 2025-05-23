@@ -252,6 +252,9 @@
     <EmbeddedResource Include="ScheduleDetail.resx">
       <DependentUpon>ScheduleDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleView.resx">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeatDetail.resx">
       <DependentUpon>SeatDetail.cs</DependentUpon>
     </EmbeddedResource>

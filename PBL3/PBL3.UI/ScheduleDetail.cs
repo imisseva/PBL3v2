@@ -20,7 +20,7 @@ namespace PBL3.UI
         private StationService stationService = new StationService();
         private RouteService routeService = new RouteService();
         private Route_SubRouteService route_subrouteService = new Route_SubRouteService();
-        private List<ScheduleDTO> schedule; // Danh sách đã được gán dữ liệu trước đó
+        public List<ScheduleDTO> schedule; // Danh sách đã được gán dữ liệu trước đó
         private bool hasShownDuplicateMessage = false; // Để tránh hiện lại nhiều lần khi chưa thay đổi
         public ScheduleDetail()
         {
