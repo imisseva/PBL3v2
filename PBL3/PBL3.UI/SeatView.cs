@@ -113,5 +113,10 @@ namespace PBL3
                 LoadSeatData();
             }
         }
+
+        private void btnEdit_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
