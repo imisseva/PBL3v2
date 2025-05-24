@@ -120,6 +120,7 @@
             this.btnCancel.Size = new System.Drawing.Size(94, 36);
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -134,6 +135,7 @@
             this.btnOK.Size = new System.Drawing.Size(92, 33);
             this.btnOK.TabIndex = 20;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // SeatDetail
             // 
@@ -152,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SeatDetail";
             this.Text = "SeatDetail";
+            this.Load += new System.EventHandler(this.SeatDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSeatNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
