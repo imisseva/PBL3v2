@@ -51,7 +51,7 @@ namespace PBL3.UI
             {
                 var dto = new StaffDTO
                 {
-                    ID_account = form.StaffID, // Lấy ID do người dùng nhập
+                    ID_account = form.StaffID,
                     Name = form.StaffName,
                     email = form.StaffEmail,
                     phone = form.StaffPhone,
@@ -81,6 +81,7 @@ namespace PBL3.UI
 
             }
         }
+<<<<<<< HEAD
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (dgvStaff.SelectedRows.Count == 0)
@@ -179,5 +180,104 @@ namespace PBL3.UI
             }
         }
 
+=======
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvStaff.CurrentRow != null)
+            {
+                var dto = new StaffDTO
+                {
+                    ID_account = dgvStaff.CurrentRow.Cells["ID_account"].Value != null
+                    ? Convert.ToInt32(dgvStaff.CurrentRow.Cells["ID_account"].Value)
+                    : 0,
+
+                    Name = dgvStaff.CurrentRow.Cells["Name"].Value?.ToString() ?? "",
+                    email = dgvStaff.CurrentRow.Cells["email"].Value?.ToString() ?? "",
+                    phone = dgvStaff.CurrentRow.Cells["phone"].Value?.ToString() ?? "",
+                    home_address = dgvStaff.CurrentRow.Cells["home_address"].Value?.ToString() ?? "",
+                    Dob = dgvStaff.CurrentRow.Cells["Dob"].Value != null
+                     ? Convert.ToDateTime(dgvStaff.CurrentRow.Cells["Dob"].Value)
+                     : DateTime.Today,
+                    NoiSinh = dgvStaff.CurrentRow.Cells["NoiSinh"].Value?.ToString() ?? "",
+                    CCCD = dgvStaff.CurrentRow.Cells["CCCD"].Value?.ToString() ?? "",
+                    Gender = dgvStaff.CurrentRow.Cells["Gender"].Value?.ToString() ?? "",
+                    ID_station = dgvStaff.CurrentRow.Cells["ID_station"].Value?.ToString() ?? ""
+                };
+
+
+                var form = new StaffDetail
+                {
+                    IsEditMode = true,
+                    StaffID = dto.ID_account,
+                    StaffName = dto.Name,
+                    StaffEmail = dto.email,
+                    StaffPhone = dto.phone,
+                    StaffAddress = dto.home_address,
+                    StaffDateOfBirth = dto.Dob,
+                    StaffPlaceOfBirth = dto.NoiSinh,
+                    StaffCCCD = dto.CCCD,
+                    StaffGender = dto.Gender,
+                    StaffStationID = dto.ID_station
+                };
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    dto.Name = form.StaffName;
+                    dto.email = form.StaffEmail;
+                    dto.phone = form.StaffPhone;
+                    dto.home_address = form.StaffAddress;
+                    dto.Dob = form.StaffDateOfBirth;
+                    dto.NoiSinh = form.StaffPlaceOfBirth;
+                    dto.CCCD = form.StaffCCCD;
+                    dto.Gender = form.StaffGender;
+                    dto.ID_station = form.StaffStationID;
+
+                    try
+                    {
+                        staffService.UpdateStaff(dto);
+                        MessageBox.Show("Cập nhật nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadStaffData();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
+            if (dgvStaff.CurrentRow != null)
+            {
+                string name = dgvStaff.CurrentRow.Cells["Name"].Value?.ToString() ?? "";
+                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xoá nhân viên \"{name}\" không?",
+                                                      "Xác nhận xoá",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        int id = Convert.ToInt32(dgvStaff.CurrentRow.Cells["ID_account"].Value);
+                        staffService.DeleteStaff(id);
+                        LoadStaffData();
+                        MessageBox.Show("Xoá nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xoá nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+>>>>>>> a35e272657715c199e8e1af152af083a3f460802
     }
 }

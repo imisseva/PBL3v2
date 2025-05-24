@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,7 @@ namespace PBL3.UI
 
     public partial class StaffForm2 : Form
     {
-
-        StaffPersonalInfo staffinfo;
+        private StaffDTO _currentStaff;
         BookTicket bookTicket;
         public StaffForm2()
         {
@@ -98,7 +98,7 @@ namespace PBL3.UI
         }
         private void staffInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            staffinfo = null;
+            //staffinfo = null;
         }
 
         private void btBookTicket_Click(object sender, EventArgs e)
