@@ -46,7 +46,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(887, 13);
+            this.btnDel.Location = new System.Drawing.Point(707, 13);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(99, 23);
             this.btnDel.TabIndex = 4;
@@ -55,7 +55,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(724, 13);
+            this.btnEdit.Location = new System.Drawing.Point(586, 13);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 23);
             this.btnEdit.TabIndex = 5;
@@ -65,7 +65,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(561, 13);
+            this.btnAdd.Location = new System.Drawing.Point(458, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 23);
             this.btnAdd.TabIndex = 6;
@@ -88,14 +88,14 @@
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(1022, 355);
+            this.dgv.Size = new System.Drawing.Size(851, 509);
             this.dgv.TabIndex = 3;
             // 
             // SeatView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 420);
+            this.ClientSize = new System.Drawing.Size(850, 608);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);

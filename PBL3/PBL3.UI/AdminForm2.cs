@@ -121,10 +121,16 @@ namespace PBL3.UI
             if (result == DialogResult.Yes)
             {
                 this.Hide();
-                LoginForm2 loginForm = new LoginForm2();
+                LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Close();
             }
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new ScheduleView());
         }
     }
 }
