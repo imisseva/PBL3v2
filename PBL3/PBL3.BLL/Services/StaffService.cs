@@ -35,7 +35,7 @@ namespace PBL3.BLL.Services
 
         public List<StaffDTO> GetAllStaffByID(int ID)
         {
-            return _repo.GetByID(ID)
+            return _repo.GetAllStaffByID(ID)
                  .Select(s => new StaffDTO
                  {
                      ID_account = s.ID_account,
@@ -50,6 +50,25 @@ namespace PBL3.BLL.Services
                      ID_station = s.ID_station,
                     
                  }).ToList();
+        }
+        public StaffDTO GetById(int id)
+        {
+            var staff = _repo.GetById(id);
+            if (staff == null) return null;
+
+            return new StaffDTO
+            {
+                ID_account = staff.ID_account,
+                Name = staff.Name,
+                email = staff.email,
+                phone = staff.phone,
+                CCCD = staff.CCCD,
+                home_address = staff.home_address,
+                Dob = staff.DOB ?? System.DateTime.MinValue,
+                NoiSinh = staff.NoiSinh,
+                Gender = staff.Gender,
+                ID_station = staff.ID_station
+            };
         }
 
         public void AddStaff (StaffDTO staff)

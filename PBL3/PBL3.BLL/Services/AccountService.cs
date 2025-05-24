@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PBL3.DAL.Entities;
 using PBL3.DAL.Repositories;
 using PBL3.DTO;
 
@@ -34,5 +35,17 @@ namespace PBL3.BLL.Services
         {
             return _accountRepo.ChangePassword(id, OldPass, NewPass);
         }
+        public int CreateAccount(AccountDTO dto)
+        {
+            var account = new Account
+            {
+                username = dto.Username,
+                password = dto.Password,
+                role = dto.Role
+            };
+
+            return _accountRepo.AddAccount(account);
+        }
+
     }
 }

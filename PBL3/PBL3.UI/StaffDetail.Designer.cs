@@ -50,12 +50,14 @@
             this.btOK = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
-            this.txtStationID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbbStation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(209, 256);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 22);
@@ -74,9 +76,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(146, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(139, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(281, 261);
+            this.pictureBox1.Size = new System.Drawing.Size(288, 261);
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
             // 
@@ -236,18 +238,30 @@
             this.dtpDob.Size = new System.Drawing.Size(200, 22);
             this.dtpDob.TabIndex = 63;
             // 
-            // txtStationID
+            // label9
             // 
-            this.txtStationID.Location = new System.Drawing.Point(606, 291);
-            this.txtStationID.Name = "txtStationID";
-            this.txtStationID.Size = new System.Drawing.Size(277, 22);
-            this.txtStationID.TabIndex = 64;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(449, 292);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 23);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "Ga làm việc";
+            // 
+            // cbbStation
+            // 
+            this.cbbStation.FormattingEnabled = true;
+            this.cbbStation.Location = new System.Drawing.Point(606, 294);
+            this.cbbStation.Name = "cbbStation";
+            this.cbbStation.Size = new System.Drawing.Size(277, 24);
+            this.cbbStation.TabIndex = 66;
             // 
             // StaffDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1020, 420);
-            this.Controls.Add(this.txtStationID);
+            this.Controls.Add(this.cbbStation);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpDob);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOK);
@@ -300,6 +314,7 @@
         private System.Windows.Forms.Button btOK;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.DateTimePicker dtpDob;
-        private System.Windows.Forms.TextBox txtStationID;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbbStation;
     }
 }

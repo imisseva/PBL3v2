@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3.BLL.Services;
+using PBL3.UI;
 
 namespace PBL3
 {
     public partial class StaffDetail : Form
     {
+        private StationService _stationService = new StationService();
         public StaffDetail()
         {
             InitializeComponent();
+
         }
 
         public bool IsEditMode { get; set; } = false;
@@ -75,19 +79,25 @@ namespace PBL3
 
         public string StaffStationID
         {
-            get => txtStationID.Text.Trim();
-            set => txtStationID.Text = value;
+            get => cbbStation.Text.Trim();
+            set => cbbStation.Text = value;
         }
 
         private void StaffDetail_Load(object sender, EventArgs e)
         {
+            var stations = _stationService.GetStations();
+            cbbStation.DataSource = stations;
+            cbbStation.DisplayMember = "ID_station"; 
+            cbbStation.ValueMember = "ID_station";   
+
             if (IsEditMode)
             {
                 txtID.Enabled = false;
+                cbbStation.SelectedValue = StaffStationID;
             }
             else
             {
-                txtID.Enabled = true;
+                txtID.Enabled = false;
                 txtID.Clear();
                 txtName.Clear();
                 txtEmail.Clear();
@@ -97,12 +107,30 @@ namespace PBL3
                 txtNoiSinh.Clear();
                 txtCCCD.Clear();
                 txtGender.Clear();
-                txtStationID.Clear();
+                cbbStation.SelectedIndex = -1;
             }
         }
 
+
         private void btOK_Click(object sender, EventArgs e)
         {
+            // Mở form tạo tài khoản
+            using (var f = new AccountDetail())
+            {
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy ID tài khoản vừa tạo để gán cho nhân viên
+                    StaffID = f.CreatedStaffID;
+                }
+                else
+                {
+                    // Nếu không tạo tài khoản thì không tiếp tục
+                    MessageBox.Show("Bạn phải tạo tài khoản trước khi thêm nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            // Kiểm tra nhập liệu
             if (string.IsNullOrWhiteSpace(StaffName) ||
                 string.IsNullOrWhiteSpace(StaffEmail) ||
                 string.IsNullOrWhiteSpace(StaffPhone) ||
@@ -116,9 +144,11 @@ namespace PBL3
                 return;
             }
 
+            // Đóng form và trả kết quả OK
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
 
         private void btCancel_Click(object sender, EventArgs e)
         {

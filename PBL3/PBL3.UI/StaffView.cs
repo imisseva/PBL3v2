@@ -81,6 +81,106 @@ namespace PBL3.UI
 
             }
         }
+<<<<<<< HEAD
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvStaff.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để sửa!");
+                return;
+            }
+
+            // Lấy ID nhân viên đang chọn
+            int selectedId = Convert.ToInt32(dgvStaff.SelectedRows[0].Cells["ID_account"].Value);
+
+            // Lấy thông tin hiện tại của nhân viên từ BLL
+            var staff = staffService.GetById(selectedId);
+            if (staff == null)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên.");
+                return;
+            }
+
+            // Mở form chi tiết với chế độ sửa
+            var form = new StaffDetail
+            {
+                IsEditMode = true,
+                StaffID = staff.ID_account,
+                StaffName = staff.Name,
+                StaffEmail = staff.email,
+                StaffPhone = staff.phone,
+                StaffAddress = staff.home_address,
+                StaffDateOfBirth = staff.Dob,
+                StaffPlaceOfBirth = staff.NoiSinh,
+                StaffCCCD = staff.CCCD,
+                StaffGender = staff.Gender,
+                StaffStationID = staff.ID_station
+            };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                // Cập nhật dữ liệu
+                staff.Name = form.StaffName;
+                staff.email = form.StaffEmail;
+                staff.phone = form.StaffPhone;
+                staff.home_address = form.StaffAddress;
+                staff.Dob = form.StaffDateOfBirth;
+                staff.NoiSinh = form.StaffPlaceOfBirth;
+                staff.CCCD = form.StaffCCCD;
+                staff.Gender = form.StaffGender;
+                staff.ID_station = form.StaffStationID;
+
+                try
+                {
+                    staffService.UpdateStaff(staff);
+                    MessageBox.Show("Cập nhật nhân viên thành công!");
+                    LoadStaffData();
+                }
+                catch (Exception ex)
+                {
+                    string errorMsg = ex.Message;
+                    if (ex.InnerException != null)
+                    {
+                        errorMsg += "\nChi tiết lỗi: " + ex.InnerException.Message;
+                    }
+                    MessageBox.Show("Không thể cập nhật nhân viên: " + errorMsg);
+                }
+            }
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvStaff.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để xóa.");
+                return;
+            }
+
+            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result != DialogResult.Yes) return;
+
+            try
+            {
+                // Lấy ID_account từ dòng được chọn
+                int staffId = Convert.ToInt32(dgvStaff.SelectedRows[0].Cells["ID_account"].Value);
+
+                // Gọi service xóa
+                staffService.DeleteStaff(staffId);
+
+                MessageBox.Show("Xóa nhân viên thành công!");
+                LoadStaffData();
+            }
+            catch (Exception ex)
+            {
+                string errorMsg = ex.Message;
+                if (ex.InnerException != null)
+                {
+                    errorMsg += "\nChi tiết lỗi: " + ex.InnerException.Message;
+                }
+                MessageBox.Show("Không thể xóa nhân viên: " + errorMsg);
+            }
+        }
+
+=======
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -178,5 +278,6 @@ namespace PBL3.UI
                 MessageBox.Show("Vui lòng chọn một nhân viên để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+>>>>>>> a35e272657715c199e8e1af152af083a3f460802
     }
 }

@@ -27,7 +27,7 @@ namespace PBL3.DAL.Repositories
             }
         }
         //Lấy nhân viên theo ID
-        public List<Staff> GetByID(int ID)
+        public List<Staff> GetAllStaffByID(int ID)
         {
             using (var db = new BusManagement())
             {
@@ -36,6 +36,15 @@ namespace PBL3.DAL.Repositories
                          .ToList();
             }
         }
+        public Staff GetById(int id)
+        {
+            using (var db = new BusManagement())
+            {
+                return db.Staffs.FirstOrDefault(s => s.ID_account == id);
+            }
+        }
+
+
         public void Add(Staff staff)
         {
             using (var db = new BusManagement())
