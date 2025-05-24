@@ -32,7 +32,7 @@ namespace PBL3
                 return;
             }
             var service = new AccountService();
-            bool result = service.ChangePassword(StaffPersonalInfo.Session.LoggedInAccountId, OldPass, NewPass);
+            bool result = service.ChangePassword(Session.LoggedAccountId, OldPass, NewPass);
             if (result)
             {
                 MessageBox.Show("Đổi mật khẩu thành công!");

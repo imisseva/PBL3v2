@@ -57,6 +57,7 @@
     <Compile Include="ScheduleDTO.cs" />
     <Compile Include="ScheduleStopDTO.cs" />
     <Compile Include="SeatDTO.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="StaffDTO.cs" />
     <Compile Include="StationDTO.cs" />
     <Compile Include="TicketDTO.cs" />
