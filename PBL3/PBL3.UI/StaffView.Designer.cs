@@ -52,11 +52,7 @@
             this.btnDel.TabIndex = 4;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btnDel.Click += new System.EventHandler(this.btnDelete_Click);
-=======
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
->>>>>>> a35e272657715c199e8e1af152af083a3f460802
             // 
             // btnEdit
             // 
