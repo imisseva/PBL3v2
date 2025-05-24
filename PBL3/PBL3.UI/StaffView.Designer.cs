@@ -52,6 +52,7 @@
             this.btnDel.TabIndex = 4;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -61,6 +62,7 @@
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -85,11 +87,11 @@
             // dgvStaff
             // 
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(12, 67);
+            this.dgvStaff.Location = new System.Drawing.Point(-2, 67);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.RowHeadersWidth = 51;
             this.dgvStaff.RowTemplate.Height = 24;
-            this.dgvStaff.Size = new System.Drawing.Size(811, 529);
+            this.dgvStaff.Size = new System.Drawing.Size(851, 529);
             this.dgvStaff.TabIndex = 3;
             // 
             // StaffView

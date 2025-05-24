@@ -32,5 +32,15 @@ namespace PBL3.DAL.Repositories
                 return true;
             }
         }
+        public int AddAccount(Account account)
+        {
+            using (var db = new BusManagement())
+            {
+                db.Accounts.Add(account);
+                db.SaveChanges();
+                return account.id; 
+            }
+        }
+
     }
 }
