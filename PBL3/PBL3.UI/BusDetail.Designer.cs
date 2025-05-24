@@ -101,6 +101,7 @@
             this.btnCancel.Size = new System.Drawing.Size(94, 36);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -115,6 +116,7 @@
             this.btnOK.Size = new System.Drawing.Size(92, 33);
             this.btnOK.TabIndex = 18;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // BusDetail
             // 
