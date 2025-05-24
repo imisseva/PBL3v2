@@ -114,23 +114,25 @@ namespace PBL3
 
         private void btOK_Click(object sender, EventArgs e)
         {
-            // Mở form tạo tài khoản
-            using (var f = new AccountDetail())
+            if (!IsEditMode)
             {
-                if (f.ShowDialog() == DialogResult.OK)
+                // Chế độ thêm – bắt buộc tạo tài khoản trước
+                using (var f = new AccountDetail())
                 {
-                    // Lấy ID tài khoản vừa tạo để gán cho nhân viên
-                    StaffID = f.CreatedStaffID;
-                }
-                else
-                {
-                    // Nếu không tạo tài khoản thì không tiếp tục
-                    MessageBox.Show("Bạn phải tạo tài khoản trước khi thêm nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        // Lấy ID tài khoản vừa tạo để gán cho nhân viên
+                        StaffID = f.CreatedStaffID;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn phải tạo tài khoản trước khi thêm nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
             }
 
-            // Kiểm tra nhập liệu
+            // Kiểm tra nhập liệu chung cho cả thêm và sửa
             if (string.IsNullOrWhiteSpace(StaffName) ||
                 string.IsNullOrWhiteSpace(StaffEmail) ||
                 string.IsNullOrWhiteSpace(StaffPhone) ||
@@ -148,6 +150,7 @@ namespace PBL3
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
 
 
         private void btCancel_Click(object sender, EventArgs e)
