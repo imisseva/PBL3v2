@@ -117,7 +117,7 @@ namespace PBL3.UI
             if (result == DialogResult.Yes)
             {
                 this.Hide();
-                LoginForm2 loginForm = new LoginForm2();
+                LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Close();
             }
@@ -131,7 +131,8 @@ namespace PBL3.UI
 
         private void btInfoTicket_Click(object sender, EventArgs e)
         {
-
+            MainPanel.Visible = true;
+            LoadFormToPanel(new InfoTicket());
         }
 
         private void btChangePassword_Click(object sender, EventArgs e)

@@ -121,7 +121,7 @@ namespace PBL3.UI
             if (result == DialogResult.Yes)
             {
                 this.Hide();
-                LoginForm2 loginForm = new LoginForm2();
+                LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Close();
             }
