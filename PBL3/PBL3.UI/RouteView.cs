@@ -31,6 +31,7 @@ namespace PBL3
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
+            dgv.ScrollBars = ScrollBars.Both;
             if (dgv.Columns.Count > 0)
             {
                 dgv.Columns["ID_route"].HeaderText = "ID Tuyến";

@@ -482,6 +482,7 @@
             this.guna2Button7.TabIndex = 2;
             this.guna2Button7.Text = "Quản lý lịch trình";
             this.guna2Button7.TextOffset = new System.Drawing.Point(-7, 0);
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
             // 
             // guna2Panel5
             // 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL.Services;
 using PBL3.DTO;
+using PBL3.UI;
 namespace PBL3
 {
     public partial class LoginForm: Form
@@ -44,7 +45,7 @@ namespace PBL3
             {
                 if (account.Role == 1) // Admin
                 {
-                    AdminForm adminForm = new AdminForm();
+                    AdminForm2 adminForm = new AdminForm2();
                     MessageBox.Show("Đăng nhập với quyền quản trị viên!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     adminForm.Show();
@@ -53,7 +54,7 @@ namespace PBL3
                 else if (account.Role == 0) // Staff
                 {
                     StaffPersonalInfo.Session.LoggedInAccountId = account.Id;
-                    StaffForm staffForm = new StaffForm();
+                    StaffForm2 staffForm = new StaffForm2();
                     MessageBox.Show("Đăng nhập với quyền là nhân viên", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     staffForm.Show();
