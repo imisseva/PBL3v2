@@ -1,26 +1,15 @@
 ﻿using PBL3.BLL.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static PBL3.StaffForm;
 using PBL3.DTO;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace PBL3
 {
     public partial class StaffPersonalInfo : Form
     {
         private StaffService _staffService = new StaffService();
-        //private int _loggedInAccountId = 1008;
-        public static class Session
-        {
-            public static int LoggedInAccountId { get; set; }
-        }
+
         public StaffPersonalInfo()
         {
             InitializeComponent();
@@ -29,11 +18,12 @@ namespace PBL3
 
         private void StaffPersonalInfo_Load(object sender, EventArgs e)
         {
-            this.ControlBox = false; // Disable the close button
+            this.ControlBox = false;
         }
+
         private void LoadStaffData()
         {
-            var staff = _staffService.GetAllStaffByID(Session.LoggedInAccountId).FirstOrDefault();
+            var staff = _staffService.GetAllStaffByID(Session.LoggedAccountId).FirstOrDefault();
             if (staff != null)
             {
                 txtName.Text = staff.Name;
@@ -46,7 +36,6 @@ namespace PBL3
                 txtCCCD.Text = staff.CCCD;
                 txtID.Text = staff.ID_account.ToString();
             }
-        } 
+        }
     }
 }
-
