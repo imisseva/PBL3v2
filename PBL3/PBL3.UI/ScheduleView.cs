@@ -10,7 +10,8 @@ namespace PBL3.UI
     public partial class ScheduleView : Form
     {
         private readonly ScheduleService _scheduleService = new ScheduleService();
-
+        private readonly ScheduleStopService _scheduleStopService = new ScheduleStopService();
+        private readonly StationService _stationService = new StationService();
         public ScheduleView()
         {
             InitializeComponent();
@@ -30,17 +31,31 @@ namespace PBL3.UI
                     s.ID_route.ToLower().Contains(keyword)).ToList();
             }
 
-            dgv.DataSource = schedules.Select(s => new
+            var data = schedules.Select(s =>
             {
-                ID_Schedule = s.ID_Schedule,
-                Bus = s.ID_bus,
-                Route = s.ID_route,
-                StartTime = s.start_time.ToString("dd/MM/yyyy HH:mm"),
-                EndTime = s.end_time.ToString("dd/MM/yyyy HH:mm")
+                // Lấy danh sách các ga dừng tương ứng với Schedule
+                var stops = _scheduleStopService.GetStopsBySchedule(s.ID_Schedule);
+                var stopNames = string.Join(" → ", stops
+                .OrderBy(st => st.Stop_order)
+                .Select(st => _stationService.GetNameStation(st.IDStation_stop)));
+
+                return new
+                {
+                    ID_Schedule = s.ID_Schedule,
+                    Bus = s.ID_bus,
+                    Route = s.ID_route,
+                    StartTime = s.start_time.ToString("dd/MM/yyyy HH:mm"),
+                    EndTime = s.end_time.ToString("dd/MM/yyyy HH:mm"),
+                    GaDung = stopNames
+                };
             }).ToList();
 
+            dgv.DataSource = data;
+            dgv.Columns["GaDung"].Width = 500;
+            dgv.ScrollBars = ScrollBars.Both;
             dgv.ClearSelection();
         }
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
