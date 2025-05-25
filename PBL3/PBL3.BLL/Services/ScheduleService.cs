@@ -48,6 +48,10 @@ namespace PBL3.BLL.Services
             if (schedule == null) return null;
             return ConvertToDTO(schedule);
         }
+        public bool IsScheduleIdExists(string id)
+        {
+            return _scheduleRepo.IsScheduleIdExists(id);
+        }
 
         public void AddSchedule(ScheduleDTO dto)
         {
