@@ -316,7 +316,6 @@ namespace PBL3.UI
             if (string.IsNullOrEmpty(inputId))
             {
                 hasShownDuplicateMessage = false;
-                txtIDSchedule.ForeColor = Color.Black;
                 return;
             }
 
@@ -326,11 +325,9 @@ namespace PBL3.UI
             {
                 MessageBox.Show("ID đã tồn tại trong danh sách lịch trình!", "Trùng ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 hasShownDuplicateMessage = true;
-                txtIDSchedule.ForeColor = Color.Red;
             }
             else if (!isDuplicate)
             {
-                txtIDSchedule.ForeColor = Color.Black;
                 hasShownDuplicateMessage = false;
             }
         }
