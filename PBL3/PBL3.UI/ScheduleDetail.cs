@@ -309,17 +309,18 @@ namespace PBL3.UI
         {
             this.Close();
         }
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private void guna2TextBox1_Leave(object sender, EventArgs e)
         {
             string inputId = txtIDSchedule.Text.Trim();
 
-            if (schedule == null || string.IsNullOrEmpty(inputId))
+            if (string.IsNullOrEmpty(inputId))
             {
                 hasShownDuplicateMessage = false;
+                txtIDSchedule.ForeColor = Color.Black;
                 return;
             }
 
-            bool isDuplicate = schedule.Any(s => s.ID_Schedule == inputId);
+            bool isDuplicate = scheduleService.IsScheduleIdExists(inputId);
 
             if (isDuplicate && !hasShownDuplicateMessage)
             {
@@ -334,6 +335,6 @@ namespace PBL3.UI
             }
         }
 
-        
+
     }
 }

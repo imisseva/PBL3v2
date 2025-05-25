@@ -127,15 +127,22 @@ namespace PBL3.DAL.Repositories
                     ));
             }
         }
+        public bool IsScheduleIdExists(string id)
+        {
+            using (var context = new BusManagement())
+            {
+                return context.Schedules.Any(s => s.ID_Schedule == id);
+            }
+        }
+
         public void Add(Schedule schedule)
         {
             using (var context = new BusManagement())
             {
                 context.Schedules.Add(schedule);
-                //context.SaveChanges();
+                context.SaveChanges();
             }
         }
-
         public void Update(Schedule schedule)
         {
             using (var context = new BusManagement())

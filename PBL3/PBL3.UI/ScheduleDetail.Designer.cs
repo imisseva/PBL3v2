@@ -156,7 +156,7 @@ namespace PBL3.UI
             this.txtIDSchedule.ShadowDecoration.Parent = this.txtIDSchedule;
             this.txtIDSchedule.Size = new System.Drawing.Size(171, 27);
             this.txtIDSchedule.TabIndex = 15;
-            this.txtIDSchedule.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtIDSchedule.Leave += new System.EventHandler(this.guna2TextBox1_Leave);
             // 
             // guna2Button1
             // 
@@ -244,8 +244,9 @@ namespace PBL3.UI
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(41, 75);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(3, 2);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(0, 0);
             this.guna2HtmlLabel1.TabIndex = 22;
+            this.guna2HtmlLabel1.Text = null;
             // 
             // txtStartSt
             // 
