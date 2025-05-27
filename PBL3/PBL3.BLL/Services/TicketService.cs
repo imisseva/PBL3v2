@@ -13,7 +13,7 @@ namespace PBL3.BLL.Services
     public class TicketService
     {
         private TicketRepository _repo = new TicketRepository();
-        private StationRepository _stationRepo = new StationRepository();   
+        private StationRepository _stationRepo = new StationRepository();
         public List<TicketDTO> GetTickets()
         {
             return _repo.GetTickets()
@@ -53,7 +53,7 @@ namespace PBL3.BLL.Services
                 booking_date = dto.booking_date,
                 ID_seat = dto.ID_seat,
                 ID_Schedule = dto.ID_schedule,
-                price = dto.Price,
+                price = (int)dto.Price,
             };
             _repo.CancelTicket(ticket);
         }
@@ -79,7 +79,14 @@ namespace PBL3.BLL.Services
                         })
                         .FirstOrDefault();
         }
+        public int GetRevenueByDate(DateTime date)
+        {
+            return _repo.GetRevenueByDate(date);
+        }
+        public int GetRevenueByMonth(int month, int year)
+        {
+            return _repo.GetRevenueByMonth(month, year);
+        }
 
     }
-
 }
