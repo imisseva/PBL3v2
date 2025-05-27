@@ -132,5 +132,11 @@ namespace PBL3.UI
             MainPanel.Visible = true;
             LoadFormToPanel(new ScheduleView());
         }
+
+        private void btRevenue_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new RevenueView());
+        }
     }
 }

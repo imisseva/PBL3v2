@@ -54,6 +54,24 @@ namespace PBL3.DAL.Repositories
                 }
             }
         }
-        
+        public int GetRevenueByDate(DateTime date)
+        {
+            using (var db = new BusManagement())
+            {
+                 return db.Tickets
+                    .Where(t => t.booking_date.Date == date.Date)
+                    .Sum(t => (int?)t.price) ?? 0;
+            }
+        }
+
+        public int GetRevenueByMonth(int month, int year)
+        {
+            using (var db = new BusManagement())
+            {
+                return db.Tickets
+                    .Where(t => t.booking_date.Month == month && t.booking_date.Year == year)
+                    .Sum(t => (int?)t.price) ?? 0;
+            }
+        }
     }
 }

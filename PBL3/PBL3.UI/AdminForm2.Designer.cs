@@ -35,33 +35,35 @@
             this.sideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.PersonalinfoContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btStaffInfo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btInfo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btChangeInfo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btChangePassword = new Guna.UI2.WinForms.Guna2Button();
             this.staffManagement = new Guna.UI2.WinForms.Guna2Panel();
-            this.btStaff = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btBusStation = new Guna.UI2.WinForms.Guna2Button();
             this.BusManagementContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btBusManage = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btBus = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btSeat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btRoute = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.personalContainerTransition = new System.Windows.Forms.Timer(this.components);
             this.busManagementTransition = new System.Windows.Forms.Timer(this.components);
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btStaffInfo = new Guna.UI2.WinForms.Guna2Button();
+            this.btInfo = new Guna.UI2.WinForms.Guna2Button();
+            this.btChangeInfo = new Guna.UI2.WinForms.Guna2Button();
+            this.btChangePassword = new Guna.UI2.WinForms.Guna2Button();
+            this.btStaff = new Guna.UI2.WinForms.Guna2Button();
+            this.btBusStation = new Guna.UI2.WinForms.Guna2Button();
+            this.btBusManage = new Guna.UI2.WinForms.Guna2Button();
+            this.btBus = new Guna.UI2.WinForms.Guna2Button();
+            this.btSeat = new Guna.UI2.WinForms.Guna2Button();
+            this.btRoute = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btRevenue = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.sideBar.SuspendLayout();
             this.PersonalinfoContainer.SuspendLayout();
@@ -78,6 +80,7 @@
             this.guna2Panel11.SuspendLayout();
             this.guna2Panel12.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,6 +125,7 @@
             this.sideBar.Controls.Add(this.BusManagementContainer);
             this.sideBar.Controls.Add(this.guna2Panel11);
             this.sideBar.Controls.Add(this.guna2Panel12);
+            this.sideBar.Controls.Add(this.guna2Panel6);
             this.sideBar.Controls.Add(this.guna2Panel5);
             this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBar.Location = new System.Drawing.Point(0, 37);
@@ -152,25 +156,6 @@
             this.guna2Panel7.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel7.TabIndex = 4;
             // 
-            // btStaffInfo
-            // 
-            this.btStaffInfo.Animated = true;
-            this.btStaffInfo.CheckedState.Parent = this.btStaffInfo;
-            this.btStaffInfo.CustomImages.Parent = this.btStaffInfo;
-            this.btStaffInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btStaffInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btStaffInfo.ForeColor = System.Drawing.Color.White;
-            this.btStaffInfo.HoverState.Parent = this.btStaffInfo;
-            this.btStaffInfo.Image = global::PBL3.UI.Properties.Resources.info_icon;
-            this.btStaffInfo.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btStaffInfo.Location = new System.Drawing.Point(-64, 0);
-            this.btStaffInfo.Name = "btStaffInfo";
-            this.btStaffInfo.ShadowDecoration.Parent = this.btStaffInfo;
-            this.btStaffInfo.Size = new System.Drawing.Size(376, 52);
-            this.btStaffInfo.TabIndex = 2;
-            this.btStaffInfo.Text = "Thông tin cá nhân";
-            this.btStaffInfo.Click += new System.EventHandler(this.btStaffInfo_Click);
-            // 
             // guna2Panel8
             // 
             this.guna2Panel8.Controls.Add(this.btInfo);
@@ -180,26 +165,6 @@
             this.guna2Panel8.ShadowDecoration.Parent = this.guna2Panel8;
             this.guna2Panel8.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel8.TabIndex = 5;
-            // 
-            // btInfo
-            // 
-            this.btInfo.Animated = true;
-            this.btInfo.CheckedState.Parent = this.btInfo;
-            this.btInfo.CustomImages.Parent = this.btInfo;
-            this.btInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
-            this.btInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btInfo.ForeColor = System.Drawing.Color.White;
-            this.btInfo.HoverState.Parent = this.btInfo;
-            this.btInfo.Image = global::PBL3.UI.Properties.Resources.dot_icon;
-            this.btInfo.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btInfo.Location = new System.Drawing.Point(-64, 0);
-            this.btInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.btInfo.Name = "btInfo";
-            this.btInfo.ShadowDecoration.Parent = this.btInfo;
-            this.btInfo.Size = new System.Drawing.Size(360, 58);
-            this.btInfo.TabIndex = 2;
-            this.btInfo.Text = "Thông tin cá nhân";
-            this.btInfo.TextOffset = new System.Drawing.Point(-7, 0);
             // 
             // guna2Panel9
             // 
@@ -211,26 +176,6 @@
             this.guna2Panel9.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel9.TabIndex = 6;
             // 
-            // btChangeInfo
-            // 
-            this.btChangeInfo.Animated = true;
-            this.btChangeInfo.CheckedState.Parent = this.btChangeInfo;
-            this.btChangeInfo.CustomImages.Parent = this.btChangeInfo;
-            this.btChangeInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
-            this.btChangeInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btChangeInfo.ForeColor = System.Drawing.Color.White;
-            this.btChangeInfo.HoverState.Parent = this.btChangeInfo;
-            this.btChangeInfo.Image = global::PBL3.UI.Properties.Resources.dot_icon;
-            this.btChangeInfo.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btChangeInfo.Location = new System.Drawing.Point(-64, 0);
-            this.btChangeInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.btChangeInfo.Name = "btChangeInfo";
-            this.btChangeInfo.ShadowDecoration.Parent = this.btChangeInfo;
-            this.btChangeInfo.Size = new System.Drawing.Size(360, 58);
-            this.btChangeInfo.TabIndex = 2;
-            this.btChangeInfo.Text = "Thay đổi thông tin";
-            this.btChangeInfo.TextOffset = new System.Drawing.Point(-6, 0);
-            // 
             // guna2Panel10
             // 
             this.guna2Panel10.Controls.Add(this.btChangePassword);
@@ -241,26 +186,6 @@
             this.guna2Panel10.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel10.TabIndex = 6;
             // 
-            // btChangePassword
-            // 
-            this.btChangePassword.Animated = true;
-            this.btChangePassword.CheckedState.Parent = this.btChangePassword;
-            this.btChangePassword.CustomImages.Parent = this.btChangePassword;
-            this.btChangePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
-            this.btChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btChangePassword.HoverState.Parent = this.btChangePassword;
-            this.btChangePassword.Image = global::PBL3.UI.Properties.Resources.dot_icon;
-            this.btChangePassword.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.btChangePassword.Location = new System.Drawing.Point(-68, 0);
-            this.btChangePassword.Margin = new System.Windows.Forms.Padding(0);
-            this.btChangePassword.Name = "btChangePassword";
-            this.btChangePassword.ShadowDecoration.Parent = this.btChangePassword;
-            this.btChangePassword.Size = new System.Drawing.Size(364, 52);
-            this.btChangePassword.TabIndex = 2;
-            this.btChangePassword.Text = "Thay đổi mật khẩu";
-            this.btChangePassword.TextOffset = new System.Drawing.Point(-5, 0);
-            // 
             // staffManagement
             // 
             this.staffManagement.Controls.Add(this.btStaff);
@@ -270,27 +195,6 @@
             this.staffManagement.Size = new System.Drawing.Size(248, 52);
             this.staffManagement.TabIndex = 7;
             // 
-            // btStaff
-            // 
-            this.btStaff.Animated = true;
-            this.btStaff.CheckedState.Parent = this.btStaff;
-            this.btStaff.CustomImages.Parent = this.btStaff;
-            this.btStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btStaff.ForeColor = System.Drawing.Color.White;
-            this.btStaff.HoverState.Parent = this.btStaff;
-            this.btStaff.Image = global::PBL3.UI.Properties.Resources.staff_m_1;
-            this.btStaff.ImageOffset = new System.Drawing.Point(-18, 0);
-            this.btStaff.ImageSize = new System.Drawing.Size(19, 19);
-            this.btStaff.Location = new System.Drawing.Point(-82, 0);
-            this.btStaff.Name = "btStaff";
-            this.btStaff.ShadowDecoration.Parent = this.btStaff;
-            this.btStaff.Size = new System.Drawing.Size(452, 52);
-            this.btStaff.TabIndex = 2;
-            this.btStaff.Text = "Quản lý nhân viên";
-            this.btStaff.TextOffset = new System.Drawing.Point(-7, 0);
-            this.btStaff.Click += new System.EventHandler(this.btStaff_Click);
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.btBusStation);
@@ -299,27 +203,6 @@
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel4.TabIndex = 8;
-            // 
-            // btBusStation
-            // 
-            this.btBusStation.Animated = true;
-            this.btBusStation.CheckedState.Parent = this.btBusStation;
-            this.btBusStation.CustomImages.Parent = this.btBusStation;
-            this.btBusStation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btBusStation.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btBusStation.ForeColor = System.Drawing.Color.White;
-            this.btBusStation.HoverState.Parent = this.btBusStation;
-            this.btBusStation.Image = global::PBL3.UI.Properties.Resources.bus_station_icon;
-            this.btBusStation.ImageOffset = new System.Drawing.Point(-18, 0);
-            this.btBusStation.ImageSize = new System.Drawing.Size(19, 19);
-            this.btBusStation.Location = new System.Drawing.Point(-101, 0);
-            this.btBusStation.Name = "btBusStation";
-            this.btBusStation.ShadowDecoration.Parent = this.btBusStation;
-            this.btBusStation.Size = new System.Drawing.Size(466, 52);
-            this.btBusStation.TabIndex = 2;
-            this.btBusStation.Text = "Quản lý bến xe";
-            this.btBusStation.TextOffset = new System.Drawing.Point(-7, 0);
-            this.btBusStation.Click += new System.EventHandler(this.btBusStation_Click);
             // 
             // BusManagementContainer
             // 
@@ -343,6 +226,202 @@
             this.guna2Panel1.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel1.TabIndex = 4;
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btBus);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 52);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+            this.guna2Panel2.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel2.TabIndex = 5;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.btSeat);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 104);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
+            this.guna2Panel3.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel3.TabIndex = 6;
+            // 
+            // guna2Panel11
+            // 
+            this.guna2Panel11.Controls.Add(this.btRoute);
+            this.guna2Panel11.Location = new System.Drawing.Point(3, 221);
+            this.guna2Panel11.Name = "guna2Panel11";
+            this.guna2Panel11.ShadowDecoration.Parent = this.guna2Panel11;
+            this.guna2Panel11.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel11.TabIndex = 10;
+            // 
+            // guna2Panel12
+            // 
+            this.guna2Panel12.Controls.Add(this.guna2Button7);
+            this.guna2Panel12.Location = new System.Drawing.Point(3, 279);
+            this.guna2Panel12.Name = "guna2Panel12";
+            this.guna2Panel12.ShadowDecoration.Parent = this.guna2Panel12;
+            this.guna2Panel12.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel12.TabIndex = 10;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.Controls.Add(this.guna2Button1);
+            this.guna2Panel5.Location = new System.Drawing.Point(3, 389);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
+            this.guna2Panel5.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel5.TabIndex = 11;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(251, 37);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(850, 608);
+            this.MainPanel.TabIndex = 2;
+            // 
+            // personalContainerTransition
+            // 
+            this.personalContainerTransition.Interval = 10;
+            this.personalContainerTransition.Tick += new System.EventHandler(this.personalContainerTransition_Tick);
+            // 
+            // busManagementTransition
+            // 
+            this.busManagementTransition.Interval = 10;
+            this.busManagementTransition.Tick += new System.EventHandler(this.busManagementTransition_Tick);
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Controls.Add(this.btRevenue);
+            this.guna2Panel6.Location = new System.Drawing.Point(0, 334);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
+            this.guna2Panel6.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel6.TabIndex = 6;
+            // 
+            // btStaffInfo
+            // 
+            this.btStaffInfo.Animated = true;
+            this.btStaffInfo.CheckedState.Parent = this.btStaffInfo;
+            this.btStaffInfo.CustomImages.Parent = this.btStaffInfo;
+            this.btStaffInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btStaffInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btStaffInfo.ForeColor = System.Drawing.Color.White;
+            this.btStaffInfo.HoverState.Parent = this.btStaffInfo;
+            this.btStaffInfo.Image = global::PBL3.UI.Properties.Resources.info_icon;
+            this.btStaffInfo.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btStaffInfo.Location = new System.Drawing.Point(-64, 0);
+            this.btStaffInfo.Name = "btStaffInfo";
+            this.btStaffInfo.ShadowDecoration.Parent = this.btStaffInfo;
+            this.btStaffInfo.Size = new System.Drawing.Size(376, 52);
+            this.btStaffInfo.TabIndex = 2;
+            this.btStaffInfo.Text = "Thông tin cá nhân";
+            this.btStaffInfo.Click += new System.EventHandler(this.btStaffInfo_Click);
+            // 
+            // btInfo
+            // 
+            this.btInfo.Animated = true;
+            this.btInfo.CheckedState.Parent = this.btInfo;
+            this.btInfo.CustomImages.Parent = this.btInfo;
+            this.btInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btInfo.ForeColor = System.Drawing.Color.White;
+            this.btInfo.HoverState.Parent = this.btInfo;
+            this.btInfo.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btInfo.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btInfo.Location = new System.Drawing.Point(-64, 0);
+            this.btInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.btInfo.Name = "btInfo";
+            this.btInfo.ShadowDecoration.Parent = this.btInfo;
+            this.btInfo.Size = new System.Drawing.Size(360, 58);
+            this.btInfo.TabIndex = 2;
+            this.btInfo.Text = "Thông tin cá nhân";
+            this.btInfo.TextOffset = new System.Drawing.Point(-7, 0);
+            // 
+            // btChangeInfo
+            // 
+            this.btChangeInfo.Animated = true;
+            this.btChangeInfo.CheckedState.Parent = this.btChangeInfo;
+            this.btChangeInfo.CustomImages.Parent = this.btChangeInfo;
+            this.btChangeInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btChangeInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btChangeInfo.ForeColor = System.Drawing.Color.White;
+            this.btChangeInfo.HoverState.Parent = this.btChangeInfo;
+            this.btChangeInfo.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btChangeInfo.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btChangeInfo.Location = new System.Drawing.Point(-64, 0);
+            this.btChangeInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.btChangeInfo.Name = "btChangeInfo";
+            this.btChangeInfo.ShadowDecoration.Parent = this.btChangeInfo;
+            this.btChangeInfo.Size = new System.Drawing.Size(360, 58);
+            this.btChangeInfo.TabIndex = 2;
+            this.btChangeInfo.Text = "Thay đổi thông tin";
+            this.btChangeInfo.TextOffset = new System.Drawing.Point(-6, 0);
+            // 
+            // btChangePassword
+            // 
+            this.btChangePassword.Animated = true;
+            this.btChangePassword.CheckedState.Parent = this.btChangePassword;
+            this.btChangePassword.CustomImages.Parent = this.btChangePassword;
+            this.btChangePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btChangePassword.HoverState.Parent = this.btChangePassword;
+            this.btChangePassword.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btChangePassword.ImageOffset = new System.Drawing.Point(-9, 0);
+            this.btChangePassword.Location = new System.Drawing.Point(-68, 0);
+            this.btChangePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.btChangePassword.Name = "btChangePassword";
+            this.btChangePassword.ShadowDecoration.Parent = this.btChangePassword;
+            this.btChangePassword.Size = new System.Drawing.Size(364, 52);
+            this.btChangePassword.TabIndex = 2;
+            this.btChangePassword.Text = "Thay đổi mật khẩu";
+            this.btChangePassword.TextOffset = new System.Drawing.Point(-5, 0);
+            // 
+            // btStaff
+            // 
+            this.btStaff.Animated = true;
+            this.btStaff.CheckedState.Parent = this.btStaff;
+            this.btStaff.CustomImages.Parent = this.btStaff;
+            this.btStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btStaff.ForeColor = System.Drawing.Color.White;
+            this.btStaff.HoverState.Parent = this.btStaff;
+            this.btStaff.Image = global::PBL3.UI.Properties.Resources.staff_m_1;
+            this.btStaff.ImageOffset = new System.Drawing.Point(-18, 0);
+            this.btStaff.ImageSize = new System.Drawing.Size(19, 19);
+            this.btStaff.Location = new System.Drawing.Point(-82, 0);
+            this.btStaff.Name = "btStaff";
+            this.btStaff.ShadowDecoration.Parent = this.btStaff;
+            this.btStaff.Size = new System.Drawing.Size(452, 52);
+            this.btStaff.TabIndex = 2;
+            this.btStaff.Text = "Quản lý nhân viên";
+            this.btStaff.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btStaff.Click += new System.EventHandler(this.btStaff_Click);
+            // 
+            // btBusStation
+            // 
+            this.btBusStation.Animated = true;
+            this.btBusStation.CheckedState.Parent = this.btBusStation;
+            this.btBusStation.CustomImages.Parent = this.btBusStation;
+            this.btBusStation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btBusStation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btBusStation.ForeColor = System.Drawing.Color.White;
+            this.btBusStation.HoverState.Parent = this.btBusStation;
+            this.btBusStation.Image = global::PBL3.UI.Properties.Resources.bus_station_icon;
+            this.btBusStation.ImageOffset = new System.Drawing.Point(-18, 0);
+            this.btBusStation.ImageSize = new System.Drawing.Size(19, 19);
+            this.btBusStation.Location = new System.Drawing.Point(-101, 0);
+            this.btBusStation.Name = "btBusStation";
+            this.btBusStation.ShadowDecoration.Parent = this.btBusStation;
+            this.btBusStation.Size = new System.Drawing.Size(466, 52);
+            this.btBusStation.TabIndex = 2;
+            this.btBusStation.Text = "Quản lý bến xe";
+            this.btBusStation.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btBusStation.Click += new System.EventHandler(this.btBusStation_Click);
+            // 
             // btBusManage
             // 
             this.btBusManage.Animated = true;
@@ -357,20 +436,10 @@
             this.btBusManage.Location = new System.Drawing.Point(-128, 0);
             this.btBusManage.Name = "btBusManage";
             this.btBusManage.ShadowDecoration.Parent = this.btBusManage;
-            this.btBusManage.Size = new System.Drawing.Size(456, 52);
+            this.btBusManage.Size = new System.Drawing.Size(455, 52);
             this.btBusManage.TabIndex = 2;
             this.btBusManage.Text = " Quản lý xe";
             this.btBusManage.Click += new System.EventHandler(this.btBusManage_Click);
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.btBus);
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 52);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel2.TabIndex = 5;
             // 
             // btBus
             // 
@@ -393,16 +462,6 @@
             this.btBus.TextOffset = new System.Drawing.Point(-7, 0);
             this.btBus.Click += new System.EventHandler(this.btBus_Click);
             // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.btSeat);
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 104);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel3.TabIndex = 6;
-            // 
             // btSeat
             // 
             this.btSeat.Animated = true;
@@ -423,15 +482,6 @@
             this.btSeat.Text = "Quản lý ghế";
             this.btSeat.TextOffset = new System.Drawing.Point(-6, 0);
             this.btSeat.Click += new System.EventHandler(this.btSeat_Click);
-            // 
-            // guna2Panel11
-            // 
-            this.guna2Panel11.Controls.Add(this.btRoute);
-            this.guna2Panel11.Location = new System.Drawing.Point(3, 221);
-            this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.ShadowDecoration.Parent = this.guna2Panel11;
-            this.guna2Panel11.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel11.TabIndex = 10;
             // 
             // btRoute
             // 
@@ -454,15 +504,6 @@
             this.btRoute.TextOffset = new System.Drawing.Point(-7, 0);
             this.btRoute.Click += new System.EventHandler(this.btRoute_Click);
             // 
-            // guna2Panel12
-            // 
-            this.guna2Panel12.Controls.Add(this.guna2Button7);
-            this.guna2Panel12.Location = new System.Drawing.Point(3, 279);
-            this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.ShadowDecoration.Parent = this.guna2Panel12;
-            this.guna2Panel12.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel12.TabIndex = 10;
-            // 
             // guna2Button7
             // 
             this.guna2Button7.Animated = true;
@@ -483,15 +524,6 @@
             this.guna2Button7.Text = "Quản lý lịch trình";
             this.guna2Button7.TextOffset = new System.Drawing.Point(-7, 0);
             this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.Controls.Add(this.guna2Button1);
-            this.guna2Panel5.Location = new System.Drawing.Point(3, 337);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel5.TabIndex = 11;
             // 
             // guna2Button1
             // 
@@ -514,23 +546,24 @@
             this.guna2Button1.TextOffset = new System.Drawing.Point(-7, 0);
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // MainPanel
+            // btRevenue
             // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(251, 37);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(850, 608);
-            this.MainPanel.TabIndex = 2;
-            // 
-            // personalContainerTransition
-            // 
-            this.personalContainerTransition.Interval = 10;
-            this.personalContainerTransition.Tick += new System.EventHandler(this.personalContainerTransition_Tick);
-            // 
-            // busManagementTransition
-            // 
-            this.busManagementTransition.Interval = 10;
-            this.busManagementTransition.Tick += new System.EventHandler(this.busManagementTransition_Tick);
+            this.btRevenue.Animated = true;
+            this.btRevenue.CheckedState.Parent = this.btRevenue;
+            this.btRevenue.CustomImages.Parent = this.btRevenue;
+            this.btRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btRevenue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btRevenue.ForeColor = System.Drawing.Color.White;
+            this.btRevenue.HoverState.Parent = this.btRevenue;
+            this.btRevenue.Image = global::PBL3.UI.Properties.Resources.revenue_icon;
+            this.btRevenue.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btRevenue.Location = new System.Drawing.Point(-97, 0);
+            this.btRevenue.Name = "btRevenue";
+            this.btRevenue.ShadowDecoration.Parent = this.btRevenue;
+            this.btRevenue.Size = new System.Drawing.Size(454, 52);
+            this.btRevenue.TabIndex = 12;
+            this.btRevenue.Text = "Quản lý doanh thu";
+            this.btRevenue.Click += new System.EventHandler(this.btRevenue_Click);
             // 
             // AdminForm2
             // 
@@ -559,6 +592,7 @@
             this.guna2Panel11.ResumeLayout(false);
             this.guna2Panel12.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -598,5 +632,7 @@
         private System.Windows.Forms.Timer busManagementTransition;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2Button btRevenue;
     }
 }
