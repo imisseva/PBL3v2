@@ -1,4 +1,5 @@
-﻿using PBL3.BLL.Services;
+﻿using Microsoft.VisualBasic;
+using PBL3.BLL.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,22 +41,24 @@ namespace PBL3.UI
 
                         totalTickets = filtered.Count;
                         totalRevenue = filtered.Sum(t => t.Price);
+                    txtTotalTicket.Text = totalTickets.ToString();
+                    txtTotalRevenue.Text = totalRevenue.ToString("N0") + " VND";
                 }
 
                 else if (selectedType == "Theo tháng")
                 {
                     //code
+                    
                     int month = selectedDate.Month;
                     int year = selectedDate.Year;
                     int revenue = _ticketService.GetRevenueByMonth(month, year);
                     int ticketsCount = tickets
                         .Where(t => t.booking_date.Month == month && t.booking_date.Year == year)
                         .Count();
-                    txtTotalRevenue.Text = revenue.ToString("N0") + " VND";
                     txtTotalTicket.Text = ticketsCount.ToString();
+                    txtTotalRevenue.Text = revenue.ToString("N0") + " VND";
                 }
-                txtTotalTicket.Text = totalTickets.ToString();
-                txtTotalRevenue.Text = totalRevenue.ToString("N0") + " VND";
+               
             }
             else
             {
