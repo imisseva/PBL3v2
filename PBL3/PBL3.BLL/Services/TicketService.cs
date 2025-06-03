@@ -87,6 +87,10 @@ namespace PBL3.BLL.Services
         {
             return _repo.GetRevenueByMonth(month, year);
         }
+        public Dictionary<int, int> GetMonthlyRevenueByYear(int year)
+        {
+            return _repo.GetMonthlyRevenueByYear(year);
+        }
 
     }
 }
