@@ -73,5 +73,30 @@ namespace PBL3.DAL.Repositories
                     .Sum(t => (int?)t.price) ?? 0;
             }
         }
+
+        public Dictionary<int, int> GetMonthlyRevenueByYear(int year)
+        {
+            using (var db = new BusManagement())
+            {
+                // Lấy tất cả vé trong năm đó
+                var tickets = db.Tickets
+                    .Where(t => t.booking_date.Year == year)
+                    .ToList();
+
+                // Tạo Dictionary để lưu doanh thu của từng tháng
+                var revenueByMonth = new Dictionary<int, int>();
+
+                for (int month = 1; month <= 12; month++)
+                {
+                    int revenue = tickets
+                        .Where(t => t.booking_date.Month == month)
+                        .Sum(t => t.price);
+
+                    revenueByMonth[month] = revenue;
+                }
+
+                return revenueByMonth;
+            }
+        }
     }
 }
