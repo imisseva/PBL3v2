@@ -48,9 +48,13 @@
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.RevenueContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.personalContainerTransition = new System.Windows.Forms.Timer(this.components);
             this.busManagementTransition = new System.Windows.Forms.Timer(this.components);
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.RevenueTransition = new System.Windows.Forms.Timer(this.components);
             this.btStaffInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btChangeInfo = new Guna.UI2.WinForms.Guna2Button();
@@ -62,8 +66,10 @@
             this.btSeat = new Guna.UI2.WinForms.Guna2Button();
             this.btRoute = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btRevenue = new Guna.UI2.WinForms.Guna2Button();
+            this.btMonthRevenue = new Guna.UI2.WinForms.Guna2Button();
+            this.btYearRevenue = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.sideBar.SuspendLayout();
             this.PersonalinfoContainer.SuspendLayout();
@@ -80,7 +86,10 @@
             this.guna2Panel11.SuspendLayout();
             this.guna2Panel12.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
-            this.guna2Panel6.SuspendLayout();
+            this.RevenueContainer.SuspendLayout();
+            this.guna2Panel13.SuspendLayout();
+            this.guna2Panel14.SuspendLayout();
+            this.guna2Panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,7 +134,7 @@
             this.sideBar.Controls.Add(this.BusManagementContainer);
             this.sideBar.Controls.Add(this.guna2Panel11);
             this.sideBar.Controls.Add(this.guna2Panel12);
-            this.sideBar.Controls.Add(this.guna2Panel6);
+            this.sideBar.Controls.Add(this.RevenueContainer);
             this.sideBar.Controls.Add(this.guna2Panel5);
             this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBar.Location = new System.Drawing.Point(0, 37);
@@ -281,6 +290,48 @@
             this.MainPanel.Size = new System.Drawing.Size(850, 608);
             this.MainPanel.TabIndex = 2;
             // 
+            // RevenueContainer
+            // 
+            this.RevenueContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.RevenueContainer.Controls.Add(this.guna2Panel13);
+            this.RevenueContainer.Controls.Add(this.guna2Panel14);
+            this.RevenueContainer.Controls.Add(this.guna2Panel15);
+            this.RevenueContainer.Location = new System.Drawing.Point(0, 334);
+            this.RevenueContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.RevenueContainer.Name = "RevenueContainer";
+            this.RevenueContainer.Size = new System.Drawing.Size(248, 52);
+            this.RevenueContainer.TabIndex = 11;
+            // 
+            // guna2Panel13
+            // 
+            this.guna2Panel13.Controls.Add(this.btRevenue);
+            this.guna2Panel13.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.ShadowDecoration.Parent = this.guna2Panel13;
+            this.guna2Panel13.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel13.TabIndex = 4;
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.Controls.Add(this.btMonthRevenue);
+            this.guna2Panel14.Location = new System.Drawing.Point(0, 52);
+            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.ShadowDecoration.Parent = this.guna2Panel14;
+            this.guna2Panel14.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel14.TabIndex = 5;
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.Controls.Add(this.btYearRevenue);
+            this.guna2Panel15.Location = new System.Drawing.Point(0, 104);
+            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.ShadowDecoration.Parent = this.guna2Panel15;
+            this.guna2Panel15.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel15.TabIndex = 6;
+            // 
             // personalContainerTransition
             // 
             this.personalContainerTransition.Interval = 10;
@@ -291,15 +342,10 @@
             this.busManagementTransition.Interval = 10;
             this.busManagementTransition.Tick += new System.EventHandler(this.busManagementTransition_Tick);
             // 
-            // guna2Panel6
+            // RevenueTransition
             // 
-            this.guna2Panel6.Controls.Add(this.btRevenue);
-            this.guna2Panel6.Location = new System.Drawing.Point(0, 334);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
-            this.guna2Panel6.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel6.TabIndex = 6;
+            this.RevenueTransition.Interval = 10;
+            this.RevenueTransition.Tick += new System.EventHandler(this.revenueTransition_Tick);
             // 
             // btStaffInfo
             // 
@@ -525,6 +571,67 @@
             this.guna2Button7.TextOffset = new System.Drawing.Point(-7, 0);
             this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
             // 
+            // btRevenue
+            // 
+            this.btRevenue.Animated = true;
+            this.btRevenue.CheckedState.Parent = this.btRevenue;
+            this.btRevenue.CustomImages.Parent = this.btRevenue;
+            this.btRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btRevenue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btRevenue.ForeColor = System.Drawing.Color.White;
+            this.btRevenue.HoverState.Parent = this.btRevenue;
+            this.btRevenue.Image = global::PBL3.UI.Properties.Resources.revenue_icon;
+            this.btRevenue.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btRevenue.Location = new System.Drawing.Point(-103, 0);
+            this.btRevenue.Name = "btRevenue";
+            this.btRevenue.ShadowDecoration.Parent = this.btRevenue;
+            this.btRevenue.Size = new System.Drawing.Size(454, 52);
+            this.btRevenue.TabIndex = 12;
+            this.btRevenue.Text = "Quản lý doanh thu";
+            this.btRevenue.Click += new System.EventHandler(this.btRevenue_Click);
+            // 
+            // btMonthRevenue
+            // 
+            this.btMonthRevenue.Animated = true;
+            this.btMonthRevenue.CheckedState.Parent = this.btMonthRevenue;
+            this.btMonthRevenue.CustomImages.Parent = this.btMonthRevenue;
+            this.btMonthRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btMonthRevenue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btMonthRevenue.ForeColor = System.Drawing.Color.White;
+            this.btMonthRevenue.HoverState.Parent = this.btMonthRevenue;
+            this.btMonthRevenue.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btMonthRevenue.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btMonthRevenue.Location = new System.Drawing.Point(-116, 0);
+            this.btMonthRevenue.Margin = new System.Windows.Forms.Padding(0);
+            this.btMonthRevenue.Name = "btMonthRevenue";
+            this.btMonthRevenue.ShadowDecoration.Parent = this.btMonthRevenue;
+            this.btMonthRevenue.Size = new System.Drawing.Size(524, 58);
+            this.btMonthRevenue.TabIndex = 2;
+            this.btMonthRevenue.Text = "Quản lý doanh thu tháng";
+            this.btMonthRevenue.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btMonthRevenue.Click += new System.EventHandler(this.btMonthRevenue_Click);
+            // 
+            // btYearRevenue
+            // 
+            this.btYearRevenue.Animated = true;
+            this.btYearRevenue.CheckedState.Parent = this.btYearRevenue;
+            this.btYearRevenue.CustomImages.Parent = this.btYearRevenue;
+            this.btYearRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btYearRevenue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btYearRevenue.ForeColor = System.Drawing.Color.White;
+            this.btYearRevenue.HoverState.Parent = this.btYearRevenue;
+            this.btYearRevenue.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btYearRevenue.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btYearRevenue.Location = new System.Drawing.Point(-116, -6);
+            this.btYearRevenue.Margin = new System.Windows.Forms.Padding(0);
+            this.btYearRevenue.Name = "btYearRevenue";
+            this.btYearRevenue.ShadowDecoration.Parent = this.btYearRevenue;
+            this.btYearRevenue.Size = new System.Drawing.Size(513, 58);
+            this.btYearRevenue.TabIndex = 2;
+            this.btYearRevenue.Text = "Quản lý doanh thu năm";
+            this.btYearRevenue.TextOffset = new System.Drawing.Point(-6, 0);
+            this.btYearRevenue.Click += new System.EventHandler(this.btYearRevenue_Click);
+            // 
             // guna2Button1
             // 
             this.guna2Button1.Animated = true;
@@ -545,25 +652,6 @@
             this.guna2Button1.Text = "Đăng xuất";
             this.guna2Button1.TextOffset = new System.Drawing.Point(-7, 0);
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // btRevenue
-            // 
-            this.btRevenue.Animated = true;
-            this.btRevenue.CheckedState.Parent = this.btRevenue;
-            this.btRevenue.CustomImages.Parent = this.btRevenue;
-            this.btRevenue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btRevenue.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btRevenue.ForeColor = System.Drawing.Color.White;
-            this.btRevenue.HoverState.Parent = this.btRevenue;
-            this.btRevenue.Image = global::PBL3.UI.Properties.Resources.revenue_icon;
-            this.btRevenue.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btRevenue.Location = new System.Drawing.Point(-97, 0);
-            this.btRevenue.Name = "btRevenue";
-            this.btRevenue.ShadowDecoration.Parent = this.btRevenue;
-            this.btRevenue.Size = new System.Drawing.Size(454, 52);
-            this.btRevenue.TabIndex = 12;
-            this.btRevenue.Text = "Quản lý doanh thu";
-            this.btRevenue.Click += new System.EventHandler(this.btRevenue_Click);
             // 
             // AdminForm2
             // 
@@ -592,7 +680,10 @@
             this.guna2Panel11.ResumeLayout(false);
             this.guna2Panel12.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel6.ResumeLayout(false);
+            this.RevenueContainer.ResumeLayout(false);
+            this.guna2Panel13.ResumeLayout(false);
+            this.guna2Panel14.ResumeLayout(false);
+            this.guna2Panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -632,7 +723,13 @@
         private System.Windows.Forms.Timer busManagementTransition;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Button btRevenue;
+        private System.Windows.Forms.FlowLayoutPanel RevenueContainer;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
+        private Guna.UI2.WinForms.Guna2Button btMonthRevenue;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private Guna.UI2.WinForms.Guna2Button btYearRevenue;
+        private System.Windows.Forms.Timer RevenueTransition;
     }
 }

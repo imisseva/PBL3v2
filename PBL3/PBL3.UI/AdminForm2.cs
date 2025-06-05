@@ -132,11 +132,43 @@ namespace PBL3.UI
             MainPanel.Visible = true;
             LoadFormToPanel(new ScheduleView());
         }
-
+        bool revenueExpand = false;
+        private void revenueTransition_Tick(object sender, EventArgs e)
+        {
+            if (revenueExpand == false)
+            {
+                RevenueContainer.Height += 10;
+                if (RevenueContainer.Height >= 125)
+                {
+                    RevenueTransition.Stop();
+                    revenueExpand = true;
+                }
+            }
+            else
+            {
+                RevenueContainer.Height -= 10;
+                if (RevenueContainer.Height <= 49)
+                {
+                    RevenueTransition.Stop();
+                    revenueExpand = false;
+                }
+            }
+        }
         private void btRevenue_Click(object sender, EventArgs e)
+        {
+            RevenueTransition.Start();
+        }
+
+        private void btMonthRevenue_Click(object sender, EventArgs e)
         {
             MainPanel.Visible = true;
             LoadFormToPanel(new RevenueView());
+        }
+
+        private void btYearRevenue_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new YearRevenueView());
         }
     }
 }
