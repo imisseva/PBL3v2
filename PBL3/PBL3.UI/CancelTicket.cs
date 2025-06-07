@@ -72,7 +72,7 @@ namespace PBL3.UI
             var ticket = TicketService.GetTicketByID(ticketId);
             if (ticket != null)
             {
-                dgv2.DataSource = new List<TicketDTO> { ticket }; // Hiển thị vé tìm được
+                dgv2.DataSource = new List<TicketDTO> { ticket };
             }
             else
             {

@@ -43,6 +43,7 @@
             this.btFind.TabIndex = 9;
             this.btFind.Text = "tìm kiếm";
             this.btFind.UseVisualStyleBackColor = true;
+            this.btFind.Click += new System.EventHandler(this.btFind_Click);
             // 
             // dgv2
             // 
