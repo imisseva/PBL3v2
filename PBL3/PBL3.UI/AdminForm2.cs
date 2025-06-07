@@ -27,31 +27,7 @@ namespace PBL3.UI
             MainPanel.Controls.Add(frm);
             frm.Show();
         }
-
-        bool personalinfoExpand = false;
-        private void personalContainerTransition_Tick(object sender, EventArgs e)
-        {
-            if (personalinfoExpand == false)
-            {
-                PersonalinfoContainer.Height += 10;
-                if (PersonalinfoContainer.Height >= 165)
-                {
-                    personalContainerTransition.Stop();
-                    personalinfoExpand = true;
-                }
-            }
-            else
-            {
-                PersonalinfoContainer.Height -= 10;
-                if (PersonalinfoContainer.Height <= 49)
-                {
-                    personalContainerTransition.Stop();
-                    personalinfoExpand = false;
-
-                }
-            }
-        }
-
+   
         private void btStaffInfo_Click(object sender, EventArgs e)
         {
             personalContainerTransition.Start();
