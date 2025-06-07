@@ -1,5 +1,6 @@
 ﻿using PBL3.DAL.Context;
 using PBL3.DAL.Entities;
+using PBL3.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,21 @@ namespace PBL3.DAL.Repositories
                     db.SEATs.Remove(seat);
                     db.SaveChanges();
                 }
+            }
+        }
+        public List<SeatDTO> GetSeatsByBusID(string busID)
+        {
+            using (var db = new BusManagement())
+            {
+                return db.SEATs
+                    .Where(s => s.ID_bus == busID)
+                    .Select(s => new SeatDTO
+                    {
+                        ID_seat = s.ID_seat,
+                        ID_bus = s.ID_bus,
+                        seat_number = s.seat_number,
+                        type = s.type
+                    }).ToList();
             }
         }
     }

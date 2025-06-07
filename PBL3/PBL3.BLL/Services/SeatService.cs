@@ -58,8 +58,8 @@ namespace PBL3.BLL.Services
 
         public List<SeatDTO> GetSeatsByBusID(string busID)
         {
-            return _repo.GetAll()
-                .Where(s => s.ID_bus == busID)
+            if (string.IsNullOrWhiteSpace(busID)) throw new ArgumentException("Bus ID không hợp lệ");
+            return _repo.GetSeatsByBusID(busID)
                 .Select(s => new SeatDTO
                 {
                     ID_seat = s.ID_seat,
@@ -68,6 +68,5 @@ namespace PBL3.BLL.Services
                     type = s.type
                 }).ToList();
         }
-
     }
 }

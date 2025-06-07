@@ -20,12 +20,13 @@ namespace PBL3
         public SeatView()
         {
             InitializeComponent();
-            LoadSeatData();
+            LoadBusList();
+            //LoadSeatData();
         }
 
-        private void LoadSeatData(string keyword = "")
+        private void LoadSeatData(string busId)
         {
-            var list = seatService.GetSeats(keyword);
+            var list = seatService.GetSeatsByBusID(busId); // Hàm này bạn cần viết trong service
             dgv.DataSource = list;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -38,6 +39,15 @@ namespace PBL3
                 dgv.Columns["seat_number"].HeaderText = "Số Ghế";
                 dgv.Columns["type"].HeaderText = "Loại Ghế";
             }
+        }
+
+        private void LoadBusList()
+        {
+            var busService = new BusService();
+            var buses = busService.GetBuses();
+            cbbPickBus.DataSource = buses;
+            cbbPickBus.DisplayMember = "ID_bus";
+            cbbPickBus.ValueMember = "ID_bus";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -64,7 +74,7 @@ namespace PBL3
                 {
                     seatService.AddSeat(dto);
                     MessageBox.Show("Thêm ghế thành công!");
-                    LoadSeatData();
+                    //LoadSeatData();
                 }
                 catch (Exception ex)
                 {
@@ -99,7 +109,7 @@ namespace PBL3
                     dto.seat_number = form.SeatNumber;
                     dto.type = form.SeatType;
                     seatService.UpdateSeat(dto);
-                    LoadSeatData();
+                    //LoadSeatData();
                 }
             }
         }
@@ -110,7 +120,7 @@ namespace PBL3
             {
                 string id = dgv.CurrentRow.Cells["ID_seat"].Value.ToString();
                 seatService.DeleteSeat(id);
-                LoadSeatData();
+                //LoadSeatData();
             }
         }
     }

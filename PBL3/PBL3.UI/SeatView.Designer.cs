@@ -34,19 +34,20 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.cbbPickBus = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(13, 13);
+            this.txtSearch.Location = new System.Drawing.Point(29, 140);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(295, 22);
             this.txtSearch.TabIndex = 8;
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(707, 13);
+            this.btnDel.Location = new System.Drawing.Point(696, 49);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(99, 23);
             this.btnDel.TabIndex = 4;
@@ -56,7 +57,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(586, 13);
+            this.btnEdit.Location = new System.Drawing.Point(571, 49);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 23);
             this.btnEdit.TabIndex = 5;
@@ -66,7 +67,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(458, 12);
+            this.btnAdd.Location = new System.Drawing.Point(448, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 23);
             this.btnAdd.TabIndex = 6;
@@ -76,7 +77,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(314, 13);
+            this.btnSearch.Location = new System.Drawing.Point(328, 49);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(105, 23);
             this.btnSearch.TabIndex = 7;
@@ -87,18 +88,38 @@
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(-1, 52);
+            this.dgv.Location = new System.Drawing.Point(-4, 191);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(851, 509);
             this.dgv.TabIndex = 3;
             // 
+            // cbbPickBus
+            // 
+            this.cbbPickBus.BackColor = System.Drawing.Color.Transparent;
+            this.cbbPickBus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbPickBus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPickBus.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbPickBus.FocusedState.Parent = this.cbbPickBus;
+            this.cbbPickBus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbPickBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbPickBus.FormattingEnabled = true;
+            this.cbbPickBus.HoverState.Parent = this.cbbPickBus;
+            this.cbbPickBus.ItemHeight = 30;
+            this.cbbPickBus.ItemsAppearance.Parent = this.cbbPickBus;
+            this.cbbPickBus.Location = new System.Drawing.Point(12, 36);
+            this.cbbPickBus.Name = "cbbPickBus";
+            this.cbbPickBus.ShadowDecoration.Parent = this.cbbPickBus;
+            this.cbbPickBus.Size = new System.Drawing.Size(184, 36);
+            this.cbbPickBus.TabIndex = 9;
+            // 
             // SeatView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 608);
+            this.Controls.Add(this.cbbPickBus);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
@@ -122,5 +143,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgv;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbPickBus;
     }
 }
