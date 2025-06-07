@@ -40,6 +40,8 @@
             this.txtDistance = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.OK = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +135,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // OK
+            // 
+            this.OK.Location = new System.Drawing.Point(227, 392);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(75, 23);
+            this.OK.TabIndex = 4;
+            this.OK.Text = "OK";
+            this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(481, 391);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // RouteDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.OK);
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtDistance);
             this.Controls.Add(this.txtID);
@@ -170,5 +194,7 @@
         private System.Windows.Forms.TextBox txtDistance;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button OK;
     }
 }
