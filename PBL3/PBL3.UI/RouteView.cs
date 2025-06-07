@@ -66,8 +66,8 @@ namespace PBL3
                     ID_route = form.RouteID,
                     Distance = form.RouteDistance,
                     Time = form.RouteTime,
-                    Name_Station_start = form.StationStartName,
-                    Name_Station_end = form.StationEndName
+                    ID_Station_start = form.StationStartName,
+                    ID_Station_end = form.StationEndName
                 };
                 try
                 {
@@ -111,8 +111,8 @@ namespace PBL3
                 dto.ID_route = form.RouteID;
                 dto.Distance = form.RouteDistance;
                 dto.Time = form.RouteTime;
-                dto.Name_Station_start = form.StationStartName;
-                dto.Name_Station_end = form.StationEndName;
+                dto.ID_Station_start = form.StationStartName;
+                dto.ID_Station_end = form.StationEndName;
                 try
                 {
                     routeService.UpdateRoute(dto);

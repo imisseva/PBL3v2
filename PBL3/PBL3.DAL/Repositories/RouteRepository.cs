@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using PBL3.DAL.Context;
@@ -49,7 +51,25 @@ namespace PBL3.DAL.Repositories
                     distance = dto.Distance,
                     time = dto.Time
                 });
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Console.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" has the following validation errors:");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Console.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+
+                    throw; // Có thể comment nếu bạn không muốn dừng chương trình
+                }
+
+
             }
         }
 

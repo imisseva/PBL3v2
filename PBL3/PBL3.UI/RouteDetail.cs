@@ -55,7 +55,7 @@ namespace PBL3
             {
                 if (cbStartSt.SelectedItem is StationDTO station)
                 {
-                    return station.Name_station;
+                    return station.ID_station;
                 }
                 return string.Empty;
             }
@@ -66,7 +66,7 @@ namespace PBL3
             {
                 if (cbEndSt.SelectedItem is StationDTO station)
                 {
-                    return station.Name_station;
+                    return station.ID_station;
                 }
                 return string.Empty;
             }
@@ -131,11 +131,12 @@ namespace PBL3
         private void RouteDetail_Load_1()
         {
             // Load danh sách ga vào ComboBox
-            var stations = stationService.GetStations();
-            cbStartSt.DataSource = stations;
+            var stations1 = stationService.GetStations();
+            var stations2 = stationService.GetStations();
+            cbStartSt.DataSource = stations1;
             cbStartSt.DisplayMember = "Name_station";
             cbStartSt.ValueMember = "ID_station";
-            cbEndSt.DataSource = stations;
+            cbEndSt.DataSource = stations2;
             cbEndSt.DisplayMember = "Name_station";
             cbEndSt.ValueMember = "ID_station";
         }
