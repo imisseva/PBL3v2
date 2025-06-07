@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using PBL3.BLL.Services;
 
 namespace PBL3
 {
@@ -46,6 +47,14 @@ namespace PBL3
 
         private void SeatDetail_Load(object sender, EventArgs e)
         {
+            var busService = new PBL3.BLL.Services.BusService();
+            var buses = busService.GetBuses();
+
+            cbIDBus.DataSource = buses;
+            cbIDBus.DisplayMember = "ID_bus";    
+            cbIDBus.ValueMember = "ID_bus";
+
+
             cbType.DataSource = new[]
             {
         new { Text = "giường nằm", Value = "giường nằm" },
