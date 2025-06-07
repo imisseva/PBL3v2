@@ -31,21 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btCLose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pnPass = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lbPassword = new System.Windows.Forms.Label();
             this.pnUser = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lbUser = new System.Windows.Forms.Label();
+            this.pnPass = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,8 +52,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            this.pnPass.SuspendLayout();
             this.pnUser.SuspendLayout();
+            this.pnPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +72,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.btMinimize);
             this.panel2.Controls.Add(this.btLogin);
             this.panel2.Controls.Add(this.btCLose);
@@ -88,18 +86,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(575, 650);
             this.panel2.TabIndex = 1;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.linkLabel1.Location = new System.Drawing.Point(354, 356);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(129, 19);
-            this.linkLabel1.TabIndex = 17;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot password?";
             // 
             // btMinimize
             // 
@@ -125,7 +111,7 @@
             this.btLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btLogin.ForeColor = System.Drawing.Color.White;
             this.btLogin.HoverState.Parent = this.btLogin;
-            this.btLogin.Location = new System.Drawing.Point(117, 396);
+            this.btLogin.Location = new System.Drawing.Point(237, 365);
             this.btLogin.Name = "btLogin";
             this.btLogin.ShadowDecoration.Parent = this.btLogin;
             this.btLogin.Size = new System.Drawing.Size(134, 40);
@@ -158,27 +144,49 @@
             this.label10.Text = "nguyenphong12a1nh3@gmail.com";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // label9
+            // pnUser
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(39, 581);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 19);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "submit an email to: ";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.pnUser.BackColor = System.Drawing.Color.White;
+            this.pnUser.Controls.Add(this.panel3);
+            this.pnUser.Controls.Add(this.txtUsername);
+            this.pnUser.Controls.Add(this.lbUser);
+            this.pnUser.Location = new System.Drawing.Point(0, 216);
+            this.pnUser.Name = "pnUser";
+            this.pnUser.Size = new System.Drawing.Size(573, 45);
+            this.pnUser.TabIndex = 6;
+            this.pnUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnUser_Paint);
             // 
-            // label8
+            // panel3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(39, 565);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(353, 19);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "To obtain access this App or any question about it";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(117, 39);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(380, 1);
+            this.panel3.TabIndex = 8;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.txtUsername.Location = new System.Drawing.Point(117, 17);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(390, 20);
+            this.txtUsername.TabIndex = 7;
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.Location = new System.Drawing.Point(6, 14);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(98, 21);
+            this.lbUser.TabIndex = 7;
+            this.lbUser.Text = "Username:";
+            this.lbUser.Click += new System.EventHandler(this.lbUser_Click);
             // 
             // pnPass
             // 
@@ -224,49 +232,27 @@
             this.lbPassword.Text = "Password:";
             this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
             // 
-            // pnUser
+            // label9
             // 
-            this.pnUser.BackColor = System.Drawing.Color.White;
-            this.pnUser.Controls.Add(this.panel3);
-            this.pnUser.Controls.Add(this.txtUsername);
-            this.pnUser.Controls.Add(this.lbUser);
-            this.pnUser.Location = new System.Drawing.Point(0, 216);
-            this.pnUser.Name = "pnUser";
-            this.pnUser.Size = new System.Drawing.Size(573, 45);
-            this.pnUser.TabIndex = 6;
-            this.pnUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnUser_Paint);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(39, 581);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(145, 19);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "submit an email to: ";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // panel3
+            // label8
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(117, 39);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(380, 1);
-            this.panel3.TabIndex = 8;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.txtUsername.Location = new System.Drawing.Point(117, 17);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(390, 20);
-            this.txtUsername.TabIndex = 7;
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
-            // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.Location = new System.Drawing.Point(6, 14);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(98, 21);
-            this.lbUser.TabIndex = 7;
-            this.lbUser.Text = "Username:";
-            this.lbUser.Click += new System.EventHandler(this.lbUser_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(39, 565);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(353, 19);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "To obtain access this App or any question about it";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox1
             // 
@@ -353,10 +339,10 @@
             this.Text = "LoginForm";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.pnPass.ResumeLayout(false);
-            this.pnPass.PerformLayout();
             this.pnUser.ResumeLayout(false);
             this.pnUser.PerformLayout();
+            this.pnPass.ResumeLayout(false);
+            this.pnPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -379,7 +365,6 @@
         private Guna.UI2.WinForms.Guna2Button btLogin;
         private Guna.UI2.WinForms.Guna2ControlBox btCLose;
         private Guna.UI2.WinForms.Guna2ControlBox btMinimize;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel pnPass;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtPassword;
