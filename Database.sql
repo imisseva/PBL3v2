@@ -133,3 +133,4 @@ ADD CONSTRAINT FK_Schedule_Route
 FOREIGN KEY (ID_route) REFERENCES Route(ID_route);
 ALTER TABLE Schedule
 DROP COLUMN distance;
+ALTER TABLE Staff ADD ImagePath NVARCHAR(255);
