@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDetail));
             this.txtID = new System.Windows.Forms.TextBox();
             this.lbID = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,13 +51,13 @@
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.cbbStation = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(209, 256);
+            this.txtID.Location = new System.Drawing.Point(188, 263);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 22);
             this.txtID.TabIndex = 58;
@@ -67,20 +66,19 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(167, 256);
+            this.lbID.Location = new System.Drawing.Point(146, 263);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(36, 23);
             this.lbID.TabIndex = 57;
             this.lbID.Text = "ID: ";
             // 
-            // pictureBox1
+            // pictureBoxAvatar
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(139, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(288, 261);
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(139, 53);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(152, 159);
+            this.pictureBoxAvatar.TabIndex = 56;
+            this.pictureBoxAvatar.TabStop = false;
             // 
             // txtEmail
             // 
@@ -267,7 +265,7 @@
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lbID);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxAvatar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
@@ -286,7 +284,7 @@
             this.Name = "StaffDetail";
             this.Text = "StaffDetail";
             this.Load += new System.EventHandler(this.StaffDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,7 +293,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxAvatar;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;

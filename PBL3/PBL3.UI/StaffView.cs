@@ -21,8 +21,6 @@ namespace PBL3.UI
             List<StaffDTO> staffList = staffService.GetAllStaff();
             dgvStaff.DataSource = staffList;
 
-
-            
             dgvStaff.Columns["Name"].HeaderText = "Họ tên";
             dgvStaff.Columns["email"].HeaderText = "Email";
             dgvStaff.Columns["phone"].HeaderText = "Số điện thoại";
@@ -36,15 +34,15 @@ namespace PBL3.UI
 
             if (dgvStaff.Columns.Contains("ID_account"))
             {
-                dgvStaff.Columns["ID_account"].Visible = false; 
+                dgvStaff.Columns["ID_account"].Visible = false;
             }
 
             if (dgvStaff.Columns.Contains("AvatarImage"))
             {
                 dgvStaff.Columns["AvatarImage"].Visible = false;
-               
             }
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim();
@@ -72,7 +70,8 @@ namespace PBL3.UI
                     Dob = form.StaffDateOfBirth,
                     NoiSinh = form.StaffPlaceOfBirth,
                     Gender = form.StaffGender,
-                    ID_station = form.StaffStationID
+                    ID_station = form.StaffStationID,
+                    AvatarImage = form.StaffAvatar // Lưu cả ảnh đại diện khi thêm mới
                 };
 
                 try
@@ -90,9 +89,9 @@ namespace PBL3.UI
                     }
                     MessageBox.Show("Không thể thêm nhân viên: " + errorMsg);
                 }
-
             }
         }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (dgvStaff.SelectedRows.Count == 0)
@@ -125,7 +124,8 @@ namespace PBL3.UI
                 StaffPlaceOfBirth = staff.NoiSinh,
                 StaffCCCD = staff.CCCD,
                 StaffGender = staff.Gender,
-                StaffStationID = staff.ID_station
+                StaffStationID = staff.ID_station,
+                StaffAvatar = staff.AvatarImage // Truyền đúng property ảnh đại diện
             };
 
             if (form.ShowDialog() == DialogResult.OK)
@@ -140,6 +140,7 @@ namespace PBL3.UI
                 staff.CCCD = form.StaffCCCD;
                 staff.Gender = form.StaffGender;
                 staff.ID_station = form.StaffStationID;
+                staff.AvatarImage = form.StaffAvatar; // Nếu thay đổi ảnh đại diện
 
                 try
                 {
@@ -158,6 +159,7 @@ namespace PBL3.UI
                 }
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvStaff.SelectedRows.Count == 0)

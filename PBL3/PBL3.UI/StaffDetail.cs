@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PBL3.BLL.Services;
+﻿using PBL3.BLL.Services;
 using PBL3.UI;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PBL3
 {
@@ -18,7 +12,6 @@ namespace PBL3
         public StaffDetail()
         {
             InitializeComponent();
-
         }
 
         public bool IsEditMode { get; set; } = false;
@@ -83,17 +76,40 @@ namespace PBL3
             set => cbbStation.Text = value;
         }
 
+        // Property để nhận dữ liệu ảnh đại diện (byte[])
+        public byte[] StaffAvatar { get; set; }
+
         private void StaffDetail_Load(object sender, EventArgs e)
         {
             var stations = _stationService.GetStations();
             cbbStation.DataSource = stations;
-            cbbStation.DisplayMember = "ID_station"; 
-            cbbStation.ValueMember = "ID_station";   
+            cbbStation.DisplayMember = "ID_station";
+            cbbStation.ValueMember = "ID_station";
 
             if (IsEditMode)
             {
                 txtID.Enabled = false;
                 cbbStation.SelectedValue = StaffStationID;
+
+                // Hiển thị ảnh đại diện nếu có
+                if (StaffAvatar != null && StaffAvatar.Length > 0)
+                {
+                    try
+                    {
+                        using (var ms = new System.IO.MemoryStream(StaffAvatar))
+                        {
+                            pictureBoxAvatar.Image = Image.FromStream(ms);
+                        }
+                    }
+                    catch
+                    {
+                        pictureBoxAvatar.Image = null;
+                    }
+                }
+                else
+                {
+                    pictureBoxAvatar.Image = null;
+                }
             }
             else
             {
@@ -108,9 +124,9 @@ namespace PBL3
                 txtCCCD.Clear();
                 txtGender.Clear();
                 cbbStation.SelectedIndex = -1;
+                pictureBoxAvatar.Image = null;
             }
         }
-
 
         private void btOK_Click(object sender, EventArgs e)
         {
@@ -150,8 +166,6 @@ namespace PBL3
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-
-
 
         private void btCancel_Click(object sender, EventArgs e)
         {

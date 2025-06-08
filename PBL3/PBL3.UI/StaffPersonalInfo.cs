@@ -61,27 +61,39 @@ namespace PBL3
 
         private void btUpload_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Title = "Chọn ảnh đại diện mới";
-            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-
-            if (ofd.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                pictureBoxAvatar.Image = Image.FromFile(ofd.FileName);
-                byte[] avatarBytes;
-                using (MemoryStream ms = new MemoryStream())
+                ofd.Title = "Chọn ảnh đại diện mới";
+                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    pictureBoxAvatar.Image.Save(ms, pictureBoxAvatar.Image.RawFormat);
-                    avatarBytes = ms.ToArray();
-                }
-                var staff = _staffService.GetById(Session.LoggedAccountId);
-                if (staff != null)
-                {
-                    staff.AvatarImage = avatarBytes;
-                    _staffService.UpdateStaff(staff);
-                    MessageBox.Show("Cập nhật ảnh đại diện thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (pictureBoxAvatar.Image != null)
+                    {
+                        pictureBoxAvatar.Image.Dispose();
+                        pictureBoxAvatar.Image = null;
+                    }
+                    using (var tempImage = Image.FromFile(ofd.FileName))
+                    {
+                        pictureBoxAvatar.Image = new Bitmap(tempImage);
+                    }
+
+                    byte[] avatarBytes;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        // Luôn dùng định dạng phổ biến, không dùng RawFormat
+                        pictureBoxAvatar.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        avatarBytes = ms.ToArray();
+                    }
+                    var staff = _staffService.GetById(Session.LoggedAccountId);
+                    if (staff != null)
+                    {
+                        staff.AvatarImage = avatarBytes;
+                        _staffService.UpdateStaff(staff);
+                        MessageBox.Show("Cập nhật ảnh đại diện thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
     }
 }
+
