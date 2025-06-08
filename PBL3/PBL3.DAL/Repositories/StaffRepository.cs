@@ -81,9 +81,15 @@ namespace PBL3.DAL.Repositories
                     existingStaff.DOB = staff.DOB;
                     existingStaff.NoiSinh = staff.NoiSinh;
                     existingStaff.CCCD = staff.CCCD;
+                    
+                    if (staff.AvatarImage != null)
+                    {
+                        existingStaff.AvatarImage = staff.AvatarImage;
+                    }
                     db.SaveChanges();
                 }
             }
         }
+    
     }
 }

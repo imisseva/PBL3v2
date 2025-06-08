@@ -21,7 +21,8 @@ namespace PBL3.UI
             List<StaffDTO> staffList = staffService.GetAllStaff();
             dgvStaff.DataSource = staffList;
 
-            dgvStaff.Columns["ID_account"].HeaderText = "Mã tài khoản";
+
+            
             dgvStaff.Columns["Name"].HeaderText = "Họ tên";
             dgvStaff.Columns["email"].HeaderText = "Email";
             dgvStaff.Columns["phone"].HeaderText = "Số điện thoại";
@@ -31,8 +32,19 @@ namespace PBL3.UI
             dgvStaff.Columns["Gender"].HeaderText = "Giới tính";
             dgvStaff.Columns["CCCD"].HeaderText = "CCCD";
             dgvStaff.Columns["ID_station"].HeaderText = "Mã bến xe làm việc";
-        }
+            dgvStaff.Columns["AvatarImage"].HeaderText = "Ảnh đại diện";
 
+            if (dgvStaff.Columns.Contains("ID_account"))
+            {
+                dgvStaff.Columns["ID_account"].Visible = false; 
+            }
+
+            if (dgvStaff.Columns.Contains("AvatarImage"))
+            {
+                dgvStaff.Columns["AvatarImage"].Visible = false;
+               
+            }
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim();

@@ -19,5 +19,6 @@
             public string Gender { get; set; }
             public string ID_station { get; set; }
             public byte[] AvatarImage { get; set; }
+        
     }
 }

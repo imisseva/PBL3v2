@@ -1,6 +1,9 @@
 ﻿using PBL3.BLL.Services;
 using PBL3.DTO;
+using PBL3.UI;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -35,6 +38,49 @@ namespace PBL3
                 txtNoiSinh.Text = staff.NoiSinh;
                 txtCCCD.Text = staff.CCCD;
                 txtID.Text = staff.ID_account.ToString();
+
+                if (staff.AvatarImage != null)
+                {
+                    using (var ms = new MemoryStream(staff.AvatarImage))
+                    {
+                        pictureBoxAvatar.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    pictureBoxAvatar.Image = null; // hoặc hình mặc định
+                }
+            }
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            StaffUpdateInfo staffUpdateInfo = new StaffUpdateInfo();
+            staffUpdateInfo.ShowDialog();
+        }
+
+        private void btUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Chọn ảnh đại diện mới";
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxAvatar.Image = Image.FromFile(ofd.FileName);
+                byte[] avatarBytes;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pictureBoxAvatar.Image.Save(ms, pictureBoxAvatar.Image.RawFormat);
+                    avatarBytes = ms.ToArray();
+                }
+                var staff = _staffService.GetById(Session.LoggedAccountId);
+                if (staff != null)
+                {
+                    staff.AvatarImage = avatarBytes;
+                    _staffService.UpdateStaff(staff);
+                    MessageBox.Show("Cập nhật ảnh đại diện thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

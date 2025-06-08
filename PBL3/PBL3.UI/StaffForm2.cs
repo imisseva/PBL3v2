@@ -69,7 +69,7 @@ namespace PBL3.UI
             if (personalinfoExpand == false)
             {
                 PersonalinfoContainer.Height += 10;
-                if (PersonalinfoContainer.Height >= 165)
+                if (PersonalinfoContainer.Height >= 125)
                 {
                     PersonalinfoTransition.Stop();
                     personalinfoExpand = true;
@@ -141,11 +141,6 @@ namespace PBL3.UI
             LoadFormToPanel(new ChangePassword());
         }
 
-        private void btChangeInfo_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = true;
-            LoadFormToPanel(new StaffUpdateInfo());
-
-        }
+        
     }
 }

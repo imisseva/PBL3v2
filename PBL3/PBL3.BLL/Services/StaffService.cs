@@ -29,6 +29,7 @@ namespace PBL3.BLL.Services
                     Gender = s.Gender,
                     CCCD = s.CCCD,
                     ID_station = s.ID_station,
+                    AvatarImage = s.AvatarImage
                     
                 }).ToList();
         }
@@ -48,7 +49,9 @@ namespace PBL3.BLL.Services
                      Gender = s.Gender,
                      CCCD = s.CCCD,
                      ID_station = s.ID_station,
-                    
+                     AvatarImage = s.AvatarImage
+
+
                  }).ToList();
         }
         public StaffDTO GetById(int id)
@@ -64,10 +67,11 @@ namespace PBL3.BLL.Services
                 phone = staff.phone,
                 CCCD = staff.CCCD,
                 home_address = staff.home_address,
-                Dob = staff.DOB ?? System.DateTime.MinValue,
+                Dob = staff.DOB ?? DateTime.MinValue,
                 NoiSinh = staff.NoiSinh,
                 Gender = staff.Gender,
-                ID_station = staff.ID_station
+                ID_station = staff.ID_station,
+                AvatarImage = staff.AvatarImage 
             };
         }
 
@@ -85,6 +89,7 @@ namespace PBL3.BLL.Services
                 Gender = staff.Gender,
                 CCCD = staff.CCCD,
                 ID_station = staff.ID_station,
+                AvatarImage = staff.AvatarImage
             });
         }
         public void DeleteStaff(int id)
@@ -104,7 +109,9 @@ namespace PBL3.BLL.Services
                 Gender = dto.Gender,
                 NoiSinh = dto.NoiSinh,
                 CCCD = dto.CCCD,
+                AvatarImage = dto.AvatarImage
             });  
         }
+       
     }
 }

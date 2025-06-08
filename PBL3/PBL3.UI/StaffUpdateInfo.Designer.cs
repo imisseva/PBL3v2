@@ -65,7 +65,7 @@
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
-            this.txtName.Location = new System.Drawing.Point(380, 199);
+            this.txtName.Location = new System.Drawing.Point(240, 123);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -91,7 +91,7 @@
             this.txtGender.ForeColor = System.Drawing.Color.Black;
             this.txtGender.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGender.HoverState.Parent = this.txtGender;
-            this.txtGender.Location = new System.Drawing.Point(380, 409);
+            this.txtGender.Location = new System.Drawing.Point(240, 333);
             this.txtGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGender.Name = "txtGender";
             this.txtGender.PasswordChar = '\0';
@@ -117,7 +117,7 @@
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.HoverState.Parent = this.txtPhone;
-            this.txtPhone.Location = new System.Drawing.Point(380, 379);
+            this.txtPhone.Location = new System.Drawing.Point(240, 303);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
@@ -142,7 +142,7 @@
             this.txtCCCD.ForeColor = System.Drawing.Color.Black;
             this.txtCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCCCD.HoverState.Parent = this.txtCCCD;
-            this.txtCCCD.Location = new System.Drawing.Point(380, 349);
+            this.txtCCCD.Location = new System.Drawing.Point(240, 273);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.PasswordChar = '\0';
@@ -168,7 +168,7 @@
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.HoverState.Parent = this.txtAddress;
-            this.txtAddress.Location = new System.Drawing.Point(380, 319);
+            this.txtAddress.Location = new System.Drawing.Point(240, 243);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
@@ -193,7 +193,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(380, 229);
+            this.txtEmail.Location = new System.Drawing.Point(240, 153);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -219,7 +219,7 @@
             this.txtID.ForeColor = System.Drawing.Color.Black;
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID.HoverState.Parent = this.txtID;
-            this.txtID.Location = new System.Drawing.Point(380, 169);
+            this.txtID.Location = new System.Drawing.Point(240, 93);
             this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
@@ -240,7 +240,7 @@
             this.btUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btUpdate.ForeColor = System.Drawing.Color.White;
             this.btUpdate.HoverState.Parent = this.btUpdate;
-            this.btUpdate.Location = new System.Drawing.Point(380, 483);
+            this.btUpdate.Location = new System.Drawing.Point(240, 407);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.ShadowDecoration.Parent = this.btUpdate;
             this.btUpdate.Size = new System.Drawing.Size(148, 31);
@@ -253,7 +253,7 @@
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.Image = global::PBL3.UI.Properties.Resources.ID_icon;
             this.lbID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbID.Location = new System.Drawing.Point(207, 169);
+            this.lbID.Location = new System.Drawing.Point(67, 93);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(123, 23);
             this.lbID.TabIndex = 59;
@@ -265,7 +265,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Image = global::PBL3.UI.Properties.Resources.dob_icon;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(207, 259);
+            this.label4.Location = new System.Drawing.Point(67, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 23);
             this.label4.TabIndex = 53;
@@ -277,7 +277,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::PBL3.UI.Properties.Resources.email_icon;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(207, 229);
+            this.label2.Location = new System.Drawing.Point(67, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 51;
@@ -289,7 +289,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::PBL3.UI.Properties.Resources.name_icon;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(207, 199);
+            this.label1.Location = new System.Drawing.Point(67, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 23);
             this.label1.TabIndex = 50;
@@ -301,7 +301,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = global::PBL3.UI.Properties.Resources.gender_icon;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Location = new System.Drawing.Point(207, 409);
+            this.label8.Location = new System.Drawing.Point(67, 333);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(170, 23);
             this.label8.TabIndex = 57;
@@ -313,7 +313,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Image = global::PBL3.UI.Properties.Resources.phone_icon;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(207, 379);
+            this.label7.Location = new System.Drawing.Point(67, 303);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(205, 23);
             this.label7.TabIndex = 56;
@@ -325,7 +325,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Image = global::PBL3.UI.Properties.Resources.address_icon;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(207, 319);
+            this.label6.Location = new System.Drawing.Point(67, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(192, 23);
             this.label6.TabIndex = 55;
@@ -337,7 +337,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Image = global::PBL3.UI.Properties.Resources.place_of_birth_icon;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(207, 289);
+            this.label5.Location = new System.Drawing.Point(67, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 23);
             this.label5.TabIndex = 54;
@@ -349,7 +349,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Image = global::PBL3.UI.Properties.Resources.cccd_icon;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(207, 349);
+            this.label3.Location = new System.Drawing.Point(67, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 23);
             this.label3.TabIndex = 52;
@@ -371,7 +371,7 @@
             this.txtNoiSinh.ForeColor = System.Drawing.Color.Black;
             this.txtNoiSinh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNoiSinh.HoverState.Parent = this.txtNoiSinh;
-            this.txtNoiSinh.Location = new System.Drawing.Point(380, 289);
+            this.txtNoiSinh.Location = new System.Drawing.Point(240, 213);
             this.txtNoiSinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNoiSinh.Name = "txtNoiSinh";
             this.txtNoiSinh.PasswordChar = '\0';
@@ -397,7 +397,7 @@
             this.txtDob.ForeColor = System.Drawing.Color.Black;
             this.txtDob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDob.HoverState.Parent = this.txtDob;
-            this.txtDob.Location = new System.Drawing.Point(380, 259);
+            this.txtDob.Location = new System.Drawing.Point(240, 183);
             this.txtDob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDob.Name = "txtDob";
             this.txtDob.PasswordChar = '\0';
@@ -412,7 +412,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 655);
+            this.ClientSize = new System.Drawing.Size(627, 520);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtGender);
@@ -432,7 +432,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffUpdateInfo";
             this.Text = "StaffUpdateInfo";
             this.ResumeLayout(false);
