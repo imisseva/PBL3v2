@@ -64,8 +64,17 @@ namespace PBL3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var form = new SeatDetail();
-            form.IsEditMode = false;
+            if (cbbPickBus.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn xe trước khi thêm ghế.");
+                return;
+            }
+
+            string selectedBusID = cbbPickBus.SelectedValue.ToString();
+            var form = new SeatDetail(selectedBusID)
+            {
+                IsEditMode = false
+            };
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -81,56 +90,61 @@ namespace PBL3
                 {
                     seatService.AddSeat(dto);
                     MessageBox.Show("Thêm ghế thành công!");
-
-                    // Sau khi thêm, load lại danh sách ghế của xe đang chọn
-                    if (cbbPickBus.SelectedItem != null)
-                    {
-                        LoadSeatData(cbbPickBus.SelectedValue.ToString());
-                    }
+                    LoadSeatData(selectedBusID);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi khi thêm: " + ex.Message);
                 }
-            
             }
         }
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgv.CurrentRow != null)
+            if (dgv.SelectedRows.Count == 0 || cbbPickBus.SelectedItem == null)
             {
-                var dto = new SeatDTO
+                MessageBox.Show("Vui lòng chọn một ghế và một xe.");
+                return;
+            }
+
+            DataGridViewRow selectedRow = dgv.SelectedRows[0];
+
+            string selectedBusID = cbbPickBus.SelectedValue.ToString();
+            string seatID = selectedRow.Cells["ID_seat"].Value.ToString();
+            int seatNumber = Convert.ToInt32(selectedRow.Cells["seat_number"].Value);
+            string seatType = selectedRow.Cells["type"].Value.ToString();
+
+            var form = new SeatDetail(selectedBusID)
+            {
+                IsEditMode = true,
+                SeatID = seatID,
+                SeatNumber = seatNumber,
+                SeatType = seatType
+            };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var seat = new SeatDTO
                 {
-                    ID_seat = dgv.CurrentRow.Cells["ID_seat"].Value.ToString(),
-                    ID_bus = dgv.CurrentRow.Cells["ID_bus"].Value.ToString(),
-                    seat_number = Convert.ToInt32(dgv.CurrentRow.Cells["seat_number"].Value),
-                    type = dgv.CurrentRow.Cells["type"].Value.ToString()
+                    ID_seat = form.SeatID,
+                    ID_bus = form.BusID,
+                    seat_number = form.SeatNumber,
+                    type = form.SeatType
                 };
 
-                var form = new SeatDetail
+                try
                 {
-                    IsEditMode = true,
-                    SeatID = dto.ID_seat,
-                    BusID = dto.ID_bus,
-                    SeatNumber = dto.seat_number,
-                    SeatType = dto.type
-                };
-
-                if (form.ShowDialog() == DialogResult.OK)
+                    seatService.UpdateSeat(seat);
+                    MessageBox.Show("Cập nhật ghế thành công!");
+                    LoadSeatData(selectedBusID);
+                }
+                catch (Exception ex)
                 {
-                    dto.seat_number = form.SeatNumber;
-                    dto.type = form.SeatType;
-                    seatService.UpdateSeat(dto);
-
-                    if (cbbPickBus.SelectedItem != null)
-                    {
-                        LoadSeatData(cbbPickBus.SelectedValue.ToString());
-                    }
+                    MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
                 }
             }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgv.CurrentRow != null)

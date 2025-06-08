@@ -34,17 +34,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtIDSeat = new System.Windows.Forms.TextBox();
             this.numSeatNumber = new System.Windows.Forms.NumericUpDown();
-            this.cbIDBus = new System.Windows.Forms.ComboBox();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
+            this.txtBusID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numSeatNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 54);
+            this.label1.Location = new System.Drawing.Point(103, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 118);
+            this.label2.Location = new System.Drawing.Point(103, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 1;
@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 180);
+            this.label3.Location = new System.Drawing.Point(103, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 2;
@@ -71,7 +71,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 249);
+            this.label4.Location = new System.Drawing.Point(106, 251);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 3;
@@ -79,30 +79,22 @@
             // 
             // txtIDSeat
             // 
-            this.txtIDSeat.Location = new System.Drawing.Point(254, 47);
+            this.txtIDSeat.Location = new System.Drawing.Point(266, 49);
             this.txtIDSeat.Name = "txtIDSeat";
             this.txtIDSeat.Size = new System.Drawing.Size(180, 22);
             this.txtIDSeat.TabIndex = 6;
             // 
             // numSeatNumber
             // 
-            this.numSeatNumber.Location = new System.Drawing.Point(254, 173);
+            this.numSeatNumber.Location = new System.Drawing.Point(266, 175);
             this.numSeatNumber.Name = "numSeatNumber";
             this.numSeatNumber.Size = new System.Drawing.Size(180, 22);
             this.numSeatNumber.TabIndex = 7;
             // 
-            // cbIDBus
-            // 
-            this.cbIDBus.FormattingEnabled = true;
-            this.cbIDBus.Location = new System.Drawing.Point(254, 109);
-            this.cbIDBus.Name = "cbIDBus";
-            this.cbIDBus.Size = new System.Drawing.Size(180, 24);
-            this.cbIDBus.TabIndex = 8;
-            // 
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(254, 240);
+            this.cbType.Location = new System.Drawing.Point(266, 242);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(180, 24);
             this.cbType.TabIndex = 9;
@@ -114,7 +106,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(316, 316);
+            this.btnCancel.Location = new System.Drawing.Point(328, 318);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(94, 36);
@@ -129,7 +121,7 @@
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.HoverState.Parent = this.btnOK;
-            this.btnOK.Location = new System.Drawing.Point(109, 319);
+            this.btnOK.Location = new System.Drawing.Point(121, 321);
             this.btnOK.Name = "btnOK";
             this.btnOK.ShadowDecoration.Parent = this.btnOK;
             this.btnOK.Size = new System.Drawing.Size(92, 33);
@@ -137,15 +129,22 @@
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // txtBusID
+            // 
+            this.txtBusID.Location = new System.Drawing.Point(266, 114);
+            this.txtBusID.Name = "txtBusID";
+            this.txtBusID.Size = new System.Drawing.Size(180, 22);
+            this.txtBusID.TabIndex = 22;
+            // 
             // SeatDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBusID);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbType);
-            this.Controls.Add(this.cbIDBus);
             this.Controls.Add(this.numSeatNumber);
             this.Controls.Add(this.txtIDSeat);
             this.Controls.Add(this.label4);
@@ -169,9 +168,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIDSeat;
         private System.Windows.Forms.NumericUpDown numSeatNumber;
-        private System.Windows.Forms.ComboBox cbIDBus;
         private System.Windows.Forms.ComboBox cbType;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnOK;
+        private System.Windows.Forms.TextBox txtBusID;
     }
 }

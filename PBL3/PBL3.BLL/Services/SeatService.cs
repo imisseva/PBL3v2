@@ -68,5 +68,10 @@ namespace PBL3.BLL.Services
                     type = s.type
                 }).ToList();
         }
+        public string GenerateNextSeatID(string busID)
+        {
+            return _repo.GenerateNextSeatID(busID);
+        }
+
     }
 }

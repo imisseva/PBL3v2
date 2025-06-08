@@ -75,5 +75,20 @@ namespace PBL3.DAL.Repositories
                     }).ToList();
             }
         }
+        public string GenerateNextSeatID(string busID)
+        {
+            var seats = GetSeatsByBusID(busID);
+
+            int maxNumber = 0;
+            foreach (var seat in seats)
+            {
+                if (seat.ID_seat.StartsWith("S") && int.TryParse(seat.ID_seat.Substring(1), out int number))
+                {
+                    if (number > maxNumber) maxNumber = number;
+                }
+            }
+
+            return $"S{(maxNumber + 1).ToString("D3")}";
+        }
     }
 }
