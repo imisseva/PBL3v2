@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 110);
+            this.label1.Location = new System.Drawing.Point(87, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 173);
+            this.label2.Location = new System.Drawing.Point(87, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 16);
             this.label2.TabIndex = 1;
@@ -60,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(219, 233);
+            this.label3.Location = new System.Drawing.Point(87, 223);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 16);
             this.label3.TabIndex = 2;
@@ -68,14 +68,14 @@
             // 
             // txtIDBus
             // 
-            this.txtIDBus.Location = new System.Drawing.Point(386, 104);
+            this.txtIDBus.Location = new System.Drawing.Point(254, 94);
             this.txtIDBus.Name = "txtIDBus";
             this.txtIDBus.Size = new System.Drawing.Size(190, 22);
             this.txtIDBus.TabIndex = 3;
             // 
             // numSeat
             // 
-            this.numSeat.Location = new System.Drawing.Point(386, 166);
+            this.numSeat.Location = new System.Drawing.Point(254, 156);
             this.numSeat.Name = "numSeat";
             this.numSeat.Size = new System.Drawing.Size(190, 22);
             this.numSeat.TabIndex = 4;
@@ -83,19 +83,21 @@
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(386, 224);
+            this.cbStatus.Location = new System.Drawing.Point(254, 214);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(190, 24);
             this.cbStatus.TabIndex = 5;
             // 
             // btnCancel
             // 
+            this.btnCancel.BorderRadius = 8;
             this.btnCancel.CheckedState.Parent = this.btnCancel;
             this.btnCancel.CustomImages.Parent = this.btnCancel;
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(455, 319);
+            this.btnCancel.Location = new System.Drawing.Point(323, 309);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(94, 36);
@@ -105,12 +107,14 @@
             // 
             // btnOK
             // 
+            this.btnOK.BorderRadius = 8;
             this.btnOK.CheckedState.Parent = this.btnOK;
             this.btnOK.CustomImages.Parent = this.btnOK;
+            this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.HoverState.Parent = this.btnOK;
-            this.btnOK.Location = new System.Drawing.Point(248, 322);
+            this.btnOK.Location = new System.Drawing.Point(116, 312);
             this.btnOK.Name = "btnOK";
             this.btnOK.ShadowDecoration.Parent = this.btnOK;
             this.btnOK.Size = new System.Drawing.Size(92, 33);
@@ -122,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(520, 436);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbStatus);
