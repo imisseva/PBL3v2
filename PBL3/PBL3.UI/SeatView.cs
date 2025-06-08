@@ -21,7 +21,6 @@ namespace PBL3
         {
             InitializeComponent();
             LoadBusList();
-            //LoadSeatData();
         }
 
         private void LoadSeatData(string busId)
@@ -52,7 +51,15 @@ namespace PBL3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            LoadSeatData(txtSearch.Text.Trim());
+            if (cbbPickBus.SelectedItem != null)
+            {
+                string selectedBusID = cbbPickBus.SelectedValue.ToString();
+                LoadSeatData(selectedBusID);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một xe để tìm ghế.");
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -74,12 +81,18 @@ namespace PBL3
                 {
                     seatService.AddSeat(dto);
                     MessageBox.Show("Thêm ghế thành công!");
-                    //LoadSeatData();
+
+                    // Sau khi thêm, load lại danh sách ghế của xe đang chọn
+                    if (cbbPickBus.SelectedItem != null)
+                    {
+                        LoadSeatData(cbbPickBus.SelectedValue.ToString());
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi khi thêm: " + ex.Message);
                 }
+            
             }
         }
 
@@ -109,7 +122,11 @@ namespace PBL3
                     dto.seat_number = form.SeatNumber;
                     dto.type = form.SeatType;
                     seatService.UpdateSeat(dto);
-                    //LoadSeatData();
+
+                    if (cbbPickBus.SelectedItem != null)
+                    {
+                        LoadSeatData(cbbPickBus.SelectedValue.ToString());
+                    }
                 }
             }
         }
@@ -120,7 +137,11 @@ namespace PBL3
             {
                 string id = dgv.CurrentRow.Cells["ID_seat"].Value.ToString();
                 seatService.DeleteSeat(id);
-                //LoadSeatData();
+
+                if (cbbPickBus.SelectedItem != null)
+                {
+                    LoadSeatData(cbbPickBus.SelectedValue.ToString());
+                }
             }
         }
     }

@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.cbbPickBus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(29, 140);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(295, 22);
-            this.txtSearch.TabIndex = 8;
-            // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(696, 49);
+            this.btnDel.Location = new System.Drawing.Point(697, 25);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(99, 23);
             this.btnDel.TabIndex = 4;
@@ -57,7 +49,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(571, 49);
+            this.btnEdit.Location = new System.Drawing.Point(574, 25);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 23);
             this.btnEdit.TabIndex = 5;
@@ -67,7 +59,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(448, 49);
+            this.btnAdd.Location = new System.Drawing.Point(449, 25);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 23);
             this.btnAdd.TabIndex = 6;
@@ -77,23 +69,13 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(328, 49);
+            this.btnSearch.Location = new System.Drawing.Point(326, 25);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(105, 23);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(-4, 191);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersWidth = 51;
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(851, 509);
-            this.dgv.TabIndex = 3;
             // 
             // cbbPickBus
             // 
@@ -108,41 +90,47 @@
             this.cbbPickBus.HoverState.Parent = this.cbbPickBus;
             this.cbbPickBus.ItemHeight = 30;
             this.cbbPickBus.ItemsAppearance.Parent = this.cbbPickBus;
-            this.cbbPickBus.Location = new System.Drawing.Point(12, 36);
+            this.cbbPickBus.Location = new System.Drawing.Point(33, 12);
             this.cbbPickBus.Name = "cbbPickBus";
             this.cbbPickBus.ShadowDecoration.Parent = this.cbbPickBus;
             this.cbbPickBus.Size = new System.Drawing.Size(184, 36);
             this.cbbPickBus.TabIndex = 9;
+            // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(33, 119);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.Size = new System.Drawing.Size(763, 461);
+            this.dgv.TabIndex = 11;
             // 
             // SeatView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 608);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.cbbPickBus);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SeatView";
             this.Text = "SeatView";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgv;
         private Guna.UI2.WinForms.Guna2ComboBox cbbPickBus;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }
