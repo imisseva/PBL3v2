@@ -102,7 +102,7 @@
             this.btConfirm.ShadowDecoration.Parent = this.btConfirm;
             this.btConfirm.Size = new System.Drawing.Size(180, 45);
             this.btConfirm.TabIndex = 31;
-            this.btConfirm.Text = "guna2Button1";
+            this.btConfirm.Text = "Đổi mật khẩu";
             this.btConfirm.Click += new System.EventHandler(this.btConfirm_Click);
             // 
             // ChangePassword

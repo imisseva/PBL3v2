@@ -17,7 +17,7 @@ namespace PBL3.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new SeatView());
+            Application.Run(new LoginForm());
         }
     }
 }
