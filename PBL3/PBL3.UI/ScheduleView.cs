@@ -69,6 +69,7 @@ namespace PBL3.UI
 
             if (form.ShowDialog() == DialogResult.OK)
             {
+                MessageBox.Show("Thêm thành công!");
                 LoadData();
             }
         }
