@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PBL3.BLL.Services;
 
 namespace PBL3
@@ -15,6 +7,7 @@ namespace PBL3
     public partial class SeatDetail : Form
     {
         public bool IsEditMode { get; set; } = false;
+        private string preSelectedBusID = null;
 
         public string SeatID
         {
@@ -24,8 +17,8 @@ namespace PBL3
 
         public string BusID
         {
-            get => cbIDBus.SelectedValue.ToString();
-            set => cbIDBus.SelectedValue = value;
+            get => txtBusID.Text.Trim();
+            set => txtBusID.Text = value;
         }
 
         public int SeatNumber
@@ -36,7 +29,7 @@ namespace PBL3
 
         public string SeatType
         {
-            get => cbType.SelectedValue.ToString();
+            get => cbType.SelectedValue?.ToString();
             set => cbType.SelectedValue = value;
         }
 
@@ -45,33 +38,43 @@ namespace PBL3
             InitializeComponent();
         }
 
+        public SeatDetail(string busID) : this()
+        {
+            preSelectedBusID = busID;
+        }
+
         private void SeatDetail_Load(object sender, EventArgs e)
         {
-            var busService = new PBL3.BLL.Services.BusService();
-            var buses = busService.GetBuses();
-
-            cbIDBus.DataSource = buses;
-            cbIDBus.DisplayMember = "ID_bus";    
-            cbIDBus.ValueMember = "ID_bus";
-
-
             cbType.DataSource = new[]
             {
-        new { Text = "giường nằm", Value = "giường nằm" },
-        new { Text = "giường đôi", Value = "giường đôi" }
-    };
+                new { Text = "giường nằm", Value = "giường nằm" },
+                new { Text = "giường đôi", Value = "giường đôi" }
+            };
             cbType.DisplayMember = "Text";
             cbType.ValueMember = "Value";
 
+            txtBusID.Enabled = false;
+            txtIDSeat.Enabled = false;
+
+            if (!string.IsNullOrEmpty(preSelectedBusID))
+            {
+                txtBusID.Text = preSelectedBusID;
+            }
 
             if (IsEditMode)
             {
-                txtIDSeat.Enabled = false;
+                // Không làm gì thêm – giữ nguyên dữ liệu được truyền từ SeatView
             }
             else
             {
-                txtIDSeat.Clear();
-                cbIDBus.SelectedIndex = -1;
+                // Chỉ sinh ID ghế mới nếu đang ở chế độ thêm
+                if (!string.IsNullOrEmpty(preSelectedBusID))
+                {
+                    var seatService = new SeatService();
+                    string newID = seatService.GenerateNextSeatID(preSelectedBusID);
+                    txtIDSeat.Text = newID;
+                }
+
                 numSeatNumber.Value = 1;
                 cbType.SelectedIndex = 0;
             }
