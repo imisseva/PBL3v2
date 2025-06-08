@@ -1,11 +1,11 @@
 namespace PBL3.DAL.Entities
 {
+    using PBL3.DAL.Entities;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using PBL3.DAL.Entities;
 
     [Table("Staff")]
     public partial class Staff
@@ -38,8 +38,11 @@ namespace PBL3.DAL.Entities
 
         [StringLength(255)]
         public string NoiSinh { get; set; }
+
         [StringLength(10)]
         public string Gender { get; set; }
+
+        public byte[] AvatarImage { get; set; }
 
         public virtual Account Account { get; set; }
 
