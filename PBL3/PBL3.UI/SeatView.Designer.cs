@@ -68,6 +68,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Animated = true;
             this.btnSearch.BorderRadius = 8;
             this.btnSearch.CheckedState.Parent = this.btnSearch;
             this.btnSearch.CustomImages.Parent = this.btnSearch;
@@ -85,6 +86,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Animated = true;
             this.btnAdd.BorderRadius = 8;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
@@ -102,6 +104,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Animated = true;
             this.btnEdit.BorderRadius = 8;
             this.btnEdit.CheckedState.Parent = this.btnEdit;
             this.btnEdit.CustomImages.Parent = this.btnEdit;
@@ -119,6 +122,7 @@
             // 
             // btnDel
             // 
+            this.btnDel.Animated = true;
             this.btnDel.BorderRadius = 8;
             this.btnDel.CheckedState.Parent = this.btnDel;
             this.btnDel.CustomImages.Parent = this.btnDel;
