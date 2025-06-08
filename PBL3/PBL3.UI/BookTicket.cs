@@ -28,12 +28,12 @@ namespace PBL3
             InitializeComponent();
         }
 
-
-
         private void BookTicket_Load(object sender, EventArgs e)
         {
             LoadStation();
             dpBookingdate.Value = DateTime.Today;
+            // Không cho chọn ngày trước hôm nay
+            dtpDate.MinDate = DateTime.Today;
             cbbStartPoint.SelectedIndexChanged += StationSelectionChanged;
             cbbEndPoint.SelectedIndexChanged += StationSelectionChanged;
         }
@@ -139,7 +139,6 @@ namespace PBL3
             }
         }
 
-
         private void btn_LoaddgvBus_Click(object sender, EventArgs e)
         {
             string start = cbbStartPoint.Text.Trim();
@@ -187,11 +186,18 @@ namespace PBL3
                 return;
             }
 
+            // Kiểm tra ngày không được trước ngày hôm nay
+            DateTime selectedDate = dtpDate.Value.Date;
+            if (selectedDate < DateTime.Today)
+            {
+                MessageBox.Show("Không thể chọn ngày trước ngày hôm nay để đặt vé.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // 2. Lấy thông tin từ form
             string selectedBusID = dgvBus.CurrentRow.Cells["MãXe"].Value.ToString();
             string IDstartStation = cbbStartPoint.SelectedValue.ToString();
             string IDendStation = cbbEndPoint.SelectedValue.ToString();
-            DateTime selectedDate = dtpDate.Value;
 
             // 3. Lấy ID ga
             var stationService = new StationService();
@@ -203,16 +209,6 @@ namespace PBL3
                 MessageBox.Show("Không tìm thấy ID ga tương ứng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // 4. Tìm lịch trình phù hợp từ BLL
-            //var scheduleService = new ScheduleService();
-            //var schedule = scheduleService.GetScheduleByConditions(selectedBusID, selectedDate, startStationID, endStationID);
-
-            //if (schedule == null)
-            //{
-            //    MessageBox.Show("Không tìm thấy lịch trình phù hợp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
 
             string scheduleID = dgvBus.CurrentRow.Cells["Lịch"].Value.ToString();
 
@@ -232,7 +228,7 @@ namespace PBL3
                 MessageBox.Show("Không thể xác định tất cả ghế đã chọn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             // 6. Tạo và lưu vé
             var ticketService = new TicketService();
 
@@ -244,7 +240,7 @@ namespace PBL3
                     ID_seat = seat.ID_seat,
                     ID_schedule = scheduleID,
                     Price = int.Parse(cbbPrice.Text),
-                    station_start= IDstartStation,
+                    station_start = IDstartStation,
                     station_end = IDendStation,
                 };
 
@@ -259,4 +255,4 @@ namespace PBL3
         }
 
     }
-}
+}   
