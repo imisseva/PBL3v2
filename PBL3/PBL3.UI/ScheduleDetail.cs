@@ -276,6 +276,8 @@ namespace PBL3.UI
                 scheduleStopService.AddStop(stopDTO); // Gọi tới lớp BLL/DAL tương ứng
             }
             MessageBox.Show("Thêm lịch trình thành công");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
         private void txtEndTimeLoad()
         {
