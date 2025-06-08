@@ -47,9 +47,10 @@
             this.txtGender = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbID = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btUpdate = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -152,6 +153,7 @@
             this.btUpload.Size = new System.Drawing.Size(148, 31);
             this.btUpload.TabIndex = 38;
             this.btUpload.Text = "Thay ảnh đại diện";
+            this.btUpload.Click += new System.EventHandler(this.btUpload_Click);
             // 
             // txtID
             // 
@@ -401,14 +403,14 @@
             this.lbID.Text = "ID: ";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // pictureBoxAvatar
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(550, 165);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 152);
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxAvatar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAvatar.Image")));
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(550, 165);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(148, 152);
+            this.pictureBoxAvatar.TabIndex = 35;
+            this.pictureBoxAvatar.TabStop = false;
             // 
             // label2
             // 
@@ -422,11 +424,30 @@
             this.label2.Text = "Email:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btUpdate
+            // 
+            this.btUpdate.Animated = true;
+            this.btUpdate.BorderRadius = 8;
+            this.btUpdate.CheckedState.Parent = this.btUpdate;
+            this.btUpdate.CustomImages.Parent = this.btUpdate;
+            this.btUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btUpdate.ForeColor = System.Drawing.Color.White;
+            this.btUpdate.HoverState.Parent = this.btUpdate;
+            this.btUpdate.Location = new System.Drawing.Point(367, 469);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.ShadowDecoration.Parent = this.btUpdate;
+            this.btUpdate.Size = new System.Drawing.Size(148, 31);
+            this.btUpdate.TabIndex = 50;
+            this.btUpdate.Text = "cập nhật thông tin";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
             // StaffPersonalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 566);
+            this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtPhone);
@@ -438,7 +459,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btUpload);
             this.Controls.Add(this.lbID);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxAvatar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -451,14 +472,14 @@
             this.Name = "StaffPersonalInfo";
             this.Text = "StaffPersonalInfo";
             this.Load += new System.EventHandler(this.StaffPersonalInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxAvatar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -477,5 +498,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtGender;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btUpdate;
     }
 }
