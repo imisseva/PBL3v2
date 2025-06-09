@@ -31,7 +31,7 @@ namespace PBL3
         private void BookTicket_Load(object sender, EventArgs e)
         {
             LoadStation();
-            dpBookingdate.Value = DateTime.Today;
+            txtBookingDate.Text = DateTime.Today.ToString("yyyy-MM-dd");
             // Không cho chọn ngày trước hôm nay
             dtpDate.MinDate = DateTime.Today;
             cbbStartPoint.SelectedIndexChanged += StationSelectionChanged;
@@ -248,6 +248,7 @@ namespace PBL3
             }
 
             MessageBox.Show("Đặt vé thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtSeat.Clear();
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

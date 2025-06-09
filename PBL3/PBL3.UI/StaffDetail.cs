@@ -72,8 +72,8 @@ namespace PBL3
 
         public string StaffStationID
         {
-            get => cbbStation.Text.Trim();
-            set => cbbStation.Text = value;
+            get => cbbStation.SelectedValue?.ToString() ?? "";
+            set => cbbStation.SelectedValue = value;
         }
 
         // Property để nhận dữ liệu ảnh đại diện (byte[])
@@ -83,13 +83,18 @@ namespace PBL3
         {
             var stations = _stationService.GetStations();
             cbbStation.DataSource = stations;
-            cbbStation.DisplayMember = "ID_station";
+            cbbStation.DisplayMember = "Name_station";
             cbbStation.ValueMember = "ID_station";
 
             if (IsEditMode)
             {
                 txtID.Enabled = false;
-                cbbStation.SelectedValue = StaffStationID;
+
+                // Chỉ set SelectedValue nếu StaffStationID không null
+                if (!string.IsNullOrEmpty(StaffStationID))
+                {
+                    cbbStation.SelectedValue = StaffStationID;
+                }
 
                 // Hiển thị ảnh đại diện nếu có
                 if (StaffAvatar != null && StaffAvatar.Length > 0)
@@ -127,6 +132,7 @@ namespace PBL3
                 pictureBoxAvatar.Image = null;
             }
         }
+
 
         private void btOK_Click(object sender, EventArgs e)
         {
@@ -171,6 +177,11 @@ namespace PBL3
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void cbbStation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

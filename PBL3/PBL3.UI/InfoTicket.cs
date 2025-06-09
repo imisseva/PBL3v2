@@ -31,7 +31,6 @@ namespace PBL3.UI
             dgv2.Columns["booking_date"].HeaderText = "Ngày đặt";
             dgv2.Columns["station_start"].HeaderText = "Ga đi";
             dgv2.Columns["station_end"].HeaderText = "Ga đến";
-            dgv2.Columns["Status"].HeaderText = "Trạng thái";
         }
         private void btFind_Click(object sender, EventArgs e)
         {

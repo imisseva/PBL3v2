@@ -41,6 +41,10 @@ namespace PBL3.BLL.Services
 
             return result;
         }
+        public List<ScheduleDTO> GetUpcomingSchedules()
+        {
+            return _scheduleRepo.GetUpcomingSchedules().Select(ConvertToDTO).ToList();
+        }
 
         public ScheduleDTO GetScheduleByConditions(string busId, DateTime date, string idStart, string idEnd)
         {

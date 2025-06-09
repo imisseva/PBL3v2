@@ -191,6 +191,16 @@ namespace PBL3.DAL.Repositories
                     .FirstOrDefault();
             }
         }
+        public List<Schedule> GetUpcomingSchedules()
+        {
+            using (var context = new BusManagement())
+            {
+                DateTime today = DateTime.Today;
+                return context.Schedules
+                    .Where(s => DbFunctions.TruncateTime(s.start_time) >= today)
+                    .ToList();
+            }
+        }
 
     }
 }

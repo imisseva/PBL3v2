@@ -37,7 +37,6 @@
             this.lbSeat = new System.Windows.Forms.Label();
             this.lbBookingDate = new System.Windows.Forms.Label();
             this.txtSeat = new System.Windows.Forms.TextBox();
-            this.dpBookingdate = new System.Windows.Forms.DateTimePicker();
             this.btPickSeat = new Guna.UI2.WinForms.Guna2Button();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.cbbStartPoint = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -48,6 +47,7 @@
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbPrice = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtBookingDate = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBus)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,13 +103,6 @@
             this.txtSeat.ReadOnly = true;
             this.txtSeat.Size = new System.Drawing.Size(86, 22);
             this.txtSeat.TabIndex = 14;
-            // 
-            // dpBookingdate
-            // 
-            this.dpBookingdate.Location = new System.Drawing.Point(556, 512);
-            this.dpBookingdate.Name = "dpBookingdate";
-            this.dpBookingdate.Size = new System.Drawing.Size(242, 22);
-            this.dpBookingdate.TabIndex = 24;
             // 
             // btPickSeat
             // 
@@ -318,11 +311,36 @@
             this.cbbPrice.Size = new System.Drawing.Size(140, 36);
             this.cbbPrice.TabIndex = 35;
             // 
+            // txtBookingDate
+            // 
+            this.txtBookingDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBookingDate.DefaultText = "";
+            this.txtBookingDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBookingDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBookingDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBookingDate.DisabledState.Parent = this.txtBookingDate;
+            this.txtBookingDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBookingDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBookingDate.FocusedState.Parent = this.txtBookingDate;
+            this.txtBookingDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBookingDate.HoverState.Parent = this.txtBookingDate;
+            this.txtBookingDate.Location = new System.Drawing.Point(556, 511);
+            this.txtBookingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBookingDate.Name = "txtBookingDate";
+            this.txtBookingDate.PasswordChar = '\0';
+            this.txtBookingDate.PlaceholderText = "";
+            this.txtBookingDate.ReadOnly = true;
+            this.txtBookingDate.SelectedText = "";
+            this.txtBookingDate.ShadowDecoration.Parent = this.txtBookingDate;
+            this.txtBookingDate.Size = new System.Drawing.Size(242, 23);
+            this.txtBookingDate.TabIndex = 36;
+            // 
             // BookTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 655);
+            this.Controls.Add(this.txtBookingDate);
             this.Controls.Add(this.cbbPrice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoad);
@@ -333,7 +351,6 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btPickSeat);
-            this.Controls.Add(this.dpBookingdate);
             this.Controls.Add(this.lbBookingDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSeat);
@@ -357,7 +374,6 @@
         private System.Windows.Forms.Label lbSeat;
         private System.Windows.Forms.Label lbBookingDate;
         private System.Windows.Forms.TextBox txtSeat;
-        private System.Windows.Forms.DateTimePicker dpBookingdate;
         private Guna.UI2.WinForms.Guna2Button btPickSeat;
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
         private Guna.UI2.WinForms.Guna2ComboBox cbbStartPoint;
@@ -368,5 +384,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cbbPrice;
+        private Guna.UI2.WinForms.Guna2TextBox txtBookingDate;
     }
 }
