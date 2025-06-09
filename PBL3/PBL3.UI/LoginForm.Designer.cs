@@ -111,7 +111,7 @@
             this.btLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btLogin.ForeColor = System.Drawing.Color.White;
             this.btLogin.HoverState.Parent = this.btLogin;
-            this.btLogin.Location = new System.Drawing.Point(213, 381);
+            this.btLogin.Location = new System.Drawing.Point(212, 391);
             this.btLogin.Name = "btLogin";
             this.btLogin.ShadowDecoration.Parent = this.btLogin;
             this.btLogin.Size = new System.Drawing.Size(134, 40);

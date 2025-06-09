@@ -40,7 +40,7 @@ namespace PBL3.UI
             if (bookingticketExpand == false)
             {
                 ticketBookingContainer.Height += 10;
-                if (ticketBookingContainer.Height >= 165)
+                if (ticketBookingContainer.Height >= 125)
                 {
                     bookticketTransition.Stop();
                     bookingticketExpand = true;
@@ -122,13 +122,6 @@ namespace PBL3.UI
                 this.Close();
             }
         }
-
-        private void btCancelTicket_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = true;
-            LoadFormToPanel(new CancelTicket());
-        }
-
         private void btInfoTicket_Click(object sender, EventArgs e)
         {
             MainPanel.Visible = true;
@@ -141,6 +134,9 @@ namespace PBL3.UI
             LoadFormToPanel(new ChangePassword());
         }
 
-        
+        private void Sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

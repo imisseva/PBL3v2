@@ -43,13 +43,6 @@ namespace PBL3.UI
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string keyword = txtSearch.Text.Trim();
-            List<StaffDTO> staffList = staffService.GetAllStaff(keyword);
-            dgvStaff.DataSource = staffList;
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var form = new StaffDetail
@@ -191,6 +184,13 @@ namespace PBL3.UI
                 }
                 MessageBox.Show("Không thể xóa nhân viên: " + errorMsg);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+            List<StaffDTO> staffList = staffService.GetAllStaff(keyword);
+            dgvStaff.DataSource = staffList;
         }
     }
 }
