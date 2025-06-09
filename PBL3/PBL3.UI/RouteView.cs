@@ -51,10 +51,6 @@ namespace PBL3
                 dgv.Columns["ID_route"].DisplayIndex = 0;
             }
         }
-        private void BtnSearch_Click_Route(object sender, EventArgs e)
-        {
-            LoadRouteData(txtSearch.Text.Trim());
-        }
         private void BtnAdd_Click_Route(object sender, EventArgs e)
         {
             var form = new RouteDetail();
@@ -147,6 +143,11 @@ namespace PBL3
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadRouteData(txtSearch.Text.Trim());
         }
     }
 }

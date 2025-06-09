@@ -93,7 +93,6 @@
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.PlaceholderText = "";
-            this.txtID.ReadOnly = true;
             this.txtID.SelectedText = "";
             this.txtID.ShadowDecoration.Parent = this.txtID;
             this.txtID.Size = new System.Drawing.Size(196, 36);
@@ -119,7 +118,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
-            this.txtEmail.ReadOnly = true;
             this.txtEmail.SelectedText = "";
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
             this.txtEmail.Size = new System.Drawing.Size(326, 37);
@@ -145,7 +143,6 @@
             this.txtDob.Name = "txtDob";
             this.txtDob.PasswordChar = '\0';
             this.txtDob.PlaceholderText = "";
-            this.txtDob.ReadOnly = true;
             this.txtDob.SelectedText = "";
             this.txtDob.ShadowDecoration.Parent = this.txtDob;
             this.txtDob.Size = new System.Drawing.Size(190, 36);
@@ -171,7 +168,6 @@
             this.txtNoiSinh.Name = "txtNoiSinh";
             this.txtNoiSinh.PasswordChar = '\0';
             this.txtNoiSinh.PlaceholderText = "";
-            this.txtNoiSinh.ReadOnly = true;
             this.txtNoiSinh.SelectedText = "";
             this.txtNoiSinh.ShadowDecoration.Parent = this.txtNoiSinh;
             this.txtNoiSinh.Size = new System.Drawing.Size(526, 36);
@@ -197,7 +193,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderText = "";
-            this.txtAddress.ReadOnly = true;
             this.txtAddress.SelectedText = "";
             this.txtAddress.ShadowDecoration.Parent = this.txtAddress;
             this.txtAddress.Size = new System.Drawing.Size(526, 37);
@@ -223,7 +218,6 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.PasswordChar = '\0';
             this.txtCCCD.PlaceholderText = "";
-            this.txtCCCD.ReadOnly = true;
             this.txtCCCD.SelectedText = "";
             this.txtCCCD.ShadowDecoration.Parent = this.txtCCCD;
             this.txtCCCD.Size = new System.Drawing.Size(326, 36);
@@ -249,7 +243,6 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderText = "";
-            this.txtPhone.ReadOnly = true;
             this.txtPhone.SelectedText = "";
             this.txtPhone.ShadowDecoration.Parent = this.txtPhone;
             this.txtPhone.Size = new System.Drawing.Size(192, 37);
@@ -275,7 +268,6 @@
             this.txtGender.Name = "txtGender";
             this.txtGender.PasswordChar = '\0';
             this.txtGender.PlaceholderText = "";
-            this.txtGender.ReadOnly = true;
             this.txtGender.SelectedText = "";
             this.txtGender.ShadowDecoration.Parent = this.txtGender;
             this.txtGender.Size = new System.Drawing.Size(192, 36);
@@ -302,7 +294,6 @@
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
-            this.txtName.ReadOnly = true;
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.Parent = this.txtName;
             this.txtName.Size = new System.Drawing.Size(326, 36);
@@ -319,7 +310,7 @@
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(40, 40);
             this.guna2ImageButton1.TabIndex = 51;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.btUpdate_Click);
+            this.guna2ImageButton1.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lbID
             // 

@@ -40,10 +40,7 @@ namespace PBL3
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            LoadBusData(txtSearch.Text.Trim());
-        }
+     
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -110,6 +107,11 @@ namespace PBL3
                 busService.DeleteBus(id);
                 LoadBusData();
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadBusData(txtSearch.Text.Trim());
         }
     }
 }
