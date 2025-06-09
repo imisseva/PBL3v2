@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.sideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.staffManagement = new Guna.UI2.WinForms.Guna2Panel();
@@ -44,8 +43,6 @@
             this.btBus = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btSeat = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btRoute = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.RevenueContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,10 +54,20 @@
             this.btYearRevenue = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btRoute = new Guna.UI2.WinForms.Guna2Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.RouteContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btMainRoute = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btSubRoute = new Guna.UI2.WinForms.Guna2Button();
             this.personalContainerTransition = new System.Windows.Forms.Timer(this.components);
             this.busManagementTransition = new System.Windows.Forms.Timer(this.components);
             this.RevenueTransition = new System.Windows.Forms.Timer(this.components);
+            this.routeTransition = new System.Windows.Forms.Timer(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.sideBar.SuspendLayout();
             this.staffManagement.SuspendLayout();
@@ -69,35 +76,30 @@
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            this.guna2Panel11.SuspendLayout();
             this.guna2Panel12.SuspendLayout();
             this.RevenueContainer.SuspendLayout();
             this.guna2Panel13.SuspendLayout();
             this.guna2Panel14.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            this.RouteContainer.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.guna2PictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.guna2ControlBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1101, 37);
+            this.panel1.Size = new System.Drawing.Size(1101, 44);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ADMIN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2ControlBox1
             // 
@@ -105,10 +107,10 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1063, 4);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1058, 0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(35, 30);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(43, 37);
             this.guna2ControlBox1.TabIndex = 7;
             // 
             // sideBar
@@ -117,14 +119,14 @@
             this.sideBar.Controls.Add(this.staffManagement);
             this.sideBar.Controls.Add(this.guna2Panel4);
             this.sideBar.Controls.Add(this.BusManagementContainer);
-            this.sideBar.Controls.Add(this.guna2Panel11);
             this.sideBar.Controls.Add(this.guna2Panel12);
+            this.sideBar.Controls.Add(this.RouteContainer);
             this.sideBar.Controls.Add(this.RevenueContainer);
             this.sideBar.Controls.Add(this.guna2Panel5);
             this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sideBar.Location = new System.Drawing.Point(0, 37);
+            this.sideBar.Location = new System.Drawing.Point(0, 44);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(251, 608);
+            this.sideBar.Size = new System.Drawing.Size(251, 601);
             this.sideBar.TabIndex = 1;
             // 
             // staffManagement
@@ -196,7 +198,7 @@
             this.BusManagementContainer.Location = new System.Drawing.Point(0, 116);
             this.BusManagementContainer.Margin = new System.Windows.Forms.Padding(0);
             this.BusManagementContainer.Name = "BusManagementContainer";
-            this.BusManagementContainer.Size = new System.Drawing.Size(248, 50);
+            this.BusManagementContainer.Size = new System.Drawing.Size(248, 51);
             this.BusManagementContainer.TabIndex = 10;
             // 
             // guna2Panel1
@@ -290,40 +292,10 @@
             this.btSeat.TextOffset = new System.Drawing.Point(-6, 0);
             this.btSeat.Click += new System.EventHandler(this.btSeat_Click);
             // 
-            // guna2Panel11
-            // 
-            this.guna2Panel11.Controls.Add(this.btRoute);
-            this.guna2Panel11.Location = new System.Drawing.Point(3, 169);
-            this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.ShadowDecoration.Parent = this.guna2Panel11;
-            this.guna2Panel11.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel11.TabIndex = 10;
-            // 
-            // btRoute
-            // 
-            this.btRoute.Animated = true;
-            this.btRoute.CheckedState.Parent = this.btRoute;
-            this.btRoute.CustomImages.Parent = this.btRoute;
-            this.btRoute.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btRoute.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btRoute.ForeColor = System.Drawing.Color.White;
-            this.btRoute.HoverState.Parent = this.btRoute;
-            this.btRoute.Image = global::PBL3.UI.Properties.Resources.route_icon;
-            this.btRoute.ImageOffset = new System.Drawing.Point(-18, 0);
-            this.btRoute.ImageSize = new System.Drawing.Size(19, 19);
-            this.btRoute.Location = new System.Drawing.Point(-101, 0);
-            this.btRoute.Name = "btRoute";
-            this.btRoute.ShadowDecoration.Parent = this.btRoute;
-            this.btRoute.Size = new System.Drawing.Size(511, 52);
-            this.btRoute.TabIndex = 2;
-            this.btRoute.Text = "Quản lý tuyến đường";
-            this.btRoute.TextOffset = new System.Drawing.Point(-7, 0);
-            this.btRoute.Click += new System.EventHandler(this.btRoute_Click);
-            // 
             // guna2Panel12
             // 
             this.guna2Panel12.Controls.Add(this.guna2Button7);
-            this.guna2Panel12.Location = new System.Drawing.Point(3, 227);
+            this.guna2Panel12.Location = new System.Drawing.Point(3, 170);
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.ShadowDecoration.Parent = this.guna2Panel12;
             this.guna2Panel12.Size = new System.Drawing.Size(248, 52);
@@ -356,7 +328,7 @@
             this.RevenueContainer.Controls.Add(this.guna2Panel13);
             this.RevenueContainer.Controls.Add(this.guna2Panel14);
             this.RevenueContainer.Controls.Add(this.guna2Panel15);
-            this.RevenueContainer.Location = new System.Drawing.Point(0, 282);
+            this.RevenueContainer.Location = new System.Drawing.Point(0, 274);
             this.RevenueContainer.Margin = new System.Windows.Forms.Padding(0);
             this.RevenueContainer.Name = "RevenueContainer";
             this.RevenueContainer.Size = new System.Drawing.Size(248, 52);
@@ -456,7 +428,7 @@
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.guna2Button1);
-            this.guna2Panel5.Location = new System.Drawing.Point(3, 337);
+            this.guna2Panel5.Location = new System.Drawing.Point(3, 329);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
             this.guna2Panel5.Size = new System.Drawing.Size(248, 52);
@@ -483,18 +455,122 @@
             this.guna2Button1.TextOffset = new System.Drawing.Point(-7, 0);
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // btRoute
+            // 
+            this.btRoute.Animated = true;
+            this.btRoute.CheckedState.Parent = this.btRoute;
+            this.btRoute.CustomImages.Parent = this.btRoute;
+            this.btRoute.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btRoute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btRoute.ForeColor = System.Drawing.Color.White;
+            this.btRoute.HoverState.Parent = this.btRoute;
+            this.btRoute.Image = global::PBL3.UI.Properties.Resources.route_icon;
+            this.btRoute.ImageOffset = new System.Drawing.Point(-18, 0);
+            this.btRoute.ImageSize = new System.Drawing.Size(19, 19);
+            this.btRoute.Location = new System.Drawing.Point(-112, 0);
+            this.btRoute.Name = "btRoute";
+            this.btRoute.ShadowDecoration.Parent = this.btRoute;
+            this.btRoute.Size = new System.Drawing.Size(537, 52);
+            this.btRoute.TabIndex = 2;
+            this.btRoute.Text = "Quản lý tuyến đường";
+            this.btRoute.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btRoute.Click += new System.EventHandler(this.btRoute_Click);
+            // 
             // MainPanel
             // 
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(251, 37);
+            this.MainPanel.Location = new System.Drawing.Point(251, 44);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(850, 608);
+            this.MainPanel.Size = new System.Drawing.Size(850, 601);
             this.MainPanel.TabIndex = 2;
+            // 
+            // RouteContainer
+            // 
+            this.RouteContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.RouteContainer.Controls.Add(this.guna2Panel6);
+            this.RouteContainer.Controls.Add(this.guna2Panel7);
+            this.RouteContainer.Controls.Add(this.guna2Panel8);
+            this.RouteContainer.Location = new System.Drawing.Point(0, 225);
+            this.RouteContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.RouteContainer.Name = "RouteContainer";
+            this.RouteContainer.Size = new System.Drawing.Size(248, 49);
+            this.RouteContainer.TabIndex = 8;
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Controls.Add(this.btRoute);
+            this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
+            this.guna2Panel6.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel6.TabIndex = 4;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.btMainRoute);
+            this.guna2Panel7.Location = new System.Drawing.Point(0, 52);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
+            this.guna2Panel7.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel7.TabIndex = 5;
+            // 
+            // btMainRoute
+            // 
+            this.btMainRoute.Animated = true;
+            this.btMainRoute.CheckedState.Parent = this.btMainRoute;
+            this.btMainRoute.CustomImages.Parent = this.btMainRoute;
+            this.btMainRoute.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btMainRoute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btMainRoute.ForeColor = System.Drawing.Color.White;
+            this.btMainRoute.HoverState.Parent = this.btMainRoute;
+            this.btMainRoute.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btMainRoute.ImageOffset = new System.Drawing.Point(-23, 0);
+            this.btMainRoute.Location = new System.Drawing.Point(-77, 0);
+            this.btMainRoute.Margin = new System.Windows.Forms.Padding(0);
+            this.btMainRoute.Name = "btMainRoute";
+            this.btMainRoute.ShadowDecoration.Parent = this.btMainRoute;
+            this.btMainRoute.Size = new System.Drawing.Size(485, 58);
+            this.btMainRoute.TabIndex = 2;
+            this.btMainRoute.Text = " Quản lý tuyến chính";
+            this.btMainRoute.TextOffset = new System.Drawing.Point(-23, 0);
+            this.btMainRoute.Click += new System.EventHandler(this.btMainRoute_Click);
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.btSubRoute);
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 104);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.ShadowDecoration.Parent = this.guna2Panel8;
+            this.guna2Panel8.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel8.TabIndex = 6;
+            // 
+            // btSubRoute
+            // 
+            this.btSubRoute.Animated = true;
+            this.btSubRoute.CheckedState.Parent = this.btSubRoute;
+            this.btSubRoute.CustomImages.Parent = this.btSubRoute;
+            this.btSubRoute.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btSubRoute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btSubRoute.ForeColor = System.Drawing.Color.White;
+            this.btSubRoute.HoverState.Parent = this.btSubRoute;
+            this.btSubRoute.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btSubRoute.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btSubRoute.Location = new System.Drawing.Point(-112, 0);
+            this.btSubRoute.Margin = new System.Windows.Forms.Padding(0);
+            this.btSubRoute.Name = "btSubRoute";
+            this.btSubRoute.ShadowDecoration.Parent = this.btSubRoute;
+            this.btSubRoute.Size = new System.Drawing.Size(500, 52);
+            this.btSubRoute.TabIndex = 2;
+            this.btSubRoute.Text = " Quản lý tuyến phụ";
+            this.btSubRoute.TextOffset = new System.Drawing.Point(-15, 0);
+            this.btSubRoute.Click += new System.EventHandler(this.btSubRoute_Click);
             // 
             // personalContainerTransition
             // 
             this.personalContainerTransition.Interval = 10;
-      
             // 
             // busManagementTransition
             // 
@@ -505,6 +581,33 @@
             // 
             this.RevenueTransition.Interval = 10;
             this.RevenueTransition.Tick += new System.EventHandler(this.revenueTransition_Tick);
+            // 
+            // routeTransition
+            // 
+            this.routeTransition.Interval = 10;
+            this.routeTransition.Tick += new System.EventHandler(this.routeTransition_Tick);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::PBL3.UI.Properties.Resources.icons8_bus_50;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(20, 6);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label1.Location = new System.Drawing.Point(50, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 26);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Hệ thống quản lý xe khách";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AdminForm2
             // 
@@ -525,13 +628,17 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel11.ResumeLayout(false);
             this.guna2Panel12.ResumeLayout(false);
             this.RevenueContainer.ResumeLayout(false);
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel14.ResumeLayout(false);
             this.guna2Panel15.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
+            this.RouteContainer.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -539,7 +646,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel sideBar;
         private System.Windows.Forms.Panel MainPanel;
         private Guna.UI2.WinForms.Guna2Panel staffManagement;
@@ -555,7 +661,6 @@
         private Guna.UI2.WinForms.Guna2Button btBusStation;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2Button btRoute;
         private Guna.UI2.WinForms.Guna2Button btBusManage;
         private System.Windows.Forms.Timer personalContainerTransition;
@@ -570,5 +675,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private Guna.UI2.WinForms.Guna2Button btYearRevenue;
         private System.Windows.Forms.Timer RevenueTransition;
+        private System.Windows.Forms.FlowLayoutPanel RouteContainer;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Button btMainRoute;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Button btSubRoute;
+        private System.Windows.Forms.Timer routeTransition;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
