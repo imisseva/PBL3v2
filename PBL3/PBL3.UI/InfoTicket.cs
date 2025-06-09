@@ -35,9 +35,44 @@ namespace PBL3.UI
         }
         private void btFind_Click(object sender, EventArgs e)
         {
+            if (dgv2.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn vé để hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedRow = dgv2.SelectedRows[0];
+            int ticketId = Convert.ToInt32(selectedRow.Cells["ID_ticket"].Value);
+
+            var result = MessageBox.Show("Bạn có chắc muốn hủy vé này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    TicketService.CancelTicket(ticketId);
+                    MessageBox.Show("Đã hủy vé thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadTickets(); // Reload lại sau khi hủy
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi hủy vé: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void LoadTicketData()
+        {
+            dgv2.DataSource = TicketService.GetTickets();
+        }
+
+        private void txtFind_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtFind.Text))
+            {
+                LoadTicketData(); // Nếu ô tìm kiếm trống, tải lại tất cả vé
+                return;
+            }
             if (!int.TryParse(txtFind.Text.Trim(), out int ticketId))
             {
-                MessageBox.Show("Vui lòng nhập ID vé hợp lệ.");
                 return;
             }
 
@@ -48,13 +83,9 @@ namespace PBL3.UI
             }
             else
             {
-                MessageBox.Show("Không tìm thấy vé với ID đã nhập.");
                 dgv2.DataSource = null;
             }
-        }
-        private void LoadTicketData()
-        {
-            dgv2.DataSource = TicketService.GetTickets();
+
         }
     }
 }

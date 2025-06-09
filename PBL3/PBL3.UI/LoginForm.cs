@@ -18,22 +18,7 @@ namespace PBL3
         {
             InitializeComponent();
         }
-        private void txtUsername_Click(object sender, EventArgs e)
-        {
-            txtUsername.BackColor = Color.White;    
-            pnUser.BackColor = Color.White;
-            pnPass.BackColor = SystemColors.Control;
-            txtPassword.BackColor = SystemColors.Control;
-        }
-
-        private void txtPassword_Click(object sender, EventArgs e)
-        {
-            txtPassword.BackColor = Color.White;
-            pnPass.BackColor = Color.White;
-            pnUser.BackColor = SystemColors.Control;
-            txtUsername.BackColor = SystemColors.Control;
-
-        }
+      
 
         // Trong form đăng nhập
         private void btLogin_Click(object sender, EventArgs e)
@@ -46,17 +31,13 @@ namespace PBL3
                 if (account.Role == 1) // Admin
                 {
                     AdminForm2 adminForm = new AdminForm2();
-                    MessageBox.Show("Đăng nhập với quyền quản trị viên!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     adminForm.Show();
                     this.Hide();
                 }
                 else if (account.Role == 0) // Staff
                 {
                     Session.LoggedAccountId = account.Id;
-                    StaffForm2 staffForm = new StaffForm2();
-                    MessageBox.Show("Đăng nhập với quyền là nhân viên", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    StaffForm2 staffForm = new StaffForm2();              
                     staffForm.Show();
                     this.Hide();
                 }
@@ -168,6 +149,16 @@ namespace PBL3
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TextBoxTen_TextChanged(object sender, EventArgs e)
         {
 
         }

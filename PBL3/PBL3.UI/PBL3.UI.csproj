@@ -414,5 +414,29 @@
   <ItemGroup>
     <None Include="Resources\revenue icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-account-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bus-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-45.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
