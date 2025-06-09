@@ -30,33 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbUser = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.PersonalinfoContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btStaffInfo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btInfo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btChangePassword = new Guna.UI2.WinForms.Guna2Button();
             this.ticketBookingContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btTicket = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btBookTicket = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btInfoTicket = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.bookticketTransition = new System.Windows.Forms.Timer(this.components);
             this.PersonalinfoTransition = new System.Windows.Forms.Timer(this.components);
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btStaffInfo = new Guna.UI2.WinForms.Guna2Button();
-            this.btInfo = new Guna.UI2.WinForms.Guna2Button();
-            this.btChangePassword = new Guna.UI2.WinForms.Guna2Button();
-            this.btTicket = new Guna.UI2.WinForms.Guna2Button();
-            this.btBookTicket = new Guna.UI2.WinForms.Guna2Button();
-            this.btInfoTicket = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.Sidebar.SuspendLayout();
             this.PersonalinfoContainer.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
@@ -67,9 +70,6 @@
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
-            this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +84,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1119, 44);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientPanel1.BorderRadius = 15;
+            this.guna2GradientPanel1.Controls.Add(this.lbUser);
+            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox2);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(727, 3);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(292, 38);
+            this.guna2GradientPanel1.TabIndex = 4;
+            // 
+            // lbUser
+            // 
+            this.lbUser.BackColor = System.Drawing.Color.Transparent;
+            this.lbUser.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.Color.White;
+            this.lbUser.Location = new System.Drawing.Point(44, 6);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(201, 26);
+            this.lbUser.TabIndex = 5;
+            this.lbUser.Text = "Nguyễn Tuấn Phong";
+            this.lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::PBL3.UI.Properties.Resources.staff_m_1;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(7, 3);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(33, 33);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::PBL3.UI.Properties.Resources.icons8_bus_50;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 3;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2ControlBox1
             // 
@@ -145,6 +193,25 @@
             this.guna2Panel7.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel7.TabIndex = 4;
             // 
+            // btStaffInfo
+            // 
+            this.btStaffInfo.Animated = true;
+            this.btStaffInfo.CheckedState.Parent = this.btStaffInfo;
+            this.btStaffInfo.CustomImages.Parent = this.btStaffInfo;
+            this.btStaffInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btStaffInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btStaffInfo.ForeColor = System.Drawing.Color.White;
+            this.btStaffInfo.HoverState.Parent = this.btStaffInfo;
+            this.btStaffInfo.Image = global::PBL3.UI.Properties.Resources.info_icon;
+            this.btStaffInfo.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btStaffInfo.Location = new System.Drawing.Point(-64, 0);
+            this.btStaffInfo.Name = "btStaffInfo";
+            this.btStaffInfo.ShadowDecoration.Parent = this.btStaffInfo;
+            this.btStaffInfo.Size = new System.Drawing.Size(376, 52);
+            this.btStaffInfo.TabIndex = 2;
+            this.btStaffInfo.Text = "Thông tin cá nhân";
+            this.btStaffInfo.Click += new System.EventHandler(this.btStaffInfo_Click);
+            // 
             // guna2Panel8
             // 
             this.guna2Panel8.Controls.Add(this.btInfo);
@@ -155,6 +222,27 @@
             this.guna2Panel8.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel8.TabIndex = 5;
             // 
+            // btInfo
+            // 
+            this.btInfo.Animated = true;
+            this.btInfo.CheckedState.Parent = this.btInfo;
+            this.btInfo.CustomImages.Parent = this.btInfo;
+            this.btInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btInfo.ForeColor = System.Drawing.Color.White;
+            this.btInfo.HoverState.Parent = this.btInfo;
+            this.btInfo.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btInfo.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btInfo.Location = new System.Drawing.Point(-64, 0);
+            this.btInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.btInfo.Name = "btInfo";
+            this.btInfo.ShadowDecoration.Parent = this.btInfo;
+            this.btInfo.Size = new System.Drawing.Size(360, 58);
+            this.btInfo.TabIndex = 2;
+            this.btInfo.Text = "Thông tin cá nhân";
+            this.btInfo.TextOffset = new System.Drawing.Point(-7, 0);
+            this.btInfo.Click += new System.EventHandler(this.btInfo_Click);
+            // 
             // guna2Panel10
             // 
             this.guna2Panel10.Controls.Add(this.btChangePassword);
@@ -164,6 +252,27 @@
             this.guna2Panel10.ShadowDecoration.Parent = this.guna2Panel10;
             this.guna2Panel10.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel10.TabIndex = 6;
+            // 
+            // btChangePassword
+            // 
+            this.btChangePassword.Animated = true;
+            this.btChangePassword.CheckedState.Parent = this.btChangePassword;
+            this.btChangePassword.CustomImages.Parent = this.btChangePassword;
+            this.btChangePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
+            this.btChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btChangePassword.HoverState.Parent = this.btChangePassword;
+            this.btChangePassword.Image = global::PBL3.UI.Properties.Resources.dot_icon;
+            this.btChangePassword.ImageOffset = new System.Drawing.Point(-9, 0);
+            this.btChangePassword.Location = new System.Drawing.Point(-68, 0);
+            this.btChangePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.btChangePassword.Name = "btChangePassword";
+            this.btChangePassword.ShadowDecoration.Parent = this.btChangePassword;
+            this.btChangePassword.Size = new System.Drawing.Size(364, 52);
+            this.btChangePassword.TabIndex = 2;
+            this.btChangePassword.Text = "Thay đổi mật khẩu";
+            this.btChangePassword.TextOffset = new System.Drawing.Point(-5, 0);
+            this.btChangePassword.Click += new System.EventHandler(this.btChangePassword_Click);
             // 
             // ticketBookingContainer
             // 
@@ -187,139 +296,6 @@
             this.guna2Panel2.Size = new System.Drawing.Size(248, 52);
             this.guna2Panel2.TabIndex = 4;
             // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.btBookTicket);
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 52);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel3.TabIndex = 5;
-            // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.Controls.Add(this.btInfoTicket);
-            this.guna2Panel6.Location = new System.Drawing.Point(0, 104);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
-            this.guna2Panel6.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel6.TabIndex = 6;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.Controls.Add(this.guna2Button3);
-            this.guna2Panel4.Location = new System.Drawing.Point(3, 104);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(248, 52);
-            this.guna2Panel4.TabIndex = 6;
-            // 
-            // bookticketTransition
-            // 
-            this.bookticketTransition.Interval = 10;
-            this.bookticketTransition.Tick += new System.EventHandler(this.bookticketTransition_Tick);
-            // 
-            // PersonalinfoTransition
-            // 
-            this.PersonalinfoTransition.Interval = 10;
-            this.PersonalinfoTransition.Tick += new System.EventHandler(this.PersonalinfoTransition_Tick);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(251, 44);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(868, 648);
-            this.MainPanel.TabIndex = 3;
-            // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientPanel1.BorderRadius = 15;
-            this.guna2GradientPanel1.Controls.Add(this.label2);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(727, 3);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(292, 38);
-            this.guna2GradientPanel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(44, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 26);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nguyễn Tuấn Phong";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btStaffInfo
-            // 
-            this.btStaffInfo.Animated = true;
-            this.btStaffInfo.CheckedState.Parent = this.btStaffInfo;
-            this.btStaffInfo.CustomImages.Parent = this.btStaffInfo;
-            this.btStaffInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btStaffInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btStaffInfo.ForeColor = System.Drawing.Color.White;
-            this.btStaffInfo.HoverState.Parent = this.btStaffInfo;
-            this.btStaffInfo.Image = global::PBL3.UI.Properties.Resources.info_icon;
-            this.btStaffInfo.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btStaffInfo.Location = new System.Drawing.Point(-64, 0);
-            this.btStaffInfo.Name = "btStaffInfo";
-            this.btStaffInfo.ShadowDecoration.Parent = this.btStaffInfo;
-            this.btStaffInfo.Size = new System.Drawing.Size(376, 52);
-            this.btStaffInfo.TabIndex = 2;
-            this.btStaffInfo.Text = "Thông tin cá nhân";
-            this.btStaffInfo.Click += new System.EventHandler(this.btStaffInfo_Click);
-            // 
-            // btInfo
-            // 
-            this.btInfo.Animated = true;
-            this.btInfo.CheckedState.Parent = this.btInfo;
-            this.btInfo.CustomImages.Parent = this.btInfo;
-            this.btInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
-            this.btInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btInfo.ForeColor = System.Drawing.Color.White;
-            this.btInfo.HoverState.Parent = this.btInfo;
-            this.btInfo.Image = global::PBL3.UI.Properties.Resources.dot_icon;
-            this.btInfo.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btInfo.Location = new System.Drawing.Point(-64, 0);
-            this.btInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.btInfo.Name = "btInfo";
-            this.btInfo.ShadowDecoration.Parent = this.btInfo;
-            this.btInfo.Size = new System.Drawing.Size(360, 58);
-            this.btInfo.TabIndex = 2;
-            this.btInfo.Text = "Thông tin cá nhân";
-            this.btInfo.TextOffset = new System.Drawing.Point(-7, 0);
-            this.btInfo.Click += new System.EventHandler(this.btInfo_Click);
-            // 
-            // btChangePassword
-            // 
-            this.btChangePassword.Animated = true;
-            this.btChangePassword.CheckedState.Parent = this.btChangePassword;
-            this.btChangePassword.CustomImages.Parent = this.btChangePassword;
-            this.btChangePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(98)))), ((int)(((byte)(140)))));
-            this.btChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btChangePassword.HoverState.Parent = this.btChangePassword;
-            this.btChangePassword.Image = global::PBL3.UI.Properties.Resources.dot_icon;
-            this.btChangePassword.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.btChangePassword.Location = new System.Drawing.Point(-68, 0);
-            this.btChangePassword.Margin = new System.Windows.Forms.Padding(0);
-            this.btChangePassword.Name = "btChangePassword";
-            this.btChangePassword.ShadowDecoration.Parent = this.btChangePassword;
-            this.btChangePassword.Size = new System.Drawing.Size(364, 52);
-            this.btChangePassword.TabIndex = 2;
-            this.btChangePassword.Text = "Thay đổi mật khẩu";
-            this.btChangePassword.TextOffset = new System.Drawing.Point(-5, 0);
-            this.btChangePassword.Click += new System.EventHandler(this.btChangePassword_Click);
-            // 
             // btTicket
             // 
             this.btTicket.Animated = true;
@@ -340,6 +316,16 @@
             this.btTicket.Text = "Quản lý vé xe";
             this.btTicket.TextOffset = new System.Drawing.Point(-6, 0);
             this.btTicket.Click += new System.EventHandler(this.btTicket_Click);
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.btBookTicket);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 52);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
+            this.guna2Panel3.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel3.TabIndex = 5;
             // 
             // btBookTicket
             // 
@@ -362,6 +348,16 @@
             this.btBookTicket.TextOffset = new System.Drawing.Point(-7, 0);
             this.btBookTicket.Click += new System.EventHandler(this.btBookTicket_Click);
             // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Controls.Add(this.btInfoTicket);
+            this.guna2Panel6.Location = new System.Drawing.Point(0, 104);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
+            this.guna2Panel6.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel6.TabIndex = 6;
+            // 
             // btInfoTicket
             // 
             this.btInfoTicket.Animated = true;
@@ -382,6 +378,15 @@
             this.btInfoTicket.Text = "Thông tin vé";
             this.btInfoTicket.TextOffset = new System.Drawing.Point(1, 0);
             this.btInfoTicket.Click += new System.EventHandler(this.btInfoTicket_Click);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Controls.Add(this.guna2Button3);
+            this.guna2Panel4.Location = new System.Drawing.Point(3, 104);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
+            this.guna2Panel4.Size = new System.Drawing.Size(248, 52);
+            this.guna2Panel4.TabIndex = 6;
             // 
             // guna2Button3
             // 
@@ -404,28 +409,23 @@
             this.guna2Button3.TextOffset = new System.Drawing.Point(-7, 0);
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // guna2PictureBox2
+            // bookticketTransition
             // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::PBL3.UI.Properties.Resources.staff_m_1;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(7, 3);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(33, 33);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 0;
-            this.guna2PictureBox2.TabStop = false;
+            this.bookticketTransition.Interval = 10;
+            this.bookticketTransition.Tick += new System.EventHandler(this.bookticketTransition_Tick);
             // 
-            // guna2PictureBox1
+            // PersonalinfoTransition
             // 
-            this.guna2PictureBox1.Image = global::PBL3.UI.Properties.Resources.icons8_bus_50;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 6);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 3;
-            this.guna2PictureBox1.TabStop = false;
+            this.PersonalinfoTransition.Interval = 10;
+            this.PersonalinfoTransition.Tick += new System.EventHandler(this.PersonalinfoTransition_Tick);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(251, 44);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(868, 648);
+            this.MainPanel.TabIndex = 3;
             // 
             // StaffForm2
             // 
@@ -440,6 +440,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffForm2";
             this.panel1.ResumeLayout(false);
+            this.guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.Sidebar.ResumeLayout(false);
             this.PersonalinfoContainer.ResumeLayout(false);
             this.guna2Panel7.ResumeLayout(false);
@@ -450,9 +453,6 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
-            this.guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,6 +485,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbUser;
     }
 }
