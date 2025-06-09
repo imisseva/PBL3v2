@@ -62,6 +62,7 @@
             this.btStatistical.BorderRadius = 8;
             this.btStatistical.CheckedState.Parent = this.btStatistical;
             this.btStatistical.CustomImages.Parent = this.btStatistical;
+            this.btStatistical.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btStatistical.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btStatistical.ForeColor = System.Drawing.Color.White;
             this.btStatistical.HoverState.Parent = this.btStatistical;

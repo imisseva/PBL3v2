@@ -1,4 +1,5 @@
-﻿using PBL3.DTO;
+﻿using PBL3.BLL.Services;
+using PBL3.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,28 @@ namespace PBL3.UI
     public partial class StaffForm2 : Form
     {
         private StaffDTO _currentStaff;
+        private StaffService _staffService = new StaffService();
         BookTicket bookTicket;
         public StaffForm2()
         {
             InitializeComponent();
             MainPanel.Visible = false;
+            SetStaffName();
         }
 
+        private void SetStaffName()
+        {
+            // Lấy thông tin nhân viên vừa đăng nhập
+            var staff = _staffService.GetById(Session.LoggedAccountId);
+            if (staff != null)
+            {
+                lbUser.Text = staff.Name;
+            }
+            else
+            {
+                lbUser.Text = "Không rõ";
+            }
+        }
 
         private void LoadFormToPanel(Form frm)
         {
