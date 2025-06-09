@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.cbbPick = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.DateRevenuedp = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btStatistical = new Guna.UI2.WinForms.Guna2Button();
-            this.txtTotalTicket = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTotalRevenue = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbTotalTicket = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DateRevenuedp = new System.Windows.Forms.DateTimePicker();
+            this.plotPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // cbbPick
@@ -53,25 +50,11 @@
             "Theo ngày",
             "Theo tháng"});
             this.cbbPick.ItemsAppearance.Parent = this.cbbPick;
-            this.cbbPick.Location = new System.Drawing.Point(136, 72);
+            this.cbbPick.Location = new System.Drawing.Point(21, 12);
             this.cbbPick.Name = "cbbPick";
             this.cbbPick.ShadowDecoration.Parent = this.cbbPick;
             this.cbbPick.Size = new System.Drawing.Size(140, 36);
             this.cbbPick.TabIndex = 0;
-            // 
-            // DateRevenuedp
-            // 
-            this.DateRevenuedp.CheckedState.Parent = this.DateRevenuedp;
-            this.DateRevenuedp.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateRevenuedp.HoverState.Parent = this.DateRevenuedp;
-            this.DateRevenuedp.Location = new System.Drawing.Point(326, 72);
-            this.DateRevenuedp.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateRevenuedp.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateRevenuedp.Name = "DateRevenuedp";
-            this.DateRevenuedp.ShadowDecoration.Parent = this.DateRevenuedp;
-            this.DateRevenuedp.Size = new System.Drawing.Size(200, 36);
-            this.DateRevenuedp.TabIndex = 1;
-            this.DateRevenuedp.Value = new System.DateTime(2025, 5, 27, 5, 49, 48, 536);
             // 
             // btStatistical
             // 
@@ -82,7 +65,7 @@
             this.btStatistical.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btStatistical.ForeColor = System.Drawing.Color.White;
             this.btStatistical.HoverState.Parent = this.btStatistical;
-            this.btStatistical.Location = new System.Drawing.Point(562, 72);
+            this.btStatistical.Location = new System.Drawing.Point(658, 12);
             this.btStatistical.Name = "btStatistical";
             this.btStatistical.ShadowDecoration.Parent = this.btStatistical;
             this.btStatistical.Size = new System.Drawing.Size(180, 36);
@@ -90,98 +73,42 @@
             this.btStatistical.Text = "Thống kê";
             this.btStatistical.Click += new System.EventHandler(this.btStatistical_Click);
             // 
-            // txtTotalTicket
+            // DateRevenuedp
             // 
-            this.txtTotalTicket.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalTicket.DefaultText = "";
-            this.txtTotalTicket.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalTicket.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalTicket.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalTicket.DisabledState.Parent = this.txtTotalTicket;
-            this.txtTotalTicket.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalTicket.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalTicket.FocusedState.Parent = this.txtTotalTicket;
-            this.txtTotalTicket.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalTicket.HoverState.Parent = this.txtTotalTicket;
-            this.txtTotalTicket.Location = new System.Drawing.Point(326, 210);
-            this.txtTotalTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTotalTicket.Name = "txtTotalTicket";
-            this.txtTotalTicket.PasswordChar = '\0';
-            this.txtTotalTicket.PlaceholderText = "";
-            this.txtTotalTicket.SelectedText = "";
-            this.txtTotalTicket.ShadowDecoration.Parent = this.txtTotalTicket;
-            this.txtTotalTicket.Size = new System.Drawing.Size(200, 44);
-            this.txtTotalTicket.TabIndex = 3;
+            this.DateRevenuedp.Location = new System.Drawing.Point(185, 26);
+            this.DateRevenuedp.Name = "DateRevenuedp";
+            this.DateRevenuedp.Size = new System.Drawing.Size(215, 22);
+            this.DateRevenuedp.TabIndex = 3;
             // 
-            // txtTotalRevenue
+            // plotPanel
             // 
-            this.txtTotalRevenue.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalRevenue.DefaultText = "";
-            this.txtTotalRevenue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalRevenue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalRevenue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalRevenue.DisabledState.Parent = this.txtTotalRevenue;
-            this.txtTotalRevenue.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalRevenue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalRevenue.FocusedState.Parent = this.txtTotalRevenue;
-            this.txtTotalRevenue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalRevenue.HoverState.Parent = this.txtTotalRevenue;
-            this.txtTotalRevenue.Location = new System.Drawing.Point(325, 315);
-            this.txtTotalRevenue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTotalRevenue.Name = "txtTotalRevenue";
-            this.txtTotalRevenue.PasswordChar = '\0';
-            this.txtTotalRevenue.PlaceholderText = "";
-            this.txtTotalRevenue.SelectedText = "";
-            this.txtTotalRevenue.ShadowDecoration.Parent = this.txtTotalRevenue;
-            this.txtTotalRevenue.Size = new System.Drawing.Size(200, 44);
-            this.txtTotalRevenue.TabIndex = 4;
-            // 
-            // lbTotalTicket
-            // 
-            this.lbTotalTicket.AutoSize = true;
-            this.lbTotalTicket.Location = new System.Drawing.Point(198, 228);
-            this.lbTotalTicket.Name = "lbTotalTicket";
-            this.lbTotalTicket.Size = new System.Drawing.Size(78, 16);
-            this.lbTotalTicket.TabIndex = 5;
-            this.lbTotalTicket.Text = "Tổng số vé:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 328);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Tổng doanh thu:";
+            this.plotPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plotPanel.Location = new System.Drawing.Point(21, 60);
+            this.plotPanel.Name = "plotPanel";
+            this.plotPanel.Size = new System.Drawing.Size(817, 538);
+            this.plotPanel.TabIndex = 4;
             // 
             // RevenueView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 608);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbTotalTicket);
-            this.Controls.Add(this.txtTotalRevenue);
-            this.Controls.Add(this.txtTotalTicket);
-            this.Controls.Add(this.btStatistical);
+            this.Controls.Add(this.plotPanel);
             this.Controls.Add(this.DateRevenuedp);
+            this.Controls.Add(this.btStatistical);
             this.Controls.Add(this.cbbPick);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RevenueView";
             this.Text = "RevenueView";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2ComboBox cbbPick;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateRevenuedp;
         private Guna.UI2.WinForms.Guna2Button btStatistical;
-        private Guna.UI2.WinForms.Guna2TextBox txtTotalTicket;
-        private Guna.UI2.WinForms.Guna2TextBox txtTotalRevenue;
-        private System.Windows.Forms.Label lbTotalTicket;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DateRevenuedp;
+        private System.Windows.Forms.Panel plotPanel;
     }
 }
