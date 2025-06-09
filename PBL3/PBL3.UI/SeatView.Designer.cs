@@ -30,7 +30,6 @@
         {
             this.cbbPickBus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDel = new Guna.UI2.WinForms.Guna2Button();
@@ -55,6 +54,7 @@
             this.cbbPickBus.ShadowDecoration.Parent = this.cbbPickBus;
             this.cbbPickBus.Size = new System.Drawing.Size(248, 36);
             this.cbbPickBus.TabIndex = 9;
+            this.cbbPickBus.SelectedIndexChanged += new System.EventHandler(this.cbbPickBus_SelectedIndexChanged);
             // 
             // dgv
             // 
@@ -66,24 +66,6 @@
             this.dgv.Size = new System.Drawing.Size(763, 461);
             this.dgv.TabIndex = 11;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Animated = true;
-            this.btnSearch.BorderRadius = 8;
-            this.btnSearch.CheckedState.Parent = this.btnSearch;
-            this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(317, 25);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(105, 36);
-            this.btnSearch.TabIndex = 12;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // btnAdd
             // 
             this.btnAdd.Animated = true;
@@ -94,7 +76,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(442, 25);
+            this.btnAdd.Location = new System.Drawing.Point(357, 25);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(105, 36);
@@ -112,7 +94,7 @@
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverState.Parent = this.btnEdit;
-            this.btnEdit.Location = new System.Drawing.Point(566, 25);
+            this.btnEdit.Location = new System.Drawing.Point(532, 25);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
             this.btnEdit.Size = new System.Drawing.Size(105, 36);
@@ -145,7 +127,6 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.cbbPickBus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -159,7 +140,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2ComboBox cbbPickBus;
         private System.Windows.Forms.DataGridView dgv;
-        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnDel;

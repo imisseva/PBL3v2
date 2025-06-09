@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3.BLL.Services;
 using PBL3.DTO;
-using PBL3.UI;
 
 namespace PBL3
 {
@@ -25,7 +20,7 @@ namespace PBL3
 
         private void LoadSeatData(string busId)
         {
-            var list = seatService.GetSeatsByBusID(busId); // Hàm này bạn cần viết trong service
+            var list = seatService.GetSeatsByBusID(busId);
             dgv.DataSource = list;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -44,33 +39,37 @@ namespace PBL3
         {
             var busService = new BusService();
             var buses = busService.GetBuses();
-            cbbPickBus.DataSource = buses;
+
+            // Thêm dòng đầu tiên "Chọn xe"
+            var busList = new List<BusDTO>(buses);
+            busList.Insert(0, new BusDTO { ID_bus = "-- Chọn xe --" });
+
+            cbbPickBus.DataSource = busList;
             cbbPickBus.DisplayMember = "ID_bus";
             cbbPickBus.ValueMember = "ID_bus";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (cbbPickBus.SelectedItem != null)
-            {
-                string selectedBusID = cbbPickBus.SelectedValue.ToString();
-                LoadSeatData(selectedBusID);
-            }
-            else
+            string selectedBusID = cbbPickBus.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(selectedBusID) || selectedBusID == "-- Chọn xe --")
             {
                 MessageBox.Show("Vui lòng chọn một xe để tìm ghế.");
+                return;
             }
+
+            LoadSeatData(selectedBusID);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (cbbPickBus.SelectedItem == null)
+            string selectedBusID = cbbPickBus.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(selectedBusID) || selectedBusID == "-- Chọn xe --")
             {
                 MessageBox.Show("Vui lòng chọn xe trước khi thêm ghế.");
                 return;
             }
 
-            string selectedBusID = cbbPickBus.SelectedValue.ToString();
             var form = new SeatDetail(selectedBusID)
             {
                 IsEditMode = false
@@ -99,10 +98,10 @@ namespace PBL3
             }
         }
 
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgv.SelectedRows.Count == 0 || cbbPickBus.SelectedItem == null)
+            string selectedBusID = cbbPickBus.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(selectedBusID) || selectedBusID == "-- Chọn xe --" || dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một ghế và một xe.");
                 return;
@@ -110,7 +109,6 @@ namespace PBL3
 
             DataGridViewRow selectedRow = dgv.SelectedRows[0];
 
-            string selectedBusID = cbbPickBus.SelectedValue.ToString();
             string seatID = selectedRow.Cells["ID_seat"].Value.ToString();
             int seatNumber = Convert.ToInt32(selectedRow.Cells["seat_number"].Value);
             string seatType = selectedRow.Cells["type"].Value.ToString();
@@ -145,6 +143,7 @@ namespace PBL3
                 }
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgv.CurrentRow != null)
@@ -152,10 +151,20 @@ namespace PBL3
                 string id = dgv.CurrentRow.Cells["ID_seat"].Value.ToString();
                 seatService.DeleteSeat(id);
 
-                if (cbbPickBus.SelectedItem != null)
+                string selectedBusID = cbbPickBus.SelectedValue?.ToString();
+                if (!string.IsNullOrEmpty(selectedBusID) && selectedBusID != "-- Chọn xe --")
                 {
-                    LoadSeatData(cbbPickBus.SelectedValue.ToString());
+                    LoadSeatData(selectedBusID);
                 }
+            }
+        }
+
+        private void cbbPickBus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedBusID = cbbPickBus.SelectedValue?.ToString();
+            if (!string.IsNullOrEmpty(selectedBusID) && selectedBusID != "-- Chọn xe --")
+            {
+                LoadSeatData(selectedBusID);
             }
         }
     }

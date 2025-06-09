@@ -34,6 +34,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
       <HintPath>..\..\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
@@ -209,6 +231,18 @@
     <Compile Include="RouteView.Designer.cs">
       <DependentUpon>RouteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Route_SubRouteDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Route_SubRouteDetail.Designer.cs">
+      <DependentUpon>Route_SubRouteDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Route_SubrouteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Route_SubrouteView.Designer.cs">
+      <DependentUpon>Route_SubrouteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScheduleDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RouteView.resx">
       <DependentUpon>RouteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Route_SubRouteDetail.resx">
+      <DependentUpon>Route_SubRouteDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Route_SubrouteView.resx">
+      <DependentUpon>Route_SubrouteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleDetail.resx">
       <DependentUpon>ScheduleDetail.cs</DependentUpon>

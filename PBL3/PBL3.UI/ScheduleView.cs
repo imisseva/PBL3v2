@@ -72,5 +72,38 @@ namespace PBL3.UI
         {
             LoadData(txtSearch.Text.Trim());
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            LoadUpcomingSchedules();
+        }
+        private void LoadUpcomingSchedules()
+        {
+            var schedules = _scheduleService.GetUpcomingSchedules();
+
+            var data = schedules.Select(s =>
+            {
+                var stops = _scheduleStopService.GetStopsBySchedule(s.ID_Schedule);
+                var stopNames = string.Join(" → ", stops
+                    .OrderBy(st => st.Stop_order)
+                    .Select(st => _stationService.GetNameStation(st.IDStation_stop)));
+
+                return new
+                {
+                    ID_Schedule = s.ID_Schedule,
+                    Bus = s.ID_bus,
+                    Route = s.ID_route,
+                    StartTime = s.start_time.ToString("dd/MM/yyyy HH:mm"),
+                    EndTime = s.end_time.ToString("dd/MM/yyyy HH:mm"),
+                    GaDung = stopNames
+                };
+            }).ToList();
+
+            dgv.DataSource = data;
+            dgv.Columns["GaDung"].Width = 500;
+            dgv.ScrollBars = ScrollBars.Both;
+            dgv.ClearSelection();
+        }
+
     }
 }

@@ -20,6 +20,38 @@ namespace PBL3.BLL.Services
         {
             return  _repo.GetIntermediateStationsByRoute(routeID);
         }
+        public List<Route_SubRouteDTO> GetAll(string keyword = "")
+        {
+            return _repo.GetAll(keyword);
+        }
 
+        public void Add(Route_SubRouteDTO dto)
+        {
+            _repo.Add(dto);
+        }
+
+        public void Update(Route_SubRouteDTO dto)
+        {
+            _repo.Update(dto);
+        }
+
+        public void Delete(string parentID, string childID)
+        {
+            _repo.Delete(parentID, childID);
+        }
+
+        public Route_SubRouteDTO GetById(string parentID, string childID)
+        {
+            var entity = _repo.GetById(parentID, childID);
+            if (entity == null) return null;
+
+            return new Route_SubRouteDTO
+            {
+                ID_route_parent = entity.ID_route_parent,
+                ID_route_child = entity.ID_route_child,
+                StopOrder = entity.StopOrder
+                // Có thể bổ sung Name_route nếu cần
+            };
+        }
     }
 }

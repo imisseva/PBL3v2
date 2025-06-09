@@ -15,6 +15,5 @@
             public DateTime booking_date { get; set; }
             public string station_start { get; set; }
             public string station_end { get; set; }
-            public string Status { get; set; } // 0: Chưa thanh toán, 1: Đã thanh toán
         }
     }

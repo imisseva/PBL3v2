@@ -253,6 +253,7 @@
             this.cbbStation.Name = "cbbStation";
             this.cbbStation.Size = new System.Drawing.Size(277, 24);
             this.cbbStation.TabIndex = 66;
+            this.cbbStation.SelectedIndexChanged += new System.EventHandler(this.cbbStation_SelectedIndexChanged);
             // 
             // StaffDetail
             // 
