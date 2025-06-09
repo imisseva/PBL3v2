@@ -12,6 +12,7 @@ namespace PBL3
     public partial class StaffPersonalInfo : Form
     {
         private StaffService _staffService = new StaffService();
+        private int StaffID => int.TryParse(txtID.Text, out int id) ? id : 0;
 
         public StaffPersonalInfo()
         {
@@ -39,7 +40,7 @@ namespace PBL3
                 txtCCCD.Text = staff.CCCD;
                 txtID.Text = staff.ID_account.ToString();
 
-                if (staff.AvatarImage != null)
+                if (staff.AvatarImage != null && staff.AvatarImage.Length > 0)
                 {
                     using (var ms = new MemoryStream(staff.AvatarImage))
                     {
@@ -53,10 +54,40 @@ namespace PBL3
             }
         }
 
-        private void btUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            StaffUpdateInfo staffUpdateInfo = new StaffUpdateInfo();
-            staffUpdateInfo.ShowDialog();
+            var staff = _staffService.GetById(StaffID);
+
+            if (staff == null)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            staff.Name = txtName.Text.Trim();
+            staff.email = txtEmail.Text.Trim();
+            staff.phone = txtPhone.Text.Trim();
+            staff.home_address = txtAddress.Text.Trim();
+            staff.CCCD = txtCCCD.Text.Trim();
+            staff.NoiSinh = txtNoiSinh.Text.Trim();
+            staff.Gender = txtGender.Text.Trim();
+
+            // Xử lý ngày sinh
+            if (DateTime.TryParse(txtDob.Text.Trim(), out DateTime dobParsed))
+                staff.Dob = dobParsed;
+            else
+                staff.Dob = DateTime.Now; // hoặc giữ giá trị cũ: staff.Dob = staff.Dob;
+
+            try
+            {
+                _staffService.UpdateStaff(staff);
+                MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadStaffData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cập nhật thất bại: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btUpload_Click(object sender, EventArgs e)
@@ -80,7 +111,6 @@ namespace PBL3
                     byte[] avatarBytes;
                     using (MemoryStream ms = new MemoryStream())
                     {
-                        // Luôn dùng định dạng phổ biến, không dùng RawFormat
                         pictureBoxAvatar.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                         avatarBytes = ms.ToArray();
                     }
@@ -90,10 +120,10 @@ namespace PBL3
                         staff.AvatarImage = avatarBytes;
                         _staffService.UpdateStaff(staff);
                         MessageBox.Show("Cập nhật ảnh đại diện thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadStaffData();
                     }
                 }
             }
         }
     }
 }
-

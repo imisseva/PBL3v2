@@ -56,12 +56,6 @@ namespace PBL3.UI
             dgv.ClearSelection();
         }
 
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text.Trim());
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var form = new ScheduleDetail();
@@ -72,6 +66,11 @@ namespace PBL3.UI
                 MessageBox.Show("Thêm thành công!");
                 LoadData();
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text.Trim());
         }
     }
 }

@@ -41,11 +41,6 @@ namespace PBL3
             }
         }
 
-        private void BtnSearch_Click_Station(object sender, EventArgs e)
-        {
-            LoadStationData(txtSearch.Text.Trim());
-        }
-
         private void BtnAdd_Click_Station(object sender, EventArgs e)
         {
             var form = new StationDetail();
@@ -114,6 +109,11 @@ namespace PBL3
         private void StationView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadStationData(txtSearch.Text.Trim());
         }
     }
 }
