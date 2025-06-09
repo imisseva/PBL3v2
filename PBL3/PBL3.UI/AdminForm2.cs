@@ -84,11 +84,7 @@ namespace PBL3.UI
             LoadFormToPanel(new StaffView());
         }
 
-        private void btRoute_Click(object sender, EventArgs e)
-        {
-            MainPanel.Visible = true;
-            LoadFormToPanel(new RouteView());
-        }
+       
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -135,6 +131,34 @@ namespace PBL3.UI
             RevenueTransition.Start();
         }
 
+        bool routeExpand = false;
+        private void routeTransition_Tick(object sender, EventArgs e)
+        {
+            if (routeExpand == false)
+            {
+                RouteContainer.Height += 10;
+                if (RouteContainer.Height >= 125)
+                {
+                    routeTransition.Stop();
+                    routeExpand = true;
+                }
+            }
+            else
+            {
+                RouteContainer.Height -= 10;
+                if (RouteContainer.Height <= 49)
+                {
+                    routeTransition.Stop();
+                    routeExpand = false;
+                }
+            }
+        }
+        private void btRoute_Click(object sender, EventArgs e)
+        {
+           routeTransition.Start();
+        }
+        
+
         private void btMonthRevenue_Click(object sender, EventArgs e)
         {
             MainPanel.Visible = true;
@@ -145,6 +169,19 @@ namespace PBL3.UI
         {
             MainPanel.Visible = true;
             LoadFormToPanel(new YearRevenueView());
+        }
+
+        private void btMainRoute_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new RouteView());
+        }
+
+        private void btSubRoute_Click(object sender, EventArgs e)
+        {
+            MainPanel.Visible = true;
+            LoadFormToPanel(new Route_SubrouteView());
+
         }
     }
 }
