@@ -26,7 +26,15 @@ namespace PBL3
 
         private void LoadBusData(string keyword = "")
         {
-            var list = busService.GetBuses(keyword);
+            var list = busService.GetBuses(keyword)
+                .Select(bus => new
+                {
+                    ID_bus = bus.ID_bus,
+                    Quantity = bus.Quantity,
+                    Status = bus.Status == "1" ? "Hoạt động" :
+                             bus.Status == "0" ? "Không hoạt động" : "Không rõ"
+                }).ToList();
+
             dgv.DataSource = list;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -40,7 +48,8 @@ namespace PBL3
             }
         }
 
-     
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -73,30 +82,49 @@ namespace PBL3
         {
             if (dgv.CurrentRow != null)
             {
-                var dto = new BusDTO
+                string id = dgv.CurrentRow.Cells["ID_bus"].Value.ToString();
+                int quantity = Convert.ToInt32(dgv.CurrentRow.Cells["Quantity"].Value);
+                string statusText = dgv.CurrentRow.Cells["Status"].Value.ToString();
+
+                int status = statusText == "Hoạt động" ? 1 :
+                             statusText == "Không hoạt động" ? 0 : -1;
+
+                if (status == -1)
                 {
-                    ID_bus = dgv.CurrentRow.Cells["ID_bus"].Value.ToString(),
-                    Quantity = Convert.ToInt32(dgv.CurrentRow.Cells["Quantity"].Value),
-                    Status = dgv.CurrentRow.Cells["Status"].Value.ToString() 
-                };
+                    MessageBox.Show("Trạng thái không hợp lệ.");
+                    return;
+                }
 
                 var form = new BusDetail
                 {
                     IsEditMode = true,
-                    BusID = dto.ID_bus,
-                    Quantity = dto.Quantity,
-                    Status = Convert.ToInt32(dto.Status) 
+                    BusID = id,
+                    Quantity = quantity,
+                    Status = status
                 };
 
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    dto.Quantity = form.Quantity;
-                    dto.Status = form.Status.ToString();
-                    busService.UpdateBus(dto);
-                    LoadBusData();
+                    var dto = new BusDTO
+                    {
+                        ID_bus = form.BusID,
+                        Quantity = form.Quantity,
+                        Status = form.Status.ToString() // Status là int, cần ToString() để khớp với DTO
+                    };
+
+                    try
+                    {
+                        busService.UpdateBus(dto);
+                        LoadBusData();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi cập nhật: " + ex.Message);
+                    }
                 }
             }
         }
+
 
 
         private void btnDelete_Click(object sender, EventArgs e)
